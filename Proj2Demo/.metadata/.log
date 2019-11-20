@@ -1,0 +1,210 @@
+
+!ENTRY org.eclipse.core.resources 4 568 2019-11-19 16:17:11.033
+!MESSAGE Could not write metadata for '/'.
+!STACK 0
+java.io.FileNotFoundException: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.core.resources\.root\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:133)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1712)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1168)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1110)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.debug.core 4 125 2019-11-19 16:54:57.409
+!MESSAGE Error logged from Debug Core: 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:55)
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:50)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.checkTargetIsNotWritable(LocalFile.java:90)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.mkdir(LocalFile.java:304)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:300)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173)
+	at org.eclipse.cdt.debug.internal.core.CSettingsManager.save(CSettingsManager.java:255)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.saveFormats(CDebugTarget.java:1547)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.cleanup(CDebugTarget.java:1078)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.terminated(CDebugTarget.java:1044)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleTerminatedEvent(CDebugTarget.java:1284)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleDebugEvents(CDebugTarget.java:906)
+	at com.img.codescape.da.debugger.EventManager.fireEvents(EventManager.java:128)
+	at com.img.codescape.da.debugger.EventManager.update(EventManager.java:69)
+	at java.util.Observable.notifyObservers(Observable.java:159)
+	at com.img.codescape.da.debugger.CSCDISession.notifyObservers(CSCDISession.java:1344)
+	at com.img.codescape.da.debugger.EventThread.run(EventThread.java:31)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 272 2019-11-19 16:54:57.409
+!MESSAGE Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.debug.core 4 125 2019-11-19 16:54:57.414
+!MESSAGE Error logged from Debug Core: 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:55)
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:50)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.checkTargetIsNotWritable(LocalFile.java:90)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.mkdir(LocalFile.java:304)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:300)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173)
+	at org.eclipse.cdt.debug.internal.core.CGlobalVariableManager.save(CGlobalVariableManager.java:274)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.saveGlobalVariables(CDebugTarget.java:1543)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.cleanup(CDebugTarget.java:1079)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.terminated(CDebugTarget.java:1044)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleTerminatedEvent(CDebugTarget.java:1284)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleDebugEvents(CDebugTarget.java:906)
+	at com.img.codescape.da.debugger.EventManager.fireEvents(EventManager.java:128)
+	at com.img.codescape.da.debugger.EventManager.update(EventManager.java:69)
+	at java.util.Observable.notifyObservers(Observable.java:159)
+	at com.img.codescape.da.debugger.CSCDISession.notifyObservers(CSCDISession.java:1344)
+	at com.img.codescape.da.debugger.EventThread.run(EventThread.java:31)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 272 2019-11-19 16:54:57.414
+!MESSAGE Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.cdt.debug.core 4 1000 2019-11-19 16:54:57.419
+!MESSAGE Internal error logged from CDI Debug: 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:55)
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:50)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.checkTargetIsNotWritable(LocalFile.java:90)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.mkdir(LocalFile.java:304)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:300)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173)
+	at org.eclipse.cdt.debug.internal.core.CRegisterManager.save(CRegisterManager.java:317)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.saveRegisterGroups(CDebugTarget.java:1535)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.cleanup(CDebugTarget.java:1083)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.terminated(CDebugTarget.java:1044)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleTerminatedEvent(CDebugTarget.java:1284)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleDebugEvents(CDebugTarget.java:906)
+	at com.img.codescape.da.debugger.EventManager.fireEvents(EventManager.java:128)
+	at com.img.codescape.da.debugger.EventManager.update(EventManager.java:69)
+	at java.util.Observable.notifyObservers(Observable.java:159)
+	at com.img.codescape.da.debugger.CSCDISession.notifyObservers(CSCDISession.java:1344)
+	at com.img.codescape.da.debugger.EventThread.run(EventThread.java:31)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 272 2019-11-19 16:54:57.419
+!MESSAGE Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2019-11-19 16:54:57.427
+!MESSAGE Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.resources 4 568 2019-11-19 16:56:11.719
+!MESSAGE Could not write metadata for '/'.
+!STACK 0
+java.io.FileNotFoundException: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.core.resources\.root\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:133)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1712)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1168)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1110)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.debug.core 4 125 2019-11-19 18:34:02.279
+!MESSAGE Error logged from Debug Core: 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:55)
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:50)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.checkTargetIsNotWritable(LocalFile.java:90)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.mkdir(LocalFile.java:304)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:300)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173)
+	at org.eclipse.cdt.debug.internal.core.CSettingsManager.save(CSettingsManager.java:255)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.saveFormats(CDebugTarget.java:1547)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.cleanup(CDebugTarget.java:1078)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.terminated(CDebugTarget.java:1044)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleTerminatedEvent(CDebugTarget.java:1284)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleDebugEvents(CDebugTarget.java:906)
+	at com.img.codescape.da.debugger.EventManager.fireEvents(EventManager.java:128)
+	at com.img.codescape.da.debugger.EventManager.update(EventManager.java:69)
+	at java.util.Observable.notifyObservers(Observable.java:159)
+	at com.img.codescape.da.debugger.CSCDISession.notifyObservers(CSCDISession.java:1344)
+	at com.img.codescape.da.debugger.EventThread.run(EventThread.java:31)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 272 2019-11-19 18:34:02.279
+!MESSAGE Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.debug.core 4 125 2019-11-19 18:34:02.283
+!MESSAGE Error logged from Debug Core: 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:55)
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:50)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.checkTargetIsNotWritable(LocalFile.java:90)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.mkdir(LocalFile.java:304)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:300)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173)
+	at org.eclipse.cdt.debug.internal.core.CGlobalVariableManager.save(CGlobalVariableManager.java:274)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.saveGlobalVariables(CDebugTarget.java:1543)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.cleanup(CDebugTarget.java:1079)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.terminated(CDebugTarget.java:1044)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleTerminatedEvent(CDebugTarget.java:1284)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleDebugEvents(CDebugTarget.java:906)
+	at com.img.codescape.da.debugger.EventManager.fireEvents(EventManager.java:128)
+	at com.img.codescape.da.debugger.EventManager.update(EventManager.java:69)
+	at java.util.Observable.notifyObservers(Observable.java:159)
+	at com.img.codescape.da.debugger.CSCDISession.notifyObservers(CSCDISession.java:1344)
+	at com.img.codescape.da.debugger.EventThread.run(EventThread.java:31)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 272 2019-11-19 18:34:02.283
+!MESSAGE Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.cdt.debug.core 4 1000 2019-11-19 18:34:02.287
+!MESSAGE Internal error logged from CDI Debug: 
+!STACK 1
+org.eclipse.core.runtime.CoreException: Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:55)
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:50)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.checkTargetIsNotWritable(LocalFile.java:90)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.mkdir(LocalFile.java:304)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:300)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:250)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:220)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:173)
+	at org.eclipse.cdt.debug.internal.core.CRegisterManager.save(CRegisterManager.java:317)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.saveRegisterGroups(CDebugTarget.java:1535)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.cleanup(CDebugTarget.java:1083)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.terminated(CDebugTarget.java:1044)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleTerminatedEvent(CDebugTarget.java:1284)
+	at org.eclipse.cdt.debug.internal.core.model.CDebugTarget.handleDebugEvents(CDebugTarget.java:906)
+	at com.img.codescape.da.debugger.EventManager.fireEvents(EventManager.java:128)
+	at com.img.codescape.da.debugger.EventManager.update(EventManager.java:69)
+	at java.util.Observable.notifyObservers(Observable.java:159)
+	at com.img.codescape.da.debugger.CSCDISession.notifyObservers(CSCDISession.java:1344)
+	at com.img.codescape.da.debugger.EventThread.run(EventThread.java:31)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 272 2019-11-19 18:34:02.287
+!MESSAGE Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.filesystem 4 272 2019-11-19 18:34:02.292
+!MESSAGE Could not write file: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.debug.core\.launches.
+
+!ENTRY org.eclipse.core.resources 4 568 2019-11-19 18:37:49.755
+!MESSAGE Could not write metadata for '/'.
+!STACK 0
+java.io.FileNotFoundException: N:\Final_Project_ECE540\Proj2Demo\.metadata\.plugins\org.eclipse.core.resources\.root\.markers.snap (The system cannot find the path specified)
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(FileOutputStream.java:270)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:133)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:45)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:41)
+	at org.eclipse.core.internal.resources.SaveManager.visitAndSnap(SaveManager.java:1712)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1168)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1110)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
