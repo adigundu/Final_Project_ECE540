@@ -55,12 +55,12 @@ BTN_U_MASK 				= 0x4
 PUSHBUTTON_MASK			= 0x1F
 
 # Masks for Pushbuttons PLAYER 2		#subject to changes
-BTN_R_MASK_2 				= 0x2
-BTN_C_MASK_2 				= 0x10
-BTN_L_MASK_2 				= 0x8
-BTN_D_MASK_2 				= 0x1
-BTN_U_MASK_2 				= 0x4
-PUSHBUTTON_MASK_2			= 0x1F
+# BTN_R_MASK_2 				= 0x2
+# BTN_C_MASK_2 				= 0x10
+# BTN_L_MASK_2 				= 0x8
+# BTN_D_MASK_2 				= 0x1
+# BTN_U_MASK_2 				= 0x4
+# PUSHBUTTON_MASK_2			= 0x1F
 
 # Values to display specific segments on the display
 DISPLAY_SEGMENT_A 		= 16
@@ -72,7 +72,7 @@ DISPLAY_SEGMENT_F 		= 21
 DISPLAY_SEGMENT_G 		= 22
 DISPLAY_SEGMENT_BLANK 	= 28
 
-# Button Masks to get specific commands PLAYER 1
+# Button Masks to get specific commands PLAYER 1			#change the mappings
 FORWARD 				= BTN_L_MASK | BTN_R_MASK
 REVERSE 				= BTN_D_MASK | BTN_U_MASK
 RIGHT_2X 				= BTN_L_MASK | BTN_D_MASK
@@ -83,16 +83,6 @@ LEFT_1X_L 				= BTN_U_MASK
 LEFT_1X_R 				= BTN_R_MASK
 STOP 					= 0x00
 
-# Button Masks to get specific commands PLAYER 2		#subject to changes
-P2_FORWARD 				= BTN_L_MASK | BTN_R_MASK
-P2_REVERSE 				= BTN_D_MASK | BTN_U_MASK
-P2_RIGHT_2X 			= BTN_L_MASK | BTN_D_MASK
-P2_RIGHT_1X_L 			= BTN_L_MASK
-P2_RIGHT_1X_R 			= BTN_D_MASK
-P2_LEFT_2X 				= BTN_U_MASK | BTN_R_MASK
-P2_LEFT_1X_L 			= BTN_U_MASK
-P2_LEFT_1X_R 			= BTN_R_MASK
-P2_STOP 				= 0x00
 
 # ======================
 # === Port Addresses ===
@@ -110,7 +100,7 @@ P2_PORT_PBTNS  		= 0xbf800008		# (i) pushbuttons inputs
 # Change the following port address, as implemented by you in the hardware
 # ========================================================================
 
-
+#for scoreboard only
 PORT_SEVENSEG_EN 	= 0xbf700000		# (o) 7 Segment enable
 PORT_SEVENSEG_HGH	= 0xbf700004		# (o) 7 Segment Higher Display
 PORT_SEVENSEG_LOW	= 0xbf700008		# (o) 7 Segment Lower Display
@@ -142,14 +132,6 @@ MSK_BTN_UP 		= 0x04		# Pushbutton Up is bit 2
 MSK_BTN_RIGHT 	= 0x02		# Pushbutton Right is bit 25
 MSK_BTN_DOWN 	= 0x01		# Pushbutton Down is bit 0
 
-#bit masks for pushbuttons and switches for seven segment emulator PLAYER 2?
-# P2_MSK_ALLBTNS		= 0x1F		# Buttons are in bits[5:0]
-# P2_MSK_PBTNS 		= 0x0F		# Mask for 4 buttons to display on LED
-# P2_MSK_BTN_CENTER 	= 0x10		# Pushbutton Center is bit 4
-# P2_MSK_BTN_LEFT 	= 0x08		# Pushbutton Left is bit 3
-# P2_MSK_BTN_UP 		= 0x04		# Pushbutton Up is bit 2
-# P2_MSK_BTN_RIGHT 	= 0x02		# Pushbutton Right is bit 25
-# P2_MSK_BTN_DOWN 	= 0x01		# Pushbutton Down is bit 0
 
 MSK_SW7			= 0x80		# Slide switch 7 is bit 7
 MSK_SW6 		= 0x40		# Slide switch 6 is bit 6
@@ -266,35 +248,6 @@ MSKMVMT_F 	= 0x40		# Mask out all but Forward movement bits
 MSKMVMT_R 	= 0xE0		# Mask out all but right movement bits
 MSKMVMT_H 	= 0x00		# Mask out all but hold movement bits
 
-#Player 2 
-# ======================
-# === BotInfo values ===
-# ======================
-P2_OR_N 		= 0x00		# Orientation is North
-P2_OR_NE 		= 0x01		# Orientation is Northeast
-P2_OR_E 		= 0x02		# Orientation is East
-P2_OR_SE 		= 0x03		# Orientation is Southeast
-P2_OR_S 		= 0x04		# Orientation is South
-P2_OR_SW		= 0x05		# Orientation is Southwest
-P2_OR_W 		= 0x06		# Orientation is West
-P2_OR_NW 		= 0x07		# Orientation is Northwest
-
-P2_MV_STOP 	= 0x00		# Movement is stopped
-P2_MV_FWD 		= 0x04		# Movement is forward
-P2_MV_REV		= 0x08		# Movement is reverse
-P2_MV_SLT 		= 0x0C		# Movement is slow left turn
-P2_MV_FLT 		= 0x0D		# Movement is fast left turn
-P2_MV_SRT 		= 0x0E		# Movement is slow right turn
-P2_MV_FRT 		= 0x0F		# Movement is fast right turn
-						# Next 2 contants assume field is in low nibble
-P2_MSKMVMT 	= 0x0F		# Mask out all but movement bits
-P2_MSKORIENT 	= 0x07		# Mask out all but orientation bits
-P2_MSKBLKL 	= 0x07		# Mask out all but line sensor bits
-P2_MSKMVMT_B 	= 0x80		# Mask out all but Back movement bits
-P2_MSKMVMT_F 	= 0x40		# Mask out all but Forward movement bits
-P2_MSKMVMT_R 	= 0xE0		# Mask out all but right movement bits
-P2_MSKMVMT_H 	= 0x00		# Mask out all but hold movement bits
-
 
 
 # =================================
@@ -345,49 +298,6 @@ SP_MVMTD 	= 0x1A		# Fast left turn - display lower case L
 SP_MVMTE 	= 0x19		# Slow right turn - display upper case R
 SP_MVMTF 	= 0x1B		# Fast right turn - display lower case R
 
-#Player2
-P2_SP_BTNBASE 	= 0x20		# table is based at 0x20
-						#								[b3,b2,b1,b0]=[lf,lr,rf,rr]
-P2_SP_LSRS 	= 0x00		# left motor off, right motor off 				[0000]
-P2_SP_LORR 	= 0x02		# left motor off, right motor reverse			[0001]
-P2_SP_LSRF 	= 0x03		# left motor off, right motor forward			[0010]
-P2_SP_LSRFR	= 0x00		# left motor off, right motor fwd & rev = off	[0011]
-P2_SP_LRRS 	= 0x20		# left motor reverse, right motor off			[0100]
-P2_SP_LRRR 	= 0x22		# left motor reverse, right motor reverse		[0101]
-P2_SP_LRRF 	= 0x23		# left motor reverse, right motor forward		[0110]
-P2_SP_LRRFR 	= 0x20		# left motor rev, right motor fwd & rev = off	[0111]
-P2_SP_LFRS 	= 0x30		# left motor forward, right motor off 			[1000]
-P2_SP_LFRR 	= 0x32		# left motor forward, right motor reverse		[1001]
-P2_SP_LFRF	 	= 0x33		# left motor forward, right motor forward		[1010]
-P2_SP_LFRFR 	= 0x30		# left motor fwd, right motor fwd & rev = off	[1011]
-P2_SP_LFRRS 	= 0x00		# left motor fwd & rev = off, right motor off	[1100]
-P2_SP_LFRRR 	= 0x02		# left motor fwd & rev = off, right motor rev	[1101]
-P2_SP_LFRRF 	= 0x03		# left motor fwd & rev = off, right motor fwd	[1110]
-P2_SP_LFRRFR 	= 0x00		# left  and right motor fwd & rev = off			[1111]
-
-
-# Movement display lookup table.  Converts movement from BotInfo register to
-# the character code to display.  Not very dense but we have the room in the SP RAM and
-# it saves building a switch statement into the code.
-P2_SP_MVMTBASE	= 0x30		# table is based at 0x30
-
-P2_SP_MVMT0 	= 0x17		# Stopped - display upper case H
-P2_SP_MVMT1 	= 0x1C		# Reserved - display dot to indicate error
-P2_SP_MVMT2 	= 0x1C		# Reserved - display dot to indicate error
-P2_SP_MVMT3 	= 0x1C		# Reserved - display dot to indicate error
-P2_SP_MVMT4 	= 0x0F		# Forward - display upper case F
-P2_SP_MVMT5 	= 0x1C		# Reserved - display dot to indicate error
-P2_SP_MVMT6 	= 0x1C		# Reserved - display dot to indicate error
-P2_SP_MVMT7 	= 0x1C		# Reserved - display dot to indicate error
-P2_SP_MVMT8 	= 0x0B		# Reverse (Backward) - display lower case B
-P2_SP_MVMT9 	= 0x1C		# Reserved - display dot to indicate error
-P2_SP_MVMTA 	= 0x1C		# Reserved - display dot to indicate error
-P2_SP_MVMTB 	= 0x1C		# Reserved - display dot to indicate error
-P2_SP_MVMTC 	= 0x18		# Slow left turn - display upper case L
-P2_SP_MVMTD 	= 0x1A		# Fast left turn - display lower case L
-P2_SP_MVMTE 	= 0x19		# Slow right turn - display upper case R
-P2_SP_MVMTF 	= 0x1B		# Fast right turn - display lower case R
-
 # Different variables for lookup table, BotInfo register, LOCx_REG, LOCy_REG, Old_Heading register,
 # 7 segment displays, and other variables required. All are byte wides except SP_TEMP which is word
 # wide.
@@ -403,16 +313,6 @@ SP_DIG4:	.byte   0
 SP_DIG5:	.byte   0		
 SP_DIG6:	.byte   0		
 SP_DIG7:	.byte   0	
-
-# 7 segment display variables Player 2 	#not really reqd since we are not using it
-P2_SP_DIG0:	.byte   0		
-P2_SP_DIG1:	.byte   0		
-P2_SP_DIG2:	.byte   0		
-P2_SP_DIG3:	.byte   0		
-P2_SP_DIG4:	.byte   0		
-P2_SP_DIG5:	.byte   0		
-P2_SP_DIG6:	.byte   0		
-P2_SP_DIG7:	.byte   0		
 
 #Player 1
 #Location x variable
@@ -485,53 +385,53 @@ SP_TEMP: 	.word	0x00
 
 #Player 2
 # Intermediate variables can be used for implementing the algorithm
-P2_SP_SEM:		.byte   0
-P2_SP_OLDMVMT:	.byte   0		
-P2_SP_OLDHDG:	.byte   0		
-P2_SP_OLDDP:	.byte   0		
-P2_SP_OLDHDG1:	.byte	0
-P2_SP_RGTCNT:	.byte	0
-P2_SP_LEFTFL:	.byte	0
-P2_SP_OLDX:	.byte	0
-P2_SP_OLDY:	.byte	0
+# P2_SP_SEM:		.byte   0
+# P2_SP_OLDMVMT:	.byte   0		
+# P2_SP_OLDHDG:	.byte   0		
+# P2_SP_OLDDP:	.byte   0		
+# P2_SP_OLDHDG1:	.byte	0
+# P2_SP_RGTCNT:	.byte	0
+# P2_SP_LEFTFL:	.byte	0
+# P2_SP_OLDX:	.byte	0
+# P2_SP_OLDY:	.byte	0
 
-# Buttons lookup table
-P2_SP_BTNBAS1:	.byte 	0
-P2_SP_BTNBAS2:	.byte 	0
-P2_SP_BTNBAS3:	.byte 	0
-P2_SP_BTNBAS4:	.byte 	0
-P2_SP_BTNBAS5:	.byte 	0
-P2_SP_BTNBAS6:	.byte 	0
-P2_SP_BTNBAS7:	.byte 	0
-P2_SP_BTNBAS8:	.byte 	0
-P2_SP_BTNBAS9:	.byte 	0
-P2_SP_BTNBAS10:.byte 	0
-P2_SP_BTNBAS11:.byte 	0
-P2_SP_BTNBAS12:.byte 	0
-P2_SP_BTNBAS13:.byte 	0
-P2_SP_BTNBAS14:.byte 	0
-P2_SP_BTNBAS15:.byte 	0
-P2_SP_BTNBAS16:.byte 	0
+#Buttons lookup table
+# P2_SP_BTNBAS1:	.byte 	0
+# P2_SP_BTNBAS2:	.byte 	0
+# P2_SP_BTNBAS3:	.byte 	0
+# P2_SP_BTNBAS4:	.byte 	0
+# P2_SP_BTNBAS5:	.byte 	0
+# P2_SP_BTNBAS6:	.byte 	0
+# P2_SP_BTNBAS7:	.byte 	0
+# P2_SP_BTNBAS8:	.byte 	0
+# P2_SP_BTNBAS9:	.byte 	0
+# P2_SP_BTNBAS10:.byte 	0
+# P2_SP_BTNBAS11:.byte 	0
+# P2_SP_BTNBAS12:.byte 	0
+# P2_SP_BTNBAS13:.byte 	0
+# P2_SP_BTNBAS14:.byte 	0
+# P2_SP_BTNBAS15:.byte 	0
+# P2_SP_BTNBAS16:.byte 	0
 
-# Movement lookup table
-P2_SP_MVTBAS1:	.byte 	0
-P2_SP_MVTBAS2:	.byte 	0
-P2_SP_MVTBAS3:	.byte 	0
-P2_SP_MVTBAS4:	.byte 	0
-P2_SP_MVTBAS5:	.byte 	0
-P2_SP_MVTBAS6:	.byte 	0
-P2_SP_MVTBAS7:	.byte 	0
-P2_SP_MVTBAS8:	.byte 	0
-P2_SP_MVTBAS9:	.byte 	0
-P2_SP_MVTBAS10:.byte 	0
-P2_SP_MVTBAS11:.byte 	0
-P2_SP_MVTBAS12:.byte 	0
-P2_SP_MVTBAS13:.byte 	0
-P2_SP_MVTBAS14:.byte 	0
-P2_SP_MVTBAS15:.byte 	0
-P2_SP_MVTBAS16:.byte 	0
-P2_SP_RGTC0NT:	.byte 	0
-P2_SP_TEMP: 	.word	0x00
+#Movement lookup table
+# P2_SP_MVTBAS1:	.byte 	0
+# P2_SP_MVTBAS2:	.byte 	0
+# P2_SP_MVTBAS3:	.byte 	0
+# P2_SP_MVTBAS4:	.byte 	0
+# P2_SP_MVTBAS5:	.byte 	0
+# P2_SP_MVTBAS6:	.byte 	0
+# P2_SP_MVTBAS7:	.byte 	0
+# P2_SP_MVTBAS8:	.byte 	0
+# P2_SP_MVTBAS9:	.byte 	0
+# P2_SP_MVTBAS10:.byte 	0
+# P2_SP_MVTBAS11:.byte 	0
+# P2_SP_MVTBAS12:.byte 	0
+# P2_SP_MVTBAS13:.byte 	0
+# P2_SP_MVTBAS14:.byte 	0
+# P2_SP_MVTBAS15:.byte 	0
+# P2_SP_MVTBAS16:.byte 	0
+# P2_SP_RGTC0NT:	.byte 	0
+# P2_SP_TEMP: 	.word	0x00
 
 
 
@@ -560,12 +460,23 @@ main:
 # ================== 
 												
 main_L0:		li    $13, PORT_BOTUPDT			#	while(25) {  // main loop is an infinite loop
-				lw 	  $21, 0($13) 				#	while (upd_sysreg == 0)  {}   // loop until isr updates rojobot registers
+				lw 	  $21, 0($13) 				
+				#load bot updt for player 2
+				li    $13, P2_PORT_BOTUPDT			#	while(25) {  // main loop is an infinite loop
+				lw 	  $23, 0($13) 				#	while (upd_sysreg1 == 0 || upd_sysreg2 == 0)  {}   // loop until isr updates rojobot registers
+				or    $21, $23, $21
 				beq	  $21, $0, main_L0
-				nop
-				li 	  $13, PORT_INTACK			#   Load the Acknowledgement port address 
+				nop 
+				
+				li 	  $13, PORT_INTACK			#   Load the Acknowledgement port address 1
 				li 	  $21, INT_ACK				#   Set the Acknowledgement bit 
 				sw 	  $21, 0($13)				# 	Write the Acknowledgement bit
+				
+				#int ack for player2
+			    li 	  $13, P2_PORT_INTACK			#   Load the Acknowledgement port address 2 
+				li 	  $21, INT_ACK				#   Set the Acknowledgement bit 
+				sw 	  $21, 0($13)				# 	Write the Acknowledgement bit
+				
 main_L1:
 				li    $13, PORT_BOTINFO			# 	Load the BotInfo port address
 				lw 	  $21, 0($13)				#	Read the BotInfo Register
@@ -584,48 +495,19 @@ main_L1:
 				srl	  $21, $21, 8				# 	Do the same for LOCx_REG
 				and	  $22, $21, MSKBOTINFO
 				sb	  $22, LOCx_REG
-
-				jal	next_loc					#	Dig[3:2] = nex LocX# Dig[25:0] = next LocY
-				nop
-				jal	next_mvmt					#	Dig[4] = next movement
-				nop
-				jal	next_hdg					#	Dig[7:4] = next heading
-				nop
-												#	}
-main_L2:		jal	wr_alldigits				#	write all of the digits to the display
-				nop
-				lb	$2,	SENSOR_REG				#	update LEDs with new sensor information
-				jal	LED_wrleds					#
-				nop
-				li 	  $13, PORT_INTACK			#	Clear the Acknowledgement bit 
-				li 	  $21, FALSE
-				sw 	  $21, 0($13)
-				beq   $0, $0,	next_step		#	tell rojobot what to do next
-				nop
-ret_next_step:
-
-				beq $0,$0,	main_L0				#	} // end - main while loop
-				nop
 				
 				
-#Player 2
-p2_main_L0:		li    $13, P2_PORT_BOTUPDT			#	while(25) {  // main loop is an infinite loop
-				lw 	  $21, 0($13) 				#	while (upd_sysreg == 0)  {}   // loop until isr updates rojobot registers
-				beq	  $21, $0, p2_main_L0
-				nop
-				li 	  $13, P2_PORT_INTACK			#   Load the Acknowledgement port address 
-				li 	  $21, INT_ACK				#   Set the Acknowledgement bit 
-				sw 	  $21, 0($13)				# 	Write the Acknowledgement bit
-p2_main_L1:
-				li    $13, P2_PORT_BOTINFO			# 	Load the BotInfo port address
+				#Player 2
+				
+				li    $13, P2_PORT_BOTINFO		# 	Load the BotInfo port address
 				lw 	  $21, 0($13)				#	Read the BotInfo Register
 				
 				and	  $22, $21, MSKBOTINFO		#	Mask out the unwanted bits
-				sb	  $22, P2_BOTINF_REG			# 	Update the BotInfo memory location
+				sb	  $22, P2_BOTINF_REG		# 	Update the BotInfo memory location
 				
 				srl	  $21, $21, 8				#	Move the original data to extract the Sensor info
 				and	  $22, $21, MSKBOTINFO		#	Mask out the unwanted bits
-				sb	  $22, P2_SENSOR_REG			#	Store the sensor information in the Sensor register memory location
+				sb	  $22, P2_SENSOR_REG		#	Store the sensor information in the Sensor register memory location
 				
 				srl	  $21, $21, 8				# 	Do the same for LOCy_REG
 				and	  $22, $21, MSKBOTINFO		
@@ -634,32 +516,61 @@ p2_main_L1:
 				srl	  $21, $21, 8				# 	Do the same for LOCx_REG
 				and	  $22, $21, MSKBOTINFO
 				sb	  $22, P2_LOCx_REG
-
-				jal	p2_next_loc					#	Dig[3:2] = nex LocX# Dig[25:0] = next LocY
+				
+				#Player 1
+				addi $4, $0, LOCx_REG			#arguments to the function in $a0 = $4 and $a1 = $5
+				addi $5 ,$0, LOCy_REG
+				jal	next_loc					#	Dig[3:2] = nex LocX# Dig[25:0] = next LocY
 				nop
-				jal	p2_next_mvmt					#	Dig[4] = next movement
+				add $4, $0, $0
+				add $5, $0, $0
+				addi $4, $0, BOTINF_REG			#arguments to the function in $a0 = $4 
+				jal	next_mvmt					#	Dig[4] = next movement
 				nop
-				jal	p2_next_hdg					#	Dig[7:4] = next heading
+				addi $4, $0, BOTINF_REG			#arguments to the function in $a0 = $4
+				jal	next_hdg					#	Dig[7:4] = next heading
+				nop
+				
+				#Player 2
+				addi $4, $0, P2_LOCx_REG			#arguments to the function in $a0 = $4 and $a1 = $5
+				addi $5 ,$0, P2_LOCy_REG
+				jal	next_loc					#	Dig[3:2] = nex LocX# Dig[25:0] = next LocY
+				nop
+				add $4, $0, $0
+				add $5, $0, $0
+				addi $4, $0, P2_BOTINF_REG
+				jal	next_mvmt					#	Dig[4] = next movement
+				nop
+				addi $4, $0, P2_BOTINF_REG
+				jal	next_hdg					#	Dig[7:4] = next heading
 				nop
 												#	}
-p2_main_L2:		#jal	p2_wr_alldigits				#	write all of the digits to the display
+ main_L2:		#jal	wr_alldigits				#	write all of the digits to the display
 				#nop
-				lb	$2,	P2_SENSOR_REG				#	update LEDs with new sensor information
-				#jal	p2_LED_wrleds					#
+				lb	$2,	SENSOR_REG				#	update LEDs with new sensor information
+				#jal	LED_wrleds					#
 				#nop
-				li 	  $13, P2_PORT_INTACK			#	Clear the Acknowledgement bit 
+				
+				li 	  $13, PORT_INTACK			#	Clear the Acknowledgement bit 1
 				li 	  $21, FALSE
 				sw 	  $21, 0($13)
-				beq   $0, $0, p2_next_step		#	tell rojobot what to do next
+				
+				li 	  $13, P2_PORT_INTACK		#	Clear the Acknowledgement bit 2
+				li 	  $21, FALSE
+				sw 	  $21, 0($13)
+				
+				beq   $0, $0,	next_step		#	tell rojobot1 what to do next
 				nop
-p2_ret_next_step:
-
-				beq $0,$0,	p2_main_L0				#	} // end - main while loop
+				
+				beq   $0, $0, p2_next_step		#	tell rojobot2 what to do next
 				nop
+				
+ret_next_step:
 
-
-
-
+				beq $0,$0,	main_L0				#	} // end - main while loop
+				nop
+				
+				
 #**************************************************************************************
 # Support functions
 #**************************************************************************************
@@ -683,20 +594,6 @@ wr_alldigits:
 				jr 	$ra
 				nop
 				
-# p2_wr_alldigits:
-				# lw 	$25, (SP_DIG0)				# Load the lower 7 segment displays
-				# li 	$2, PORT_SEVENSEG_LOW
-				# sw	$25, 0($2)					# Write to the lower 7 segment displays
-				# lw 	$25, (SP_DIG4)				# Load the higher 7 segment displays
-				# li 	$2, PORT_SEVENSEG_HGH
-				# sw	$25, 0($2)					# Write to the higher 7 segment displays
-				# li 	$25, 0x00					# Enable all the display segments
-				# li 	$2, PORT_SEVENSEG_EN
-				# sw	$25, 0($2)
-				# jr 	$ra
-				# nop
-
-
 #*******
 # Functions to convert pushbutton presses to Motor Control input
 #*******
@@ -753,55 +650,6 @@ init_btnluptbl:	la	$2,		(SP_BTNBAS1)		# $2 gets base of button translation looku
 				add	$2, $2, 1					# increment the table index
 				li	$3,		SP_LFRRFR			# $3 gets values for 0x0F
 				sb	$3,		0($2)				# store the entry in the table
-				#PLAYER 2 INITIALIZATION
-				la	$2,		(P2_SP_BTNBAS1)		# $2 gets base of button translation lookup table
-				li	$3,		P2_SP_LSRS				# $3 gets values for 0x00
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_LORR				# $3 gets values for 0x01
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LSRF				# $3 gets values for 0x02
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LSRFR			# $3 gets values for 0x03
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LRRS				# $3 gets values for 0x04
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LRRR				# $3 gets values for 0x05
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LRRF				# $3 gets values for 0x06
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LRRFR			# $3 gets values for 0x07
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LFRS				# $3 gets values for 0x08
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LFRR				# $3 gets values for 0x09
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LFRF				# $3 gets values for 0x0A
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LFRFR			# $3 gets values for 0x0B
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LFRRS			# $3 gets values for 0x0C
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LFRRR			# $3 gets values for 0x0D
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LFRRF			# $3 gets values for 0x0E
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2, 1					# increment the table index
-				li	$3,		P2_SP_LFRRFR			# $3 gets values for 0x0F
-				sb	$3,		0($2)				# store the entry in the table
 				jr 	$ra							# done...at last
 				nop
 
@@ -822,13 +670,13 @@ btn2mot:		la	$3,		(SP_BTNBAS1)		# $3 gets base of button conversion table
 				nop
 #Player 2
 
-p2_btn2mot:		la	$3,		(P2_SP_BTNBAS1)		# $3 gets base of button conversion table
-				add	$2,		$4, 0				# mask out upper nibble of buttons
-				AND	$2,	$2,	MSKLOWNIB			#
-				add	$3, $3,	$2					# $3 = Base + offset into table
-				lb	$2,		0($3)				# and fetch the entry
-				jr 	$ra
-				nop
+# p2_btn2mot:		la	$3,		(P2_SP_BTNBAS1)		# $3 gets base of button conversion table
+				# add	$2,		$4, 0				# mask out upper nibble of buttons
+				# AND	$2,	$2,	MSKLOWNIB			#
+				# add	$3, $3,	$2					# $3 = Base + offset into table
+				# lb	$2,		0($3)				# and fetch the entry
+				# jr 	$ra
+				# nop
 
 
 # ===============================================================================
@@ -883,55 +731,7 @@ init_mvmttbl:	la	$2,		(SP_MVTBAS1)		# $2 gets base of movement translation looku
 				add	$2, $2,	1					# increment the table index
 				li	$3,		SP_MVMTF			# $3 gets values for 0x0F
 				sb	$3,		0($2)				# store the entry in the table
-				#FOR PLAYER 2
-				la	$2,		(P2_SP_MVTBAS1)		# $2 gets base of movement translation lookup table
-				li	$3,		P2_SP_MVMT0			# $3 gets values for 0x00
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMT1			# $3 gets values for 0x01
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMT2			# $3 gets values for 0x02
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMT3			# $3 gets values for 0x03
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMT4			# $3 gets values for 0x04
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMT5			# $3 gets values for 0x05
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMT6			# $3 gets values for 0x06
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMT7			# $3 gets values for 0x07
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMT8			# $3 gets values for 0x08
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMT9			# $3 gets values for 0x09
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMTA			# $3 gets values for 0x0A
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMTB			# $3 gets values for 0x0B
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMTC			# $3 gets values for 0x0C
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMTD			# $3 gets values for 0x0D
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMTE			# $3 gets values for 0x0E
-				sb	$3,		0($2)				# store the entry in the table
-				add	$2, $2,	1					# increment the table index
-				li	$3,		P2_SP_MVMTF			# $3 gets values for 0x0F
-				sb	$3,		0($2)				# store the entry in the table
+
 				jr 	$ra							# done...at last
 				nop
 
@@ -951,15 +751,6 @@ mvmt2cc:		la	$3,		(SP_MVTBAS1)		# $3 gets base of movment conversion table
 				beq	$0, $0, back_mvmt2cc
 				nop
 
-#Player 2				
-p2_mvmt2cc:		la	$3,		(P2_SP_MVTBAS1)		# $3 gets base of movment conversion table
-				add	$2,		$25, 0				# mask out upper nibble of movment
-				AND	$2, $2,	MSKLOWNIB			#
-				ADD	$3, $3,	$2					# $3 = Base + offset into table
-				lb	$2,		0($3)				# and fetch the entry
-				beq	$0, $0, p2_back_mvmt2cc
-				nop
-
 
 ##########################################
 # Modify this function for Project 2 #####
@@ -970,7 +761,8 @@ p2_mvmt2cc:		la	$3,		(P2_SP_MVTBAS1)		# $3 gets base of movment conversion table
 # === Registers affected: $12, $25                                     ===
 # === Uses BOTINF_REG (Bot Info register) to get movement.                 ===
 # ========================================================================
-next_mvmt:		lb	$25,	(BOTINF_REG)		# $25[3:0] = BOTINF_REG[7:4]
+next_mvmt:		add $25, $0, $4
+				#lb	$25,	(BOTINF_REG)		# $25[3:0] = BOTINF_REG[7:4]
 				sb 	$25, 	SP_OLDMVMT
 				srl		$25, $25, 4				#
 				beq $0, $0,	mvmt2cc				# translate movement to char code
@@ -980,19 +772,6 @@ back_mvmt2cc:
 				jr 	$ra							# digit 4 is in the scratchpad RAM
 				nop
 
-#Player 2
-
-p2_next_mvmt:	lb	$25,	(P2_BOTINF_REG)		# $25[3:0] = BOTINF_REG[7:4]
-				sb 	$25, 	P2_SP_OLDMVMT
-				srl		$25, $25, 4				#
-				beq $0, $0,	p2_mvmt2cc				# translate movement to char code
-				nop
-p2_back_mvmt2cc:
-				sb	$2,		P2_SP_DIG4				# and move to digit 4.
-				jr 	$ra							# digit 4 is in the scratchpad RAM
-				nop
-				
-
 
 # ==============================================================================
 # === next_hdg() - Calculate  digits for heading (compass setting)           ===
@@ -1000,7 +779,8 @@ p2_back_mvmt2cc:
 # === Uses BOTINF_REG (Bot Info register) to get orientation.  Calculates digits ===
 # === with a case statement based on orientation.                            ===
 # ==============================================================================
-next_hdg:		lb	$25,	(BOTINF_REG)			# $25[2:0] = BOTINF_REG[2:0] = orientation
+next_hdg:		add $25, $0, $4
+				#lb	$25,	(BOTINF_REG)			# $25[2:0] = BOTINF_REG[2:0] = orientation
 				and	$25,	$25,	MSKORIENT			#
 				sb 	$25, 	SP_OLDHDG
 												# switch(orientation)  {
@@ -1070,93 +850,21 @@ nh_endcase:		sb	$5,		SP_DIG7				# update the heading display digits
 				sb	$7,		SP_DIG5				#
 				jr 	$ra
 				nop
-				
-#PLAYER 2
-
-p2_next_hdg:		lb	$25,	(P2_BOTINF_REG)			# $25[2:0] = BOTINF_REG[2:0] = orientation
-				and	$25,	$25,	MSKORIENT			#
-				sb 	$25, 	P2_SP_OLDHDG
-												# switch(orientation)  {
-P2_nh_caseORN:		bne	$25,	P2_OR_N, P2_nh_caseORNE		#	case(OR_N):
-				nop								#
-				li	$5,		00					#		Dig[2:0] = 000
-				li	$6,		00					#
-				li	$7,		00					#
-				beq $0,$0,	P2_nh_endcase			#		break
-				nop
-												#
-P2_nh_caseORNE:	bne	$25,	P2_OR_NE, P2_nh_caseORE		#	case (OR_NE):
-				nop								#
-				li	$5,		00					#		Dig[2:0] = 045
-				li	$6,		04					#
-				li	$7,		05					#
-				beq $0,$0,	P2_nh_endcase			#		break
-				nop
-
-P2_nh_caseORE:		bne	$25,		P2_OR_E, P2_nh_caseORSE	#	case (OR_E):
-				nop								#
-				li	$5,		0x00					#		Dig[2:0] = 090
-				li	$6,		0x09					#
-				li	$7,		0x00					#
-				beq $0,$0,	P2_nh_endcase			#		break
-				nop
-
-P2_nh_caseORSE:	bne	$25,		P2_OR_SE, P2_nh_caseORS	#	case (OR_SE):
-				nop								#
-				li	$5,		0x01					#		Dig[2:0] = 135
-				li	$6,		0x03					#
-				li	$7,		0x05					#
-				beq $0,$0,	P2_nh_endcase			#		break
-				nop
-
-P2_nh_caseORS:		bne	$25,		P2_OR_S, P2_nh_caseORSW 	#	case (OR_S):
-				nop								#
-				li	$5,		0x01					#		Dig[2:0] = 180
-				li	$6,		0x08					#
-				li	$7,		00					#
-				beq $0,$0,	P2_nh_endcase			#		break
-				nop
-
-P2_nh_caseORSW:	bne	$25,		P2_OR_SW, P2_nh_caseORW	#	case (OR_SW):
-				nop								#
-				li	$5,		02					#		Dig[2:0] = 225
-				li	$6,		02					#
-				li	$7,		05					#
-				beq $0,$0,	P2_nh_endcase			#		break
-				nop
-
-P2_nh_caseORW:		bne	$25,		P2_OR_W, P2_nh_caseORNW	#	case (OR_W):
-				nop 							#
-				li	$5,		02					#		Dig[2:0] = 270
-				li	$6,		07					#
-				li	$7,		00					#
-				beq $0,$0,	P2_nh_endcase			#		break
-				nop
-
-												#	case (OR_NW):  // only remaining case
-P2_nh_caseORNW:	li	$5,		03					#		Dig[2:0] = 315
-				li	$6,		01					#
-				li	$7,		05					#
-												# } // end of switch statement
-P2_nh_endcase:		sb	$5,		P2_SP_DIG7				# update the heading display digits
-				sb	$6,		P2_SP_DIG6				# these are stored in the Scratchpad RAM
-				sb	$7,		P2_SP_DIG5				#
-				jr 	$ra
-				nop
-
 
 # ==============================================================================
 # === next_loc() - Calculate digits for Rojobot location                     ===
 # === Registers affected: $12, $11, $14, $13, $25                         ===
 # === Uses LocX and LocY to get location.                                    ===
 # ==============================================================================
-next_loc:		lb		$25,	(LOCx_REG)			# Dig[3:2] gets X-coordinate
+next_loc:		add $25, $0, $4
+				#lb		$25,	(LOCx_REG)			# Dig[3:2] gets X-coordinate
 				add		$11,	$25, 0					# Digit 2 gets lower nibble
 				and		$11, $11,	MSK_HEXDIGIT	#
 				srl		$25, $25, 4					#
 				add		$12,	$25, 0					#
 
-				lb		$25,	(LOCy_REG)			# Dig[1:0] gets Y-coordinate
+				add $25, $0, $5
+				#lb		$25,	(LOCy_REG)			# Dig[1:0] gets Y-coordinate
 				add		$13,	$25, 0					# Digit 0 gets lower nibble
 				and	    $13, $13,	MSK_HEXDIGIT	#
 				srl		$25, $25, 4					#
@@ -1165,25 +873,6 @@ next_loc:		lb		$25,	(LOCx_REG)			# Dig[3:2] gets X-coordinate
 				sb		$12, SP_DIG3
 				sb		$13, SP_DIG0
 				sb		$14, SP_DIG1
-				jr 	$ra
-				nop
-
-#Player 2
-p2_next_loc:	lb		$25,	(P2_LOCx_REG)			# Dig[3:2] gets X-coordinate
-				add		$11,	$25, 0					# Digit 2 gets lower nibble
-				and		$11, $11,	MSK_HEXDIGIT	#
-				srl		$25, $25, 4					#
-				add		$12,	$25, 0					#
-
-				lb		$25,	(P2_LOCy_REG)			# Dig[1:0] gets Y-coordinate
-				add		$13,	$25, 0					# Digit 0 gets lower nibble
-				and	    $13, $13,	MSK_HEXDIGIT	#
-				srl		$25, $25, 4					#
-				add		$14,	$25, 0					#
-				sb		$11, P2_SP_DIG2
-				sb		$12, P2_SP_DIG3
-				sb		$13, P2_SP_DIG0
-				sb		$14, P2_SP_DIG1
 				jr 	$ra
 				nop
 
@@ -1211,7 +900,8 @@ next_step:		lb 		$25,(SENSOR_REG)
 				nop
 				li 		$25, 	PORT_BOTCTRL
 				sw		$2,		0($25)				# tell Rojobot what to do
-				beq		$0, $0, ret_next_step
+				# beq		$0, $0, ret_next_step
+				beq		$0, $0, p2_next_step
 				nop
 
 #PLAYER 2
@@ -1224,11 +914,11 @@ p2_next_step:		lb 		$25,(P2_SENSOR_REG)
 
 				jal		DEB_rdbtns					# Read the pushbuttons. buttons returned in $4
 				nop
-				jal		p2_btn2mot						# and calculate new MotCtl - returned in $2
+				jal		btn2mot						# and calculate new MotCtl - returned in $2
 				nop
 				li 		$25, 	P2_PORT_BOTCTRL
 				sw		$2,		0($25)				# tell Rojobot what to do
-				beq		$0, $0, p2_ret_next_step
+				beq		$0, $0, ret_next_step
 				nop
 
 
@@ -1255,7 +945,8 @@ DEB_rdbtns:		li		$25,	PORT_PBTNS			# read the buttons
 				and		$4, $4,	MSK_ALLBTNS			# mask out unused bits
 				jr 	$ra								# and return
 				nop
-P2_DEB_rdbtns:		li		$25,	P2_PORT_PBTNS			# read the buttons
+				
+P2_DEB_rdbtns:	li		$25,	P2_PORT_PBTNS			# read the buttons
 				lw		$4, 	0($25)
 				and		$4, $4,	MSK_ALLBTNS			# mask out unused bits
 				jr 	$ra								# and return
@@ -1275,15 +966,6 @@ LED_wrleds:		add		$25,	$2, 0						# Copy LEDs to $25 to preserve them
 				sw		$25,	0($2)				# and write pattern to the LEDs
 				jr $ra								# and return
 				nop
-
-#subject to change, may not require 
-p2_LED_wrleds:		add		$25,	$2, 0						# Copy LEDs to $25 to preserve them
-				and  	$25, $25,	MSK_LEDS_LO			# mask out unused bits
-				li 		$2, PORT_LEDS
-				sw		$25,	0($2)				# and write pattern to the LEDs
-				jr $ra								# and return
-				nop
-
 
 #---------------------
 # SS_wrdpts() - Write the decimal points for digit 3 to 0 to the display
@@ -1305,5 +987,352 @@ SS_wrdpts:		lb		$25,	SP_OLDDP				# Copy the decimal points to $25 to leave $2 un
 				nop
 
 
+################################################################################################################################################################################################################
 
 
+
+# Button Masks to get specific commands PLAYER 2		#subject to changes
+# P2_FORWARD 				= BTN_L_MASK | BTN_R_MASK
+# P2_REVERSE 				= BTN_D_MASK | BTN_U_MASK
+# P2_RIGHT_2X 			= BTN_L_MASK | BTN_D_MASK
+# P2_RIGHT_1X_L 			= BTN_L_MASK
+# P2_RIGHT_1X_R 			= BTN_D_MASK
+# P2_LEFT_2X 				= BTN_U_MASK | BTN_R_MASK
+# P2_LEFT_1X_L 			= BTN_U_MASK
+# P2_LEFT_1X_R 			= BTN_R_MASK
+# P2_STOP 				= 0x00
+
+#Player2
+# P2_SP_BTNBASE 	= 0x20		# table is based at 0x20
+						# #								[b3,b2,b1,b0]=[lf,lr,rf,rr]
+# P2_SP_LSRS 	= 0x00		# left motor off, right motor off 				[0000]
+# P2_SP_LORR 	= 0x02		# left motor off, right motor reverse			[0001]
+# P2_SP_LSRF 	= 0x03		# left motor off, right motor forward			[0010]
+# P2_SP_LSRFR	= 0x00		# left motor off, right motor fwd & rev = off	[0011]
+# P2_SP_LRRS 	= 0x20		# left motor reverse, right motor off			[0100]
+# P2_SP_LRRR 	= 0x22		# left motor reverse, right motor reverse		[0101]
+# P2_SP_LRRF 	= 0x23		# left motor reverse, right motor forward		[0110]
+# P2_SP_LRRFR 	= 0x20		# left motor rev, right motor fwd & rev = off	[0111]
+# P2_SP_LFRS 	= 0x30		# left motor forward, right motor off 			[1000]
+# P2_SP_LFRR 	= 0x32		# left motor forward, right motor reverse		[1001]
+# P2_SP_LFRF	 	= 0x33		# left motor forward, right motor forward		[1010]
+# P2_SP_LFRFR 	= 0x30		# left motor fwd, right motor fwd & rev = off	[1011]
+# P2_SP_LFRRS 	= 0x00		# left motor fwd & rev = off, right motor off	[1100]
+# P2_SP_LFRRR 	= 0x02		# left motor fwd & rev = off, right motor rev	[1101]
+# P2_SP_LFRRF 	= 0x03		# left motor fwd & rev = off, right motor fwd	[1110]
+# P2_SP_LFRRFR 	= 0x00		# left  and right motor fwd & rev = off			[1111]
+
+
+# Movement display lookup table.  Converts movement from BotInfo register to
+# the character code to display.  Not very dense but we have the room in the SP RAM and
+# it saves building a switch statement into the code.
+# P2_SP_MVMTBASE	= 0x30		# table is based at 0x30
+
+# P2_SP_MVMT0 	= 0x17		# Stopped - display upper case H
+# P2_SP_MVMT1 	= 0x1C		# Reserved - display dot to indicate error
+# P2_SP_MVMT2 	= 0x1C		# Reserved - display dot to indicate error
+# P2_SP_MVMT3 	= 0x1C		# Reserved - display dot to indicate error
+# P2_SP_MVMT4 	= 0x0F		# Forward - display upper case F
+# P2_SP_MVMT5 	= 0x1C		# Reserved - display dot to indicate error
+# P2_SP_MVMT6 	= 0x1C		# Reserved - display dot to indicate error
+# P2_SP_MVMT7 	= 0x1C		# Reserved - display dot to indicate error
+# P2_SP_MVMT8 	= 0x0B		# Reverse (Backward) - display lower case B
+# P2_SP_MVMT9 	= 0x1C		# Reserved - display dot to indicate error
+# P2_SP_MVMTA 	= 0x1C		# Reserved - display dot to indicate error
+# P2_SP_MVMTB 	= 0x1C		# Reserved - display dot to indicate error
+# P2_SP_MVMTC 	= 0x18		# Slow left turn - display upper case L
+# P2_SP_MVMTD 	= 0x1A		# Fast left turn - display lower case L
+# P2_SP_MVMTE 	= 0x19		# Slow right turn - display upper case R
+# P2_SP_MVMTF 	= 0x1B		# Fast right turn - display lower case R
+
+# 7 segment display variables Player 2 	#not really reqd since we are not using it
+# P2_SP_DIG0:	.byte   0		
+# P2_SP_DIG1:	.byte   0		
+# P2_SP_DIG2:	.byte   0		
+# P2_SP_DIG3:	.byte   0		
+# P2_SP_DIG4:	.byte   0		
+# P2_SP_DIG5:	.byte   0		
+# P2_SP_DIG6:	.byte   0		
+# P2_SP_DIG7:	.byte   0		
+
+#Player 2
+# p2_main_L0:		li    $13, P2_PORT_BOTUPDT			#	while(25) {  // main loop is an infinite loop
+				# lw 	  $21, 0($13) 				#	while (upd_sysreg == 0)  {}   // loop until isr updates rojobot registers
+				# beq	  $21, $0, p2_main_L0
+				# nop
+				# li 	  $13, P2_PORT_INTACK			#   Load the Acknowledgement port address 
+				# li 	  $21, INT_ACK				#   Set the Acknowledgement bit 
+				# sw 	  $21, 0($13)				# 	Write the Acknowledgement bit
+# p2_main_L1:
+				# li    $13, P2_PORT_BOTINFO			# 	Load the BotInfo port address
+				# lw 	  $21, 0($13)				#	Read the BotInfo Register
+				
+				# and	  $22, $21, MSKBOTINFO		#	Mask out the unwanted bits
+				# sb	  $22, P2_BOTINF_REG			# 	Update the BotInfo memory location
+				
+				# srl	  $21, $21, 8				#	Move the original data to extract the Sensor info
+				# and	  $22, $21, MSKBOTINFO		#	Mask out the unwanted bits
+				# sb	  $22, P2_SENSOR_REG			#	Store the sensor information in the Sensor register memory location
+				
+				# srl	  $21, $21, 8				# 	Do the same for LOCy_REG
+				# and	  $22, $21, MSKBOTINFO		
+				# sb	  $22, P2_LOCy_REG				
+				
+				# srl	  $21, $21, 8				# 	Do the same for LOCx_REG
+				# and	  $22, $21, MSKBOTINFO
+				# sb	  $22, P2_LOCx_REG
+
+				# jal	p2_next_loc					#	Dig[3:2] = nex LocX# Dig[25:0] = next LocY
+				# nop
+				# jal	p2_next_mvmt					#	Dig[4] = next movement
+				# nop
+				# jal	p2_next_hdg					#	Dig[7:4] = next heading
+				# nop
+												# #	}
+# p2_main_L2:		#jal	p2_wr_alldigits				#	write all of the digits to the display
+				# #nop
+				# lb	$2,	P2_SENSOR_REG				#	update LEDs with new sensor information
+				# #jal	p2_LED_wrleds					#
+				# #nop
+				# li 	  $13, P2_PORT_INTACK			#	Clear the Acknowledgement bit 
+				# li 	  $21, FALSE
+				# sw 	  $21, 0($13)
+				# beq   $0, $0, p2_next_step		#	tell rojobot what to do next
+				# nop
+# p2_ret_next_step:
+
+				# beq $0,$0,	p2_main_L0				#	} // end - main while loop
+				# nop
+
+# p2_wr_alldigits:
+				# lw 	$25, (SP_DIG0)				# Load the lower 7 segment displays
+				# li 	$2, PORT_SEVENSEG_LOW
+				# sw	$25, 0($2)					# Write to the lower 7 segment displays
+				# lw 	$25, (SP_DIG4)				# Load the higher 7 segment displays
+				# li 	$2, PORT_SEVENSEG_HGH
+				# sw	$25, 0($2)					# Write to the higher 7 segment displays
+				# li 	$25, 0x00					# Enable all the display segments
+				# li 	$2, PORT_SEVENSEG_EN
+				# sw	$25, 0($2)
+				# jr 	$ra
+				# nop
+
+
+
+
+
+
+#Player 2				
+# p2_mvmt2cc:		la	$3,		(P2_SP_MVTBAS1)		# $3 gets base of movment conversion table
+				# add	$2,		$25, 0				# mask out upper nibble of movment
+				# AND	$2, $2,	MSKLOWNIB			#
+				# ADD	$3, $3,	$2					# $3 = Base + offset into table
+				# lb	$2,		0($3)				# and fetch the entry
+				# beq	$0, $0, p2_back_mvmt2cc
+				# nop
+
+
+#Player 2
+
+# p2_next_mvmt:	lb	$25,	(P2_BOTINF_REG)		# $25[3:0] = BOTINF_REG[7:4]
+				# sb 	$25, 	P2_SP_OLDMVMT
+				# srl		$25, $25, 4				#
+				# beq $0, $0,	p2_mvmt2cc				# translate movement to char code
+				# nop
+# p2_back_mvmt2cc:
+				# sb	$2,		SP_DIG4				# and move to digit 4.
+				# jr 	$ra							# digit 4 is in the scratchpad RAM
+				# nop
+				
+#PLAYER 2 INITIALIZATION
+				# la	$2,		(P2_SP_BTNBAS1)		# $2 gets base of button translation lookup table
+				# li	$3,		P2_SP_LSRS				# $3 gets values for 0x00
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_LORR				# $3 gets values for 0x01
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LSRF				# $3 gets values for 0x02
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LSRFR			# $3 gets values for 0x03
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LRRS				# $3 gets values for 0x04
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LRRR				# $3 gets values for 0x05
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LRRF				# $3 gets values for 0x06
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LRRFR			# $3 gets values for 0x07
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LFRS				# $3 gets values for 0x08
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LFRR				# $3 gets values for 0x09
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LFRF				# $3 gets values for 0x0A
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LFRFR			# $3 gets values for 0x0B
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LFRRS			# $3 gets values for 0x0C
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LFRRR			# $3 gets values for 0x0D
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LFRRF			# $3 gets values for 0x0E
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2, 1					# increment the table index
+				# li	$3,		P2_SP_LFRRFR			# $3 gets values for 0x0F
+				# sb	$3,		0($2)				# store the entry in the table
+
+
+			
+#PLAYER 2
+
+# p2_next_hdg:		lb	$25,	(P2_BOTINF_REG)			# $25[2:0] = BOTINF_REG[2:0] = orientation
+				# and	$25,	$25,	MSKORIENT			#
+				# sb 	$25, 	P2_SP_OLDHDG
+												#switch(orientation)  {
+# P2_nh_caseORN:		bne	$25,	OR_N, P2_nh_caseORNE		#	case(OR_N):
+				# nop								#
+				# li	$5,		00					#		Dig[2:0] = 000
+				# li	$6,		00					#
+				# li	$7,		00					#
+				# beq $0,$0,	P2_nh_endcase			#		break
+				# nop
+												
+# P2_nh_caseORNE:	bne	$25,	OR_NE, P2_nh_caseORE		#	case (OR_NE):
+				# nop								#
+				# li	$5,		00					#		Dig[2:0] = 045
+				# li	$6,		04					#
+				# li	$7,		05					#
+				# beq $0,$0,	P2_nh_endcase			#		break
+				# nop
+
+# P2_nh_caseORE:		bne	$25,		OR_E, P2_nh_caseORSE	#	case (OR_E):
+				# nop								#
+				# li	$5,		0x00					#		Dig[2:0] = 090
+				# li	$6,		0x09					#
+				# li	$7,		0x00					#
+				# beq $0,$0,	P2_nh_endcase			#		break
+				# nop
+
+# P2_nh_caseORSE:	bne	$25,		OR_SE, P2_nh_caseORS	#	case (OR_SE):
+				# nop								#
+				# li	$5,		0x01					#		Dig[2:0] = 135
+				# li	$6,		0x03					#
+				# li	$7,		0x05					#
+				# beq $0,$0,	P2_nh_endcase			#		break
+				# nop
+
+# P2_nh_caseORS:		bne	$25,		OR_S, P2_nh_caseORSW 	#	case (OR_S):
+				# nop								#
+				# li	$5,		0x01					#		Dig[2:0] = 180
+				# li	$6,		0x08					#
+				# li	$7,		00					#
+				# beq $0,$0,	P2_nh_endcase			#		break
+				# nop
+
+# P2_nh_caseORSW:	bne	$25,		OR_SW, P2_nh_caseORW	#	case (OR_SW):
+				# nop								#
+				# li	$5,		02					#		Dig[2:0] = 225
+				# li	$6,		02					#
+				# li	$7,		05					#
+				# beq $0,$0,	P2_nh_endcase			#		break
+				# nop
+
+# P2_nh_caseORW:		bne	$25,		OR_W, P2_nh_caseORNW	#	case (OR_W):
+				# nop 							#
+				# li	$5,		02					#		Dig[2:0] = 270
+				# li	$6,		07					#
+				# li	$7,		00					#
+				# beq $0,$0,	P2_nh_endcase			#		break
+				# nop
+
+													#case (OR_NW):  // only remaining case
+# P2_nh_caseORNW:	li	$5,		03					#		Dig[2:0] = 315
+				# li	$6,		01					#
+				# li	$7,		05					#
+												#} // end of switch statement
+# P2_nh_endcase:		sb	$5,		SP_DIG7				# update the heading display digits			#umm not sure
+				# sb	$6,		SP_DIG6				# these are stored in the Scratchpad RAM
+				# sb	$7,		SP_DIG5				#
+				# jr 	$ra
+				# nop
+#Player 2
+# p2_next_loc:	lb		$25,	(P2_LOCx_REG)			# Dig[3:2] gets X-coordinate
+				# add		$11,	$25, 0					# Digit 2 gets lower nibble
+				# and		$11, $11,	MSK_HEXDIGIT	#
+				# srl		$25, $25, 4					#
+				# add		$12,	$25, 0					#
+
+				# lb		$25,	(P2_LOCy_REG)			# Dig[1:0] gets Y-coordinate
+				# add		$13,	$25, 0					# Digit 0 gets lower nibble
+				# and	    $13, $13,	MSK_HEXDIGIT	#
+				# srl		$25, $25, 4					#
+				# add		$14,	$25, 0					#
+				# sb		$11, SP_DIG2
+				# sb		$12, SP_DIG3
+				# sb		$13, SP_DIG0
+				# sb		$14, SP_DIG1
+				# jr 	$ra
+				# nop
+
+#FOR PLAYER 2
+				# la	$2,		(P2_SP_MVTBAS1)		# $2 gets base of movement translation lookup table
+				# li	$3,		P2_SP_MVMT0			# $3 gets values for 0x00
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMT1			# $3 gets values for 0x01
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMT2			# $3 gets values for 0x02
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMT3			# $3 gets values for 0x03
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMT4			# $3 gets values for 0x04
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMT5			# $3 gets values for 0x05
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMT6			# $3 gets values for 0x06
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMT7			# $3 gets values for 0x07
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMT8			# $3 gets values for 0x08
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMT9			# $3 gets values for 0x09
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMTA			# $3 gets values for 0x0A
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMTB			# $3 gets values for 0x0B
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMTC			# $3 gets values for 0x0C
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMTD			# $3 gets values for 0x0D
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMTE			# $3 gets values for 0x0E
+				# sb	$3,		0($2)				# store the entry in the table
+				# add	$2, $2,	1					# increment the table index
+				# li	$3,		P2_SP_MVMTF			# $3 gets values for 0x0F
+				# sb	$3,		0($2)				# store the entry in the table
