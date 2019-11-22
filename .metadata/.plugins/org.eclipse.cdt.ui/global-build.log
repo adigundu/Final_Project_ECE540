@@ -1,0 +1,125 @@
+12:57:36 **** Build of configuration Default for project propro ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+mips-mti-elf-gcc  -EL -march=m14kc -msoft-float -nostartfiles -Wl,-Map=program.map -L"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" -Wl,--defsym,__stack=0x80040000 -Wl,--defsym,__memory_size=0x1f800 -T uhi32.ld -Wl,--defsym,__flash_start=0xbfc00000 -Wl,--defsym,__flash_app_start=0x80000000 -Wl,--defsym,__app_start=0x80000000 -Wl,--defsym,__isr_vec_count=0 -Wl,-e,0xbfc00000 boot.o exceptions.o dummy.o main.o -lfdc -o program.elf
+main.o: In function `p2_back_mvmt2cc':
+(.text+0x4b4): undefined reference to `P2_SP_DIG4'
+main.o: In function `p2_back_mvmt2cc':
+(.text+0x4b8): undefined reference to `P2_SP_DIG4'
+main.o: In function `p2_next_loc':
+(.text+0x7c0): undefined reference to `P2_SP_DIG2'
+main.o: In function `p2_next_loc':
+(.text+0x7c4): undefined reference to `P2_SP_DIG2'
+main.o: In function `p2_next_loc':
+(.text+0x7c8): undefined reference to `P2_SP_DIG3'
+main.o: In function `p2_next_loc':
+(.text+0x7cc): undefined reference to `P2_SP_DIG3'
+main.o: In function `p2_next_loc':
+(.text+0x7d0): undefined reference to `P2_SP_DIG0'
+main.o: In function `p2_next_loc':
+(.text+0x7d4): undefined reference to `P2_SP_DIG0'
+main.o: In function `p2_next_loc':
+(.text+0x7d8): undefined reference to `P2_SP_DIG1'
+main.o: In function `p2_next_loc':
+(.text+0x7dc): undefined reference to `P2_SP_DIG1'
+collect2.exe: error: ld returned 1 exit status
+make: *** [program.elf] Error 1
+12:58:50 **** Incremental Build of configuration Default for project propro ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+mips-mti-elf-gcc  -EL -march=m14kc -msoft-float -nostartfiles -Wl,-Map=program.map -L"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" -Wl,--defsym,__stack=0x80040000 -Wl,--defsym,__memory_size=0x1f800 -T uhi32.ld -Wl,--defsym,__flash_start=0xbfc00000 -Wl,--defsym,__flash_app_start=0x80000000 -Wl,--defsym,__app_start=0x80000000 -Wl,--defsym,__isr_vec_count=0 -Wl,-e,0xbfc00000 boot.o exceptions.o dummy.o main.o -lfdc -o program.elf
+main.o: In function `p2_back_mvmt2cc':
+(.text+0x4b4): undefined reference to `P2_SP_DIG4'
+main.o: In function `p2_back_mvmt2cc':
+(.text+0x4b8): undefined reference to `P2_SP_DIG4'
+collect2.exe: error: ld returned 1 exit status
+make: *** [program.elf] Error 1
+12:59:38 **** Incremental Build of configuration Default for project propro ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+mips-mti-elf-gcc  -EL -march=m14kc -msoft-float -nostartfiles -Wl,-Map=program.map -L"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" -Wl,--defsym,__stack=0x80040000 -Wl,--defsym,__memory_size=0x1f800 -T uhi32.ld -Wl,--defsym,__flash_start=0xbfc00000 -Wl,--defsym,__flash_app_start=0x80000000 -Wl,--defsym,__app_start=0x80000000 -Wl,--defsym,__isr_vec_count=0 -Wl,-e,0xbfc00000 boot.o exceptions.o dummy.o main.o -lfdc -o program.elf
+mips-mti-elf-objcopy --remove-section .MIPS.abiflags --remove-section .reginfo program.elf
+mips-mti-elf-size program.elf
+   text	   data	    bss	    dec	    hex	filename
+   3212	      0	      0	   3212	    c8c	program.elf
+mips-mti-elf-objdump -D -l -t program.elf > program.dis
+mips-mti-elf-objdump -D program.elf > program.txt
+mips-mti-elf-objcopy program.elf -O srec program.rec
+13:00:21 **** Incremental Build of configuration Default for project propro ****
+make all 
+make: Nothing to be done for `all'.
+13:00:56 **** Incremental Build of configuration Default for project propro ****
+make all 
+make: Nothing to be done for `all'.
+13:01:50 **** Incremental Build of configuration Default for project propro ****
+make all 
+make: Nothing to be done for `all'.
+09:58:48 **** Incremental Build of configuration Default for project propro ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+main.S: Assembler messages:
+main.S:623: Error: operand 3 must be constant `add $4,$0,LOCx_REG'
+main.S:624: Error: operand 3 must be constant `add $5,$0,LOCy_REG'
+main.S:627: Error: operand 3 must be an immediate expression `addi $4,$0,$0'
+main.S:628: Error: operand 3 must be an immediate expression `addi $5,$0,$0'
+main.S:629: Error: operand 3 must be constant `add $4,$0,BOTINF_REG'
+main.S:632: Error: operand 3 must be constant `add $4,$0,BOTINF_REG'
+main.S:637: Error: operand 3 must be constant `add $4,$0,P2_LOCx_REG'
+main.S:638: Error: operand 3 must be constant `add $5,$0,P2_LOCy_REG'
+main.S:641: Error: operand 3 must be an immediate expression `addi $4,$0,$0'
+main.S:642: Error: operand 3 must be an immediate expression `addi $5,$0,$0'
+main.S:643: Error: operand 3 must be constant `add $4,$0,P2_BOTINF_REG'
+main.S:646: Error: operand 3 must be constant `add $4,$0,P2_BOTINF_REG'
+main.S:1146: Error: unrecognized opcode `switch(orientation) {'
+main.S:1203: Error: unrecognized opcode `case (OR_NW):'
+main.S:1207: Error: junk at end of line, first unrecognized character is `}'
+make: *** [main.o] Error 1
+10:01:41 **** Incremental Build of configuration Default for project propro ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+main.S: Assembler messages:
+main.S:621: Error: operand 3 must be constant `add $4,$0,LOCx_REG'
+main.S:622: Error: operand 3 must be constant `add $5,$0,LOCy_REG'
+main.S:625: Error: operand 3 must be an immediate expression `addi $4,$0,$0'
+main.S:626: Error: operand 3 must be an immediate expression `addi $5,$0,$0'
+main.S:635: Error: operand 3 must be constant `add $4,$0,P2_LOCx_REG'
+main.S:636: Error: operand 3 must be constant `add $5,$0,P2_LOCy_REG'
+main.S:639: Error: operand 3 must be an immediate expression `addi $4,$0,$0'
+main.S:640: Error: operand 3 must be an immediate expression `addi $5,$0,$0'
+make: *** [main.o] Error 1
+10:03:46 **** Incremental Build of configuration Default for project propro ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+mips-mti-elf-gcc  -EL -march=m14kc -msoft-float -nostartfiles -Wl,-Map=program.map -L"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" -Wl,--defsym,__stack=0x80040000 -Wl,--defsym,__memory_size=0x1f800 -T uhi32.ld -Wl,--defsym,__flash_start=0xbfc00000 -Wl,--defsym,__flash_app_start=0x80000000 -Wl,--defsym,__app_start=0x80000000 -Wl,--defsym,__isr_vec_count=0 -Wl,-e,0xbfc00000 boot.o exceptions.o dummy.o main.o -lfdc -o program.elf
+main.o: In function `p2_mvmt2cc':
+(.text+0x490): undefined reference to `p2_back_mvmt2cc'
+collect2.exe: error: ld returned 1 exit status
+make: *** [program.elf] Error 1
+10:06:52 **** Incremental Build of configuration Default for project propro ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+mips-mti-elf-gcc  -EL -march=m14kc -msoft-float -nostartfiles -Wl,-Map=program.map -L"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" -Wl,--defsym,__stack=0x80040000 -Wl,--defsym,__memory_size=0x1f800 -T uhi32.ld -Wl,--defsym,__flash_start=0xbfc00000 -Wl,--defsym,__flash_app_start=0x80000000 -Wl,--defsym,__app_start=0x80000000 -Wl,--defsym,__isr_vec_count=0 -Wl,-e,0xbfc00000 boot.o exceptions.o dummy.o main.o -lfdc -o program.elf
+mips-mti-elf-objcopy --remove-section .MIPS.abiflags --remove-section .reginfo program.elf
+mips-mti-elf-size program.elf
+   text	   data	    bss	    dec	    hex	filename
+   2768	      0	      0	   2768	    ad0	program.elf
+mips-mti-elf-objdump -D -l -t program.elf > program.dis
+mips-mti-elf-objdump -D program.elf > program.txt
+mips-mti-elf-objcopy program.elf -O srec program.rec
+10:06:57 **** Incremental Build of configuration Default for project propro ****
+make all 
+make: Nothing to be done for `all'.
+10:23:51 **** Incremental Build of configuration Default for project propro ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+mips-mti-elf-gcc  -EL -march=m14kc -msoft-float -nostartfiles -Wl,-Map=program.map -L"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" -Wl,--defsym,__stack=0x80040000 -Wl,--defsym,__memory_size=0x1f800 -T uhi32.ld -Wl,--defsym,__flash_start=0xbfc00000 -Wl,--defsym,__flash_app_start=0x80000000 -Wl,--defsym,__app_start=0x80000000 -Wl,--defsym,__isr_vec_count=0 -Wl,-e,0xbfc00000 boot.o exceptions.o dummy.o main.o -lfdc -o program.elf
+mips-mti-elf-objcopy --remove-section .MIPS.abiflags --remove-section .reginfo program.elf
+mips-mti-elf-size program.elf
+   text	   data	    bss	    dec	    hex	filename
+   2668	      0	      0	   2668	    a6c	program.elf
+mips-mti-elf-objdump -D -l -t program.elf > program.dis
+mips-mti-elf-objdump -D program.elf > program.txt
+mips-mti-elf-objcopy program.elf -O srec program.rec
+10:24:04 **** Incremental Build of configuration Default for project propro ****
+make all 
+make: Nothing to be done for `all'.
