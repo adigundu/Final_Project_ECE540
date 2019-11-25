@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2018.2 (64-bit)              -->
+<!-- Product Version: Vivado v2018.2.1 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="C:/Users/bupbup/ece_540_project_4_v1/ece_540_project_4_v1.xpr">
+<Project Version="7" Minor="38" Path="N:/Final_Project_ECE540/ece_540_project_4_v1.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="10a13ce78b0b4855813837216c569a6a"/>
@@ -39,13 +39,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="8"/>
-    <Option Name="WTModelSimExportSim" Val="8"/>
-    <Option Name="WTQuestaExportSim" Val="8"/>
-    <Option Name="WTIesExportSim" Val="8"/>
-    <Option Name="WTVcsExportSim" Val="8"/>
-    <Option Name="WTRivieraExportSim" Val="8"/>
-    <Option Name="WTActivehdlExportSim" Val="8"/>
+    <Option Name="WTXSimExportSim" Val="10"/>
+    <Option Name="WTModelSimExportSim" Val="10"/>
+    <Option Name="WTQuestaExportSim" Val="10"/>
+    <Option Name="WTIesExportSim" Val="10"/>
+    <Option Name="WTVcsExportSim" Val="10"/>
+    <Option Name="WTRivieraExportSim" Val="10"/>
+    <Option Name="WTActivehdlExportSim" Val="10"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -60,14 +60,6 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/imports/bupbup/Downloads/proj2_release_f19/world_maps/world_map_lr/world_map.ngc">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Downloads/proj2_release_f19/world_maps/world_map_lr/world_map.ngc"/>
-          <Attr Name="ImportTime" Val="1549349824"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/bupbup/ece_540_project_4/ece_540_project_2.srcs/sources_1/imports/rtl_up/core/RAMB4K_S16.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="//thoth.cecs.pdx.edu/Home02/bmeimban/Desktop/ece540/ece540w19_p1_FINAL/hardware/rtl_up/core/RAMB4K_S16.v"/>
@@ -1636,15 +1628,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/bupbup/ece_540_project_4/ece_540_project_2.srcs/sources_1/imports/world_maps_part1/world_map.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="//thoth.cecs.pdx.edu/Home02/bmeimban/Desktop/ece540/proj2_release_f19/hdl_part1/world_maps_part1/world_map.v"/>
-          <Attr Name="ImportTime" Val="1571606181"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/bupbup/ece_540_project_4/ece_540_project_2.srcs/sources_1/new/addr_scaler.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../ece_540_project_4/ece_540_project_2.srcs/sources_1/new/addr_scaler.sv"/>
@@ -1685,6 +1668,16 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="//thoth.cecs.pdx.edu/Home02/bmeimban/Desktop/ece540/ece540w19_p1_FINAL/hardware/rtl_up/boards/nexys4_ddr/mfp_nexys4_ddr.v"/>
           <Attr Name="ImportTime" Val="1571267968"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/bupbup/ece_540_project_4/ece_540_project_2.srcs/sources_1/imports/world_maps_part1/world_map.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="//thoth.cecs.pdx.edu/Home02/bmeimban/Desktop/ece540/proj2_release_f19/hdl_part1/world_maps_part1/world_map.v"/>
+          <Attr Name="ImportTime" Val="1571606181"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -1810,13 +1803,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/bupbup/Downloads/proj2_release_f19/hdl_part1/world_maps_part1/world_map.ngc">
+      <File Path="$PPRDIR/yourmap.coe">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Downloads/proj2_release_f19/hdl_part1/world_maps_part1/world_map.ngc"/>
-          <Attr Name="ImportTime" Val="1549349824"/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <Config>
@@ -1866,6 +1856,19 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="world_map" Type="BlockSrcs" RelSrcDir="$PSRCDIR/world_map">
+      <File Path="$PSRCDIR/sources_1/ip/world_map/world_map.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="TopModule" Val="world_map"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -1904,6 +1907,18 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
+    <Run Id="world_map_synth_1" Type="Ft3:Synth" SrcSet="world_map" Part="xc7a100tcsg324-1" ConstrsSet="world_map" Description="" WriteIncrSynthDcp="false" Dir="$PRUNDIR/world_map_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="bestone" Flow="Vivado Synthesis 2018"/>
+        <Step Id="synth_design">
+          <Option Id="Directive">6</Option>
+          <Option Id="ReTiming">1</Option>
+        </Step>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
@@ -1932,6 +1947,32 @@
         <Step Id="phys_opt_design"/>
         <Step Id="route_design"/>
         <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="world_map_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="world_map" Description="" WriteIncrSynthDcp="false" SynthRun="world_map_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="best_so_far" Flow="Vivado Implementation 2018"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design">
+          <Option Id="Directive">2</Option>
+        </Step>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design">
+          <Option Id="Directive">18</Option>
+        </Step>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design" EnableStepBool="1">
+          <Option Id="Directive">6</Option>
+        </Step>
+        <Step Id="route_design">
+          <Option Id="Directive">7</Option>
+        </Step>
+        <Step Id="post_route_phys_opt_design" EnableStepBool="1">
+          <Option Id="Directive">3</Option>
+        </Step>
         <Step Id="write_bitstream"/>
       </Strategy>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>

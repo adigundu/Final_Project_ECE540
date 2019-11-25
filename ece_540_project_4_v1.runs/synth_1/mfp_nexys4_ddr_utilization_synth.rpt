@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sun Nov 24 16:52:11 2019
-| Host         : surface-pro-3 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
+| Date         : Mon Nov 25 11:45:03 2019
+| Host         : caplab12 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file mfp_nexys4_ddr_utilization_synth.rpt -pb mfp_nexys4_ddr_utilization_synth.pb
 | Design       : mfp_nexys4_ddr
 | Device       : 7a100tcsg324-1
@@ -69,9 +69,9 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |   81 |     0 |       135 | 60.00 |
-|   RAMB36/FIFO*    |   66 |     0 |       135 | 48.89 |
-|     RAMB36E1 only |   66 |       |           |       |
+| Block RAM Tile    |   79 |     0 |       135 | 58.52 |
+|   RAMB36/FIFO*    |   64 |     0 |       135 | 47.41 |
+|     RAMB36E1 only |   64 |       |           |       |
 |   RAMB18          |   30 |     0 |       270 | 11.11 |
 |     RAMB18E1 only |   30 |       |           |       |
 +-------------------+------+-------+-----------+-------+
@@ -160,7 +160,7 @@ Table of Contents
 | MUXF7    |  269 |               MuxFx |
 | CARRY4   |  203 |          CarryLogic |
 | LUT1     |  110 |                 LUT |
-| RAMB36E1 |   66 |        Block Memory |
+| RAMB36E1 |   64 |        Block Memory |
 | RAMD32   |   48 |  Distributed Memory |
 | OBUF     |   47 |                  IO |
 | FDSE     |   43 |        Flop & Latch |
@@ -184,6 +184,7 @@ Table of Contents
 +-----------+------+
 |  Ref Name | Used |
 +-----------+------+
+| world_map |    2 |
 | clk_wiz_0 |    1 |
 +-----------+------+
 
@@ -191,10 +192,8 @@ Table of Contents
 9. Instantiated Netlists
 ------------------------
 
-+-----------+------+
-|  Ref Name | Used |
-+-----------+------+
-| world_map |    2 |
-+-----------+------+
++----------+------+
+| Ref Name | Used |
++----------+------+
 
 

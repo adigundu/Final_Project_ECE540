@@ -50,67 +50,6 @@ module mfp_nexys4_ddr(
     reg JA_2;
     reg JA_3;
     reg JA_4;
-
-    
-    //assign JA[1] = JA_1;
-    assign LED[`MFP_N_LED-1] = ~JA_1;
-    assign LED[`MFP_N_LED-2] = ~JA_2;
-    assign LED[`MFP_N_LED-3] = ~JA_3;
-    assign LED[`MFP_N_LED-4] = ~JA_4;
-    always @(*)
-    begin
-    
-        case (JC[1])
-            1'b0:    JA_1 <= 1'b0;
-            1'b1:    JA_1 <= 1'b1;
-            default: JA_1 <= 1'b0; 
-        endcase
-        
-        case (JC[2])
-            1'b0:    JA_2 <= 1'b0;
-            1'b1:    JA_2 <= 1'b1;
-            default: JA_2 <= 1'b0; 
-        endcase
-        case (JC[3])
-            1'b0:    JA_3 <= 1'b0;
-            1'b1:    JA_3 <= 1'b1;
-            default: JA_3 <= 1'b0; 
-        endcase
-        case (JC[4])
-            1'b0:    JA_4 <= 1'b0;
-            1'b1:    JA_4 <= 1'b1;
-            default: JA_4 <= 1'b0; 
-        endcase
-   
-  ////////////////////////////////////////////////////  
-  /*
-    case (BTNU)
-        1'b0:    JA_1 <= 1'b0;
-        1'b1:    JA_1 <= 1'b1;
-        default: JA_1 <= 1'b0; 
-    endcase
-    
-    case (BTND)
-        1'b0:    JA_2 <= 1'b0;
-        1'b1:    JA_2 <= 1'b1;
-        default: JA_2 <= 1'b0; 
-    endcase
-    case (BTNL)
-        1'b0:    JA_3 <= 1'b0;
-        1'b1:    JA_3 <= 1'b1;
-        default: JA_3 <= 1'b0; 
-    endcase
-    case (BTNR)
-        1'b0:    JA_4 <= 1'b0;
-        1'b1:    JA_4 <= 1'b1;
-        default: JA_4 <= 1'b0; 
-    endcase
-   */ 
-    ///////////////////////////////////////////////////////
-    
-    end
-    
-    
                         
   // Press btnCpuReset to reset the processor. 
     wire clk_out; 
@@ -143,7 +82,7 @@ module mfp_nexys4_ddr(
     wire [1:0]  worldmap_data;    // input wire [1 : 0] worldmap_data
     wire        clk_in_75mhz,     // input wire clk_in
                 reset,            // input wire reset
-                upd_sysregs;      // output wire upd_sysregs
+                upd_sysregs, upd_sysregs_2;      // output wire upd_sysregs
     wire [7:0]  Bot_Config_reg;   // input wire [7 : 0] Bot_Config_reg
      
     wire IO_BotUpdt;
@@ -168,6 +107,33 @@ module mfp_nexys4_ddr(
                                 // this is the data for the 
                                 // icon
   /////////////////////////////////////////////////////////////
+  
+   // duplicate signals
+     
+     
+ 
+     wire [7:0]    MotCtl_in_2,        // input  wire [7 : 0] MotCtl_in
+                   LocX_reg_2,         // output wire [7 : 0] LocX_reg
+                   LocY_reg_2,         // output wire [7 : 0] LocY_reg
+                   Sensors_reg_2,      // output wire [7 : 0] Sensors_reg
+                   BotInfo_reg_2;      // output wire [7 : 0] BotInfo_reg
+                 
+     wire [1:0]    icon_pixel_2; 
+     
+     wire [13:0]   worldmap_addr_2;    // output wire [13 : 0] worldmap_addr
+     wire [1:0]    worldmap_data_2;    // input wire [1 : 0] worldmap_data
+     
+     wire [31:0]   IO_BotInfo_2;       // mfp_sys inputs
+     
+     // for handshaking the second player
+     wire          IO_INT_ACK_2;
+     wire          IO_BotUpdt_2;
+     reg           IO_BotUpdt_Sync_2;
+     
+     // for controlling player 2
+     
+     wire [7:0]    IO_BotCtrl_2; // mfp_sys outputs
+     
     
     // renaming of signals from the processor to Rojobot
     assign IO_BotCtrl  = MotCtl_in;
@@ -371,33 +337,6 @@ module mfp_nexys4_ddr(
 /************************************************************************/    
 /************************************************************************/
 // some player 2 shit
-
-    // duplicate signals
-    
-    
-
-    wire [7:0]    MotCtl_in_2,        // input  wire [7 : 0] MotCtl_in
-                  LocX_reg_2,         // output wire [7 : 0] LocX_reg
-                  LocY_reg_2,         // output wire [7 : 0] LocY_reg
-                  Sensors_reg_2,      // output wire [7 : 0] Sensors_reg
-                  BotInfo_reg_2;      // output wire [7 : 0] BotInfo_reg
-                
-    wire [1:0]    icon_pixel_2; 
-    
-    wire [13:0]   worldmap_addr_2;    // output wire [13 : 0] worldmap_addr
-    wire [1:0]    worldmap_data_2;    // input wire [1 : 0] worldmap_data
-    
-    wire [31:0]   IO_BotInfo_2;       // mfp_sys inputs
-    
-    // for handshaking the second player
-    wire          IO_INT_ACK_2;
-    wire          IO_BotUpdt_2;
-    reg           IO_BotUpdt_Sync_2;
-    
-    // for controlling player 2
-    
-    wire [7:0]    IO_BotCtrl_2; // mfp_sys outputs
-    
     
     // split the bus of IO_BotInfo_2
     
@@ -472,5 +411,63 @@ module mfp_nexys4_ddr(
                              .addrb(), // input [13 : 0] addrb;
                              .doutb()     // output [1 : 0] doutb;
                              );
-
+ //assign JA[1] = JA_1;
+                                assign LED[`MFP_N_LED-1] = ~JA_1;
+                                assign LED[`MFP_N_LED-2] = ~JA_2;
+                                assign LED[`MFP_N_LED-3] = ~JA_3;
+                                assign LED[`MFP_N_LED-4] = ~JA_4;
+                                always @(*)
+                                begin
+                                
+                                    case (JC[1])
+                                        1'b0:    JA_1 <= 1'b0;
+                                        1'b1:    JA_1 <= 1'b1;
+                                        default: JA_1 <= 1'b0; 
+                                    endcase
+                                    
+                                    case (JC[2])
+                                        1'b0:    JA_2 <= 1'b0;
+                                        1'b1:    JA_2 <= 1'b1;
+                                        default: JA_2 <= 1'b0; 
+                                    endcase
+                                    case (JC[3])
+                                        1'b0:    JA_3 <= 1'b0;
+                                        1'b1:    JA_3 <= 1'b1;
+                                        default: JA_3 <= 1'b0; 
+                                    endcase
+                                    case (JC[4])
+                                        1'b0:    JA_4 <= 1'b0;
+                                        1'b1:    JA_4 <= 1'b1;
+                                        default: JA_4 <= 1'b0; 
+                                    endcase
+                               
+                              ////////////////////////////////////////////////////  
+                              /*
+                                case (BTNU)
+                                    1'b0:    JA_1 <= 1'b0;
+                                    1'b1:    JA_1 <= 1'b1;
+                                    default: JA_1 <= 1'b0; 
+                                endcase
+                                
+                                case (BTND)
+                                    1'b0:    JA_2 <= 1'b0;
+                                    1'b1:    JA_2 <= 1'b1;
+                                    default: JA_2 <= 1'b0; 
+                                endcase
+                                case (BTNL)
+                                    1'b0:    JA_3 <= 1'b0;
+                                    1'b1:    JA_3 <= 1'b1;
+                                    default: JA_3 <= 1'b0; 
+                                endcase
+                                case (BTNR)
+                                    1'b0:    JA_4 <= 1'b0;
+                                    1'b1:    JA_4 <= 1'b1;
+                                    default: JA_4 <= 1'b0; 
+                                endcase
+                               */ 
+                                ///////////////////////////////////////////////////////
+                                
+                                end
+                                
+                                
 endmodule

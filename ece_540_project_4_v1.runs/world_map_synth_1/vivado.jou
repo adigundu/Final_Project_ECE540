@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Mon Nov 25 11:35:56 2019
+# Process ID: 4508
+# Current directory: N:/Final_Project_ECE540/ece_540_project_4_v1.runs/world_map_synth_1
+# Command line: vivado.exe -log world_map.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source world_map.tcl
+# Log file: N:/Final_Project_ECE540/ece_540_project_4_v1.runs/world_map_synth_1/world_map.vds
+# Journal file: N:/Final_Project_ECE540/ece_540_project_4_v1.runs/world_map_synth_1\vivado.jou
+#-----------------------------------------------------------
+source world_map.tcl -notrace

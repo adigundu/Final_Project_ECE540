@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date             : Sun Nov 24 17:02:28 2019
-| Host             : surface-pro-3 running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
+| Date             : Mon Nov 25 11:50:42 2019
+| Host             : caplab12 running 64-bit major release  (build 9200)
 | Command          : report_power -file mfp_nexys4_ddr_power_routed.rpt -pb mfp_nexys4_ddr_power_summary_routed.pb -rpx mfp_nexys4_ddr_power_routed.rpx
 | Design           : mfp_nexys4_ddr
 | Device           : xc7a100tcsg324-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.410        |
+| Total On-Chip Power (W)  | 0.413        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.308        |
+| Dynamic (W)              | 0.310        |
 | Device Static (W)        | 0.102        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.1         |
@@ -53,7 +53,7 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.018 |       12 |       --- |             --- |
-| Slice Logic              |     0.014 |    22827 |       --- |             --- |
+| Slice Logic              |     0.014 |    22828 |       --- |             --- |
 |   LUT as Logic           |     0.013 |    10305 |     63400 |           16.25 |
 |   Register               |    <0.001 |     9129 |    126800 |            7.20 |
 |   CARRY4                 |    <0.001 |      203 |     15850 |            1.28 |
@@ -61,13 +61,13 @@ Table of Contents
 |   F7/F8 Muxes            |    <0.001 |      287 |     63400 |            0.45 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   LUT as Shift Register  |    <0.001 |        9 |     19000 |            0.05 |
-|   Others                 |     0.000 |     1487 |       --- |             --- |
+|   Others                 |     0.000 |     1488 |       --- |             --- |
 | Signals                  |     0.025 |    18406 |       --- |             --- |
-| Block RAM                |     0.100 |       81 |       135 |           60.00 |
+| Block RAM                |     0.103 |       81 |       135 |           60.00 |
 | MMCM                     |     0.121 |        1 |         6 |           16.67 |
 | I/O                      |     0.029 |       82 |       210 |           39.05 |
 | Static Power             |     0.102 |          |           |                 |
-| Total                    |     0.410 |          |           |                 |
+| Total                    |     0.413 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.168 |       0.150 |      0.018 |
+| Vccint    |       1.000 |     0.171 |       0.153 |      0.018 |
 | Vccaux    |       1.800 |     0.086 |       0.068 |      0.018 |
 | Vcco33    |       3.300 |     0.012 |       0.008 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -153,7 +153,7 @@ Table of Contents
 +----------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                         | Power (W) |
 +----------------------------------------------------------------------------------------------+-----------+
-| mfp_nexys4_ddr                                                                               |     0.308 |
+| mfp_nexys4_ddr                                                                               |     0.310 |
 |   clk_wiz_0                                                                                  |     0.121 |
 |     inst                                                                                     |     0.121 |
 |   colorizer_1                                                                                |    <0.001 |
@@ -183,7 +183,7 @@ Table of Contents
 |       mfp_uart_receiver                                                                      |    <0.001 |
 |     mfp_ejtag_reset                                                                          |    <0.001 |
 |     top                                                                                      |     0.057 |
-|       cpu                                                                                    |     0.056 |
+|       cpu                                                                                    |     0.057 |
 |         core                                                                                 |     0.043 |
 |           biu                                                                                |     0.002 |
 |             _HADDR_31_0_                                                                     |    <0.001 |
@@ -1902,8 +1902,20 @@ Table of Contents
 |     BOTSIMPGM_2                                                                              |    <0.001 |
 |   rojobot_icon                                                                               |    <0.001 |
 |   rojobot_icon_2                                                                             |    <0.001 |
-|   worldmap_part_1                                                                            |     0.001 |
-|   worldmap_part_1_p2                                                                         |    <0.001 |
+|   worldmap_part_1                                                                            |     0.003 |
+|     U0                                                                                       |     0.003 |
+|       inst_blk_mem_gen                                                                       |     0.003 |
+|         gnbram.gnativebmg.native_blk_mem_gen                                                 |     0.003 |
+|           valid.cstr                                                                         |     0.003 |
+|             ramloop[0].ram.r                                                                 |     0.003 |
+|               prim_init.ram                                                                  |     0.003 |
+|   worldmap_part_1_p2                                                                         |     0.001 |
+|     U0                                                                                       |     0.001 |
+|       inst_blk_mem_gen                                                                       |     0.001 |
+|         gnbram.gnativebmg.native_blk_mem_gen                                                 |     0.001 |
+|           valid.cstr                                                                         |     0.001 |
+|             ramloop[0].ram.r                                                                 |     0.001 |
+|               prim_init.ram                                                                  |     0.001 |
 +----------------------------------------------------------------------------------------------+-----------+
 
 

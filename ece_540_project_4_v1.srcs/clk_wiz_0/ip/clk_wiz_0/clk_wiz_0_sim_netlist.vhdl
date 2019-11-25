@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Mon Nov 18 14:10:30 2019
--- Host        : surface-pro-3 running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
+-- Date        : Mon Nov 25 11:11:29 2019
+-- Host        : caplab12 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               C:/Users/bupbup/ece_540_project_4/ece_540_project_2.srcs/sources_1/ip/clk_wiz_0_1/clk_wiz_0_sim_netlist.vhdl
+--               N:/Final_Project_ECE540/ece_540_project_4_v1.srcs/clk_wiz_0/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
 -- Design      : clk_wiz_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

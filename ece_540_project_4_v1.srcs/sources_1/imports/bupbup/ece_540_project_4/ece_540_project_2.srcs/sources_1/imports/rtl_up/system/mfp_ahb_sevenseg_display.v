@@ -82,7 +82,7 @@ module mfp_ahb_sevenseg_display(
     DIGITS_d[63:0] = 64'h0F0E_0D0C_0B0A_0908;
   end
   
-  always @(posedge HCLK or negedge HRESETn)
+  always @(posedge HCLK)
   begin
     case (IO_Switch[15:12])
 
