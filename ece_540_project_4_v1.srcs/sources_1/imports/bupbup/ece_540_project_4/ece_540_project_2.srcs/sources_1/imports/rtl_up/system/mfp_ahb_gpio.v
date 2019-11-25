@@ -3,7 +3,24 @@
 // General-purpose I/O module for Altera's DE2-115 and 
 // Digilent's (Xilinx) Nexys4-DDR board
 
+/*
+for reference
 
+`define PORT_BOTINFO_2		    (32'h1f80002c)		// (i) Bot Info port
+`define PORT_BOTCTRL_2		    (32'h1f800020)		// (o) Bot Control port
+`define PORT_BOTUPDT_2		    (32'h1f800024)	        // (i) Bot Update port (Poll)
+`define PORT_INTACK_2		    (32'h1f800028)		// (o) Bot Int Ack 
+`define P2_PORT_BTNS            (32'h1f80001c)              // address of p2 buttons
+
+
+`define PORT_BOTINFO_IONUM_2      (4'hb) // (o) Bot Control port
+`define PORT_BOTCTRL_IONUM_2      (4'h8) // (i) Bot Info port
+`define PORT_BOTUPDT_IONUM_2      (4'h9) // (i) Bot Update port (Poll)
+`define PORT_INTACK_IONUM_2       (4'ha) // (o) Bot Int Ack
+
+`define P2_PORT_BTNS_IONUM_2      (4'h7) // (o) Bot Int Ack
+
+*/
 `include "mfp_ahb_const.vh"
 
 module mfp_ahb_gpio(
@@ -33,8 +50,17 @@ bit sizes for reference
     output reg [7:0]            IO_BotCtrl,
     output reg                 IO_INT_ACK,
     
-    input  [31:0]           IO_BotInfo,
-    input                   IO_BotUpdt_Sync
+    input  [31:0]               IO_BotInfo,
+    input                       IO_BotUpdt_Sync,
+    
+                            // player 2 interface
+    output reg [7:0]            IO_BotCtrl_2,
+    output reg                  IO_INT_ACK_2,
+
+    input  [31:0]               IO_BotInfo_2,
+    input                       IO_BotUpdt_Sync_2,
+
+    input      [`MFP_N_PB-1 : 0] IO_PB_2
     
     
 );
@@ -63,11 +89,21 @@ bit sizes for reference
          IO_BotCtrl                        <= `MFP_N_LED'b0;
          IO_INT_ACK                        <= `MFP_N_LED'b0; 
          
+         // player 2
+         IO_BotCtrl_2                      <= `MFP_N_LED'b0;
+         IO_INT_ACK_2                      <= `MFP_N_LED'b0;         
+         
+         
        end else if (we)
          case (HADDR_d)
-           `H_LED_IONUM:        IO_LED     <= HWDATA[`MFP_N_LED-1:0];
-           `PORT_BOTCTRL_IONUM: IO_BotCtrl <= HWDATA[`MFP_N_LED-1:0]; //
-           `PORT_INTACK_IONUM:  IO_INT_ACK <= HWDATA[`MFP_N_LED-1:0]; //
+           `H_LED_IONUM:           IO_LED       <= HWDATA[`MFP_N_LED-1:0];
+           `PORT_BOTCTRL_IONUM:    IO_BotCtrl   <= HWDATA[`MFP_N_LED-1:0]; //
+           `PORT_INTACK_IONUM:     IO_INT_ACK   <= HWDATA[`MFP_N_LED-1:0]; //
+           // player 2
+           `PORT_BOTCTRL_IONUM_2:  IO_BotCtrl_2 <= HWDATA[`MFP_N_LED-1:0]; //
+           `PORT_INTACK_IONUM_2 :  IO_INT_ACK_2 <= HWDATA[`MFP_N_LED-1:0]; //           
+           
+           
            // add more for the rojobot here ///////////////////
 
            ////////////////////////////////////////////////////
@@ -83,6 +119,12 @@ bit sizes for reference
            // add more for the rojobot here /////////////////////////////
            `PORT_BOTINFO_IONUM: HRDATA <= IO_BotInfo;
            `PORT_BOTUPDT_IONUM: HRDATA <= IO_BotUpdt_Sync;
+           
+           // player 2
+           `PORT_BOTINFO_IONUM_2: HRDATA <= IO_BotInfo_2;
+           `PORT_BOTUPDT_IONUM_2: HRDATA <= IO_BotUpdt_Sync_2;  
+           
+           `P2_PORT_BTNS_IONUM_2: HRDATA <= { {32 - `MFP_N_PB {1'b0}}, IO_PB_2 };         
            //////////////////////////////////////////////////////////////           
             default:    HRDATA <= 32'h00000000;
          endcase

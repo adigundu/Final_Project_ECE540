@@ -50,7 +50,9 @@ module mfp_ahb
     output                  IO_INT_ACK_2,
     
     input  [31:0]           IO_BotInfo_2,
-    input                   IO_BotUpdt_Sync_2
+    input                   IO_BotUpdt_Sync_2,
+    
+    input      [`MFP_N_PB-1 : 0] IO_PB_2
     
 
 
@@ -75,13 +77,25 @@ module mfp_ahb
                               HTRANS, HWDATA, HWRITE, HRDATA1, HSEL[1]);
   // Module 2 - GPIO
   mfp_ahb_gpio mfp_ahb_gpio(.HCLK(HCLK), .HRESETn(HRESETn), .HADDR(HADDR[5:2]), .HTRANS(HTRANS), .HWDATA(HWDATA), .HWRITE(HWRITE), .HSEL(HSEL[2]), 
-                            .HRDATA(HRDATA2), .IO_Switch(IO_Switch), .IO_PB(IO_PB), .IO_LED(IO_LED), 
-                            // rojobot interface boes here
-                            .IO_BotCtrl(IO_BotCtrl_2), 
-                            .IO_INT_ACK(IO_INT_ACK_2),
+                            .HRDATA(HRDATA2), .IO_Switch(IO_Switch), .IO_LED(IO_LED), 
                             
-                            .IO_BotInfo(IO_BotInfo_2),
-                            .IO_BotUpdt_Sync(IO_BotUpdt_Sync_2) 
+                            .IO_PB(IO_PB),
+                            // rojobot interface boes here
+                            .IO_BotCtrl(IO_BotCtrl),  // outputs 
+                            .IO_INT_ACK(IO_INT_ACK),  // outputs
+                            
+                            .IO_BotInfo(IO_BotInfo),
+                            .IO_BotUpdt_Sync(IO_BotUpdt_Sync),
+                            
+                            ///////////////////////////////////////////////////////// 
+                            // player 2 
+                            .IO_BotCtrl_2(IO_BotCtrl_2), 
+                            .IO_INT_ACK_2(IO_INT_ACK_2),
+                            
+                            .IO_BotInfo_2(IO_BotInfo_2),
+                            .IO_BotUpdt_Sync_2(IO_BotUpdt_Sync_2),
+                            
+                            .IO_PB_2(IO_PB_2)
                             );
   // Module 3 - seven seg display
   mfp_ahb_sevenseg_display mfp_7seg_disp

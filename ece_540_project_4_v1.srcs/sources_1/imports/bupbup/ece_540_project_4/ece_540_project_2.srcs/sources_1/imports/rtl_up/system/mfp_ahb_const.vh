@@ -41,7 +41,7 @@
 `define PORT_BOTCTRL_2		    (32'h1f800020)		// (o) Bot Control port
 `define PORT_BOTUPDT_2		    (32'h1f800024)	        // (i) Bot Update port (Poll)
 `define PORT_INTACK_2		    (32'h1f800028)		// (o) Bot Int Ack 
-`define P2_PORT_BTNS                (32'h1f80001c)              // address of p2 buttons
+`define P2_PORT_BTNS            (32'h1f80001c)              // address of p2 buttons
 
 
 `define H_LED_IONUM   			(4'h0)
@@ -53,6 +53,16 @@
 `define PORT_BOTCTRL_IONUM      (4'h4) // (i) Bot Info port
 `define PORT_BOTUPDT_IONUM      (4'h5) // (i) Bot Update port (Poll)
 `define PORT_INTACK_IONUM       (4'h6) // (o) Bot Int Ack
+
+
+
+`define PORT_BOTINFO_IONUM_2      (4'hb) // (o) Bot Control port
+`define PORT_BOTCTRL_IONUM_2      (4'h8) // (i) Bot Info port
+`define PORT_BOTUPDT_IONUM_2      (4'h9) // (i) Bot Update port (Poll)
+`define PORT_INTACK_IONUM_2       (4'ha) // (o) Bot Int Ack
+
+`define P2_PORT_BTNS_IONUM_2      (4'h7) // (o) Bot Int Ack
+
 //---------------------------------------------------
 // RAM addresses
 //---------------------------------------------------

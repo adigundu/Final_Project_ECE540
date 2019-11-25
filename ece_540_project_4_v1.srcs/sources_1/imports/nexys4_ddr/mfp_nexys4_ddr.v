@@ -59,7 +59,7 @@ module mfp_nexys4_ddr(
     assign LED[`MFP_N_LED-4] = ~JA_4;
     always @(*)
     begin
-    /*
+    
         case (JC[1])
             1'b0:    JA_1 <= 1'b0;
             1'b1:    JA_1 <= 1'b1;
@@ -81,9 +81,9 @@ module mfp_nexys4_ddr(
             1'b1:    JA_4 <= 1'b1;
             default: JA_4 <= 1'b0; 
         endcase
-   */ 
-  //////////////////////////////////////////////////////  
-  
+   
+  ////////////////////////////////////////////////////  
+  /*
     case (BTNU)
         1'b0:    JA_1 <= 1'b0;
         1'b1:    JA_1 <= 1'b1;
@@ -105,7 +105,7 @@ module mfp_nexys4_ddr(
         1'b1:    JA_4 <= 1'b1;
         default: JA_4 <= 1'b0; 
     endcase
-    
+   */ 
     ///////////////////////////////////////////////////////
     
     end
@@ -122,6 +122,7 @@ module mfp_nexys4_ddr(
   
   // debounced switches and buttons -Beau /////////////////////
     wire [5:0] pbtn_debounced;
+    wire [5:0] pbtn_debounced_2;
     wire [15:0]sw_debounced;
   
     /////////////////////////////////////////////////////////////
@@ -202,18 +203,18 @@ module mfp_nexys4_ddr(
       .swtch_db(sw_debounced)                              // debounced outputs of slider switches
   );
   
-  /*
+  
   debounce debouncer2
   (
         // ports
   .clk(clk_out),                                       // clock    
-  .pbtn_in({BTNU, BTND, BTNL, BTNC, BTNR}),            // pushbutton inputs - including CPU RESET button
+  .pbtn_in({BTNU, JA_2, JA_3, JA_1, JA_4}),            // pushbutton inputs - including CPU RESET button
   .switch_in(),                                      // slider switch inputs
 
-  .pbtn_db(),                            // debounced outputs of pushbuttons    
+  .pbtn_db(pbtn_debounced_2),                            // debounced outputs of pushbuttons    
   .swtch_db()                              // debounced outputs of slider switches
     );
-  */
+  
   
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   mfp_sys mfp_sys(
@@ -271,7 +272,9 @@ module mfp_nexys4_ddr(
                     // synchronization for player 2                    
                     
                     .IO_BotInfo_2(IO_BotInfo_2), // inputs to the mfp_sys
-                    .IO_BotUpdt_Sync_2(IO_BotUpdt_Sync_2)                    
+                    .IO_BotUpdt_Sync_2(IO_BotUpdt_Sync_2),
+                    
+                    .IO_PB_2(pbtn_debounced_2) // NEW BUTTONS for Player 2),                    
 
                     );
                     
@@ -451,12 +454,23 @@ module mfp_nexys4_ddr(
                       .Sensors_reg(Sensors_reg_2),        // output wire [7 : 0] Sensors_reg
                       .BotInfo_reg(BotInfo_reg_2),        // output wire [7 : 0] BotInfo_reg
                       .worldmap_addr(worldmap_addr_2),    // output wire [13 : 0] worldmap_addr
-                      .worldmap_data(worldmap_data),      // input  wire [1 : 0] worldmap_data
+                      .worldmap_data(worldmap_data_2),      // input  wire [1 : 0] worldmap_data
                       .clk_in(clk_out_75mhz),             // input wire clk_in
                       .reset(reset),                      // input wire reset
                       .upd_sysregs(upd_sysregs_2),        // output wire upd_sysregs
                       .Bot_Config_reg(Bot_Config_reg)     // input wire [7 : 0] Bot_Config_reg
                         );
 
+
+//  Worldmap implementation for the demo
+// this is a copy for the worldmap for p2, just for the sensors to see something
+    world_map worldmap_part_1_p2(
+                             .clka (clk_out_75mhz),  //input clka;
+                             .addra(worldmap_addr_2),  //input [13 : 0] addra;
+                             .douta(worldmap_data_2),  //output [1 : 0] douta;
+                             .clkb (clk_out_75mhz),  // input clkb;
+                             .addrb(), // input [13 : 0] addrb;
+                             .doutb()     // output [1 : 0] doutb;
+                             );
 
 endmodule
