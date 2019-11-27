@@ -13,59 +13,79 @@ module worldselect(	input wire clk,
 					input wire [1:0] map_select, 
 					output reg [3:0] map_en );
 					
-	parameter 	map1 = 4'b0001,
-				map2 = 4'b0010,
-				map3 = 4'b0100,
-				map4 = 4'b1000;
-				
-	reg [3:0] state, next_state;
-	reg [1:0] map_select_now;
+	parameter 	map1_out = 4'b0001,
+				map2_out = 4'b0010,
+				map3_out = 4'b0100,
+				map4_out = 4'b1000,
+				map1 = 0,
+				map2 = 1, 
+				map3 = 2,
+				map4 = 3;
 	
-	// State register
-	always @( posedge clk or posedge map_change or posedge reset) begin
-		if ( reset )begin
-			state <= map1;
-			map_select_now <= 0;
-			end
-		else if( map_change )
-			state <= next_state;
-//		else
-//		  state = state;
-	end
+	// Synchronous elements
+	reg [1:0]state, next_state, prev_map_select;
 	
-	// State output logic
-	always @(*) begin
-		case( state )
-			map1:
-				map_en = map1;
-			map2:
-				map_en = map2;
-			map3:
-				map_en = map3;
-			map4:
-				map_en = map4;
-			default:
-				map_en = map1;
-		endcase 
-	end
+	// Asynchronous elements.
+	wire rseqchange, seqchange;
 	
-	// Next state generation decode logic on select change.
-	always @( posedge state or posedge map_change or posedge map_select ) begin
-        if( map_select_now != map_select ) begin
-            case(map_select)
-                0: next_state <= map1;
-                1: next_state <= map2;
-                2: next_state <= map3;
-                3: next_state <= map4;
-                default:
-                next_state <= state << 1;
-            endcase
-            map_select_now <= map_select;
-        end  
-       else
-            if(state == map4) next_state <= map1;
-            else next_state <= state << 1;
+	assign seqchange = (prev_map_select == map_select);	
+	assign rseqchange = (prev_map_select != map_select);
+	
+    // Output Logic
+    always@(state) begin
+        case(state)
+            map1:   begin
+                         map_en <= map1_out;
+                         prev_map_select <= map_select;
+                    end
+            map2:   begin
+                         map_en <= map2_out;
+                         prev_map_select <= map_select;
+                    end
+            map3:   begin
+                        map_en <= map3_out;
+                        prev_map_select <= map_select;
+                    end
+            map4:   begin
+                        map_en <= map4_out;
+                        prev_map_select <= map_select;
+                    end
+           default: begin
+                         map_en <= map1_out;
+                         prev_map_select <= map_select;
+                    end
+        endcase
     end
-		
+        
+    // Next State Logic
+    always@(posedge state or posedge map_change) begin
+        if(map_change) begin
+            if(rseqchange)
+                next_state <= map_select;
+            else if(seqchange) begin
+                if(state == 3)
+                    next_state <= 0;
+                else begin
+                    next_state <= state +1;
+                end 
+            end
+            else next_state = map1;
+         end
+         else next_state = next_state;
+    end 
+    
+    
+    // State Synchronization
+    always@(posedge clk or posedge reset) begin
+        if(reset) begin
+            next_state <= map1;
+            prev_map_select <= 2'bzz;
+            end
+        else 
+            state <= next_state;
+    end
+            
+            
+            
 	endmodule
 			

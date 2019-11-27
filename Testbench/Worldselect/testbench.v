@@ -61,7 +61,7 @@ initial
 	
 // Stimulus generator
 initial begin
-    for( i = 0 ; i < 9 ; i = i + 1 ) begin
+    for( i = 0 ; i < 15; i = i + 1 ) begin
         map_change = 0;
         repeat(1) @(negedge clk);
     
@@ -69,12 +69,11 @@ initial begin
         else reset = 0;
         repeat(3) @(negedge clk);
         
-        if( i % 3 == 0) map_select = map_select + 1;
+        if( i % 3 == 0) map_select = map_select - 1;
         else map_select = map_select;
         repeat(3) @(negedge clk);
         
         map_change = 1;
-        repeat(1) @(negedge clk);
        
 	end	
     $stop;
