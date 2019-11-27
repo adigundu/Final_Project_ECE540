@@ -24,18 +24,24 @@ reg map_change;
 reg [1:0] map_select;
 
 // Stimulus Variables
-reg[3:0] p;
-reg j;
-reg k;
+reg[3:0] i; // Main loop
 
+// Initial Values
+initial begin
+    i = 0;
+    map_change = 0;
+    map_select = 0;
+end
+
+    
 // DUT
-worldselect worldselect1(.clk(clk), .reset(reset), .map_change(map_change), .map_select(map_select), .map_en(map_en));
+  worldselect worldselect1(.clk(clk), .reset(reset), .map_change(map_change), .map_select(map_select), .map_en(map_en));
 
 // Initialize Monitor
 initial
     begin
 		// Displey scoreboard results
-        $monitor($time,"\t i:%d \t j:%d \t k:%d \t reset:%d \t map_change:%d \t map_select:%d \n ", p, j, k, reset, map_change, map_select);
+        $monitor($time,"\t i:%d \t reset:%d \t map_change:%d \t map_select:%d \n ", i, reset, map_change, map_select);
     end
 	
 // Initialize free running clock.
@@ -48,19 +54,30 @@ end
 // Reset for 2 cycles.
 initial
     begin
-        clk = TRUE;
+        reset = TRUE;
         repeat(IDLE_CLOCKS) @(negedge clk);
-        clk = FALSE;
+        reset = FALSE;
     end
 	
 // Stimulus generator
 initial begin
-    for( p = 0, j = 0, k = 0; p < 9; p = p + 1 )begin
-        j = ~j;
-        k = ~k;
-        end
+    for( i = 0 ; i < 9 ; i = i + 1 ) begin
+        map_change = 0;
+        repeat(1) @(negedge clk);
+    
+        if( i % 5 == 0) reset = 1;
+        else reset = 0;
+        repeat(3) @(negedge clk);
         
-$stop;
+        if( i % 3 == 0) map_select = map_select + 1;
+        else map_select = map_select;
+        repeat(3) @(negedge clk);
+        
+        map_change = 1;
+        repeat(1) @(negedge clk);
+       
+	end	
+    $stop;
 end
 
 endmodule

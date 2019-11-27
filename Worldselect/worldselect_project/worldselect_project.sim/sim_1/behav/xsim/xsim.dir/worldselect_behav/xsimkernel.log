@@ -1,7 +1,0 @@
-Running: xsim.dir/worldselect_behav/xsimk.exe -simmode gui -wdb worldselect_behav.wdb -simrunnum 0 -socket 58709
-Design successfully loaded
-Design Loading Memory Usage: 4952 KB (Peak: 4952 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 5556 KB (Peak: 5556 KB)
-Simulation CPU Usage: 0 ms

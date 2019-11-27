@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "N:/ECE540/540FinalProject/Worldselect/worldselect.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module worldselect
-INFO: [VRFC 10-2263] Analyzing Verilog file "N:/ECE540/540FinalProject/Testbench/Worldselect/testbench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top
