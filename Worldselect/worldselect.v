@@ -18,18 +18,16 @@ module worldselect(	input wire clk,
 				map3 = 4'b0100,
 				map4 = 4'b1000;
 				
-	reg state, next_state;
+	reg [3:0] state, next_state;
 	
 	// State: one of four maps enabled
 	
 	// State register
-	always @( posedge clk or posedge map_change or posedge reset ) begin
+	always @( posedge clk or posedge reset ) begin
 		if ( reset )
-			state = map1;
-		else if ( map_change )
-			state = next_state;
+			state = 0;
 		else
-			state = state;
+			state = next_state;
 	end
 	
 	// State output logic
@@ -49,30 +47,27 @@ module worldselect(	input wire clk,
 	end
 	
 	// Next state generation decode logic on select change.
-	always @( map_select ) begin
-		case ( map_select )
-		0: 
-			next_state = map1;
-		1:
-			next_state = map2;
-		2:
-			next_state = map3;
-		3:
-			next_state = map4;
-		default:
-			next_state = map1;
-		endcase
+	always @( state or map_change ) begin
+		if( map_select) begin
+            case ( map_select )
+            0: 
+                next_state = map1;
+            1:
+                next_state = map2;
+            2:
+                next_state = map3;
+            3:
+                next_state = map4;
+            default:
+                next_state = map1;
+            endcase
+        end
+        else begin
+            if(state == map4) next_state = map1;
+            else next_state = state << 1;
+        end
 	end
 		
-	// Next state generation decode logic if no map_select change.
-	always @( state ) begin
-		if( state == map4 )
-			next_state = map1;
-		else
-			next_state = state << 1;
-	end 
-		
-
-	
+			
 	endmodule
 			
