@@ -25,14 +25,6 @@ reg [1:0] map_select;
 
 // Stimulus Variables
 reg[3:0] i; // Main loop
-
-// Initial Values
-initial begin
-    i = 0;
-    map_change = 0;
-    map_select = 0;
-end
-
     
 // DUT
   worldselect worldselect1(.clk(clk), .reset(reset), .map_change(map_change), .map_select(map_select), .map_en(map_en));
@@ -61,6 +53,7 @@ initial
 	
 // Stimulus generator
 initial begin
+    map_select = 0;
     for( i = 0 ; i < 15; i = i + 1 ) begin
         map_change = 0;
         repeat(1) @(negedge clk);
@@ -74,6 +67,9 @@ initial begin
         repeat(3) @(negedge clk);
         
         map_change = 1;
+        repeat(1) @(negedge clk);
+        repeat(1) @(negedge clk);
+
        
 	end	
     $stop;

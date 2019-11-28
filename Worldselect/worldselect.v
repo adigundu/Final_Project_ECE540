@@ -58,28 +58,28 @@ module worldselect(	input wire clk,
     end
         
     // Next State Logic
-    always@(posedge state or posedge map_change) begin
-        if(map_change) begin
-            if(rseqchange)
+    always@( state or  map_change) begin
+        if(map_change == 1'b1) begin
+            if(rseqchange == 1'b1)
                 next_state <= map_select;
-            else if(seqchange) begin
+            else if(seqchange == 1'b1) begin
                 if(state == 3)
                     next_state <= 0;
                 else begin
                     next_state <= state +1;
                 end 
             end
-            else next_state = map1;
+            else next_state <= map1;
          end
-         else next_state = next_state;
+         else next_state <= next_state;
     end 
     
     
     // State Synchronization
     always@(posedge clk or posedge reset) begin
-        if(reset) begin
+        if(reset == 1'b1) begin
             next_state <= map1;
-            prev_map_select <= 2'bzz;
+            prev_map_select <= map1;
             end
         else 
             state <= next_state;
