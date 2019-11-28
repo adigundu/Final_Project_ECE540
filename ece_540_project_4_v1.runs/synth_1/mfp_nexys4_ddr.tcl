@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -31,7 +32,7 @@ set_property target_language Verilog [current_project]
 set_property ip_repo_paths n:/Downloads/proj2_release_f19/ece540_ip_repo/rojobot31 [current_project]
 set_property ip_output_repo c:/Users/bupbup/ece_540_project_4/ece_540_project_2.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files n:/Final_Project_ECE540/yourmap.coe
+add_files N:/Final_Project_ECE540/yourmap.coe
 read_verilog {
   N:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/imports/bupbup/ece_540_project_4/ece_540_project_2.srcs/sources_1/imports/rtl_up/core/m14k_const.vh
   N:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/imports/bupbup/ece_540_project_4/ece_540_project_2.srcs/sources_1/imports/rtl_up/core/m14k_config.vh
@@ -223,7 +224,7 @@ set_property used_in_implementation false [get_files -all n:/Final_Project_ECE54
 set_property used_in_implementation false [get_files -all n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/clk_wiz_0/ip/clk_wiz_0/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/clk_wiz_0/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
-read_ip -quiet n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map.xci
+read_ip -quiet N:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map.xci
 set_property used_in_implementation false [get_files -all n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being

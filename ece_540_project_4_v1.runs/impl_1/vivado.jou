@@ -2,8 +2,8 @@
 # Vivado v2018.2.1 (64-bit)
 # SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
 # IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
-# Start of session at: Mon Nov 25 11:51:15 2019
-# Process ID: 3816
+# Start of session at: Wed Nov 27 16:06:23 2019
+# Process ID: 9160
 # Current directory: N:/Final_Project_ECE540/ece_540_project_4_v1.runs/impl_1
 # Command line: vivado.exe -log mfp_nexys4_ddr.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source mfp_nexys4_ddr.tcl -notrace
 # Log file: N:/Final_Project_ECE540/ece_540_project_4_v1.runs/impl_1/mfp_nexys4_ddr.vdi

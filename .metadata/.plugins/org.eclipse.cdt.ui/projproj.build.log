@@ -1,6 +1,6 @@
-12:28:32 **** Incremental Build of configuration Default for project projproj ****
+15:25:15 **** Incremental Build of configuration Default for project projproj ****
 make all 
 make: Nothing to be done for `all'.
 
-12:28:32 Build Finished (took 416ms)
+15:25:15 Build Finished (took 272ms)
 
