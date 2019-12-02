@@ -1,0 +1,412 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Wed Nov 27 21:12:59 2019
+# Process ID: 2640
+# Current directory: N:/ECE540/540FinalProject/Worldselect/worldselect_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10336 N:\ECE540\540FinalProject\Worldselect\worldselect_project\worldselect_project.xpr
+# Log file: N:/ECE540/540FinalProject/Worldselect/worldselect_project/vivado.log
+# Journal file: N:/ECE540/540FinalProject/Worldselect/worldselect_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/ME/OneDrive/Documents/School/PSU/ECE540-DesignOfSoC/Assignments/Final/ECE540FinalProjectFolder/Worldselect/worldselect_project' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.2/data/ip'.
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: worldselect
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 866.863 ; gain = 74.738
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'worldselect' [N:/ECE540/540FinalProject/Worldselect/worldselect.v:10]
+	Parameter map1_out bound to: 4'b0001 
+	Parameter map2_out bound to: 4'b0010 
+	Parameter map3_out bound to: 4'b0100 
+	Parameter map4_out bound to: 4'b1000 
+	Parameter map1 bound to: 0 - type: integer 
+	Parameter map2 bound to: 1 - type: integer 
+	Parameter map3 bound to: 2 - type: integer 
+	Parameter map4 bound to: 3 - type: integer 
+INFO: [Synth 8-226] default block is never used [N:/ECE540/540FinalProject/Worldselect/worldselect.v:36]
+WARNING: [Synth 8-567] referenced signal 'map_select' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:35]
+ERROR: [Synth 8-27] use of clock signal in expression not supported [N:/ECE540/540FinalProject/Worldselect/worldselect.v:69]
+ERROR: [Synth 8-6156] failed synthesizing module 'worldselect' [N:/ECE540/540FinalProject/Worldselect/worldselect.v:10]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 922.504 ; gain = 130.379
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+2 Infos, 1 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Vivado_Tcl 4-5] Elaboration failed - please see the console for details
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a100tcsg324-1
+Top: worldselect
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 930.465 ; gain = 7.961
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'worldselect' [N:/ECE540/540FinalProject/Worldselect/worldselect.v:10]
+	Parameter map1_out bound to: 4'b0001 
+	Parameter map2_out bound to: 4'b0010 
+	Parameter map3_out bound to: 4'b0100 
+	Parameter map4_out bound to: 4'b1000 
+	Parameter map1 bound to: 0 - type: integer 
+	Parameter map2 bound to: 1 - type: integer 
+	Parameter map3 bound to: 2 - type: integer 
+	Parameter map4 bound to: 3 - type: integer 
+INFO: [Synth 8-226] default block is never used [N:/ECE540/540FinalProject/Worldselect/worldselect.v:36]
+WARNING: [Synth 8-567] referenced signal 'map_select' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:35]
+WARNING: [Synth 8-567] referenced signal 'rseqchange' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:61]
+WARNING: [Synth 8-567] referenced signal 'map_select' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:61]
+WARNING: [Synth 8-567] referenced signal 'seqchange' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:61]
+WARNING: [Synth 8-5788] Register state_reg in module worldselect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [N:/ECE540/540FinalProject/Worldselect/worldselect.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'worldselect' (1#1) [N:/ECE540/540FinalProject/Worldselect/worldselect.v:10]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 956.832 ; gain = 34.328
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 956.832 ; gain = 34.328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 956.832 ; gain = 34.328
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1283.453 ; gain = 360.949
+7 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1283.453 ; gain = 360.949
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "N:/ECE540/540FinalProject/Worldselect/worldselect.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module worldselect
+INFO: [VRFC 10-2263] Analyzing Verilog file "N:/ECE540/540FinalProject/Testbench/Worldselect/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 92d01c4fed624a48aa676a96cb56c7c2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_behav xil_defaultlib.top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "N:/ECE540/540FinalProject/Worldselect/worldselect.v" Line 10. Module worldselect doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.worldselect
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_behav -key {Behavioral:sim_1:Functional:top} -tclbatch {top.tcl} -view {N:/ECE540/540FinalProject/Worldselect/top_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config N:/ECE540/540FinalProject/Worldselect/top_behav.wcfg
+source top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+                   0	 i: 0 	 reset:1 	 map_change:0 	 map_select:0 
+ 
+                  40	 i: 0 	 reset:0 	 map_change:0 	 map_select:0 
+ 
+                  80	 i: 0 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 140	 i: 1 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 280	 i: 2 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 420	 i: 3 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 500	 i: 3 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 560	 i: 4 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 700	 i: 5 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 720	 i: 5 	 reset:1 	 map_change:0 	 map_select:2 
+ 
+                 840	 i: 6 	 reset:1 	 map_change:0 	 map_select:2 
+ 
+                 860	 i: 6 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 920	 i: 6 	 reset:0 	 map_change:0 	 map_select:1 
+ 
+                 980	 i: 7 	 reset:0 	 map_change:0 	 map_select:1 
+ 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1293.996 ; gain = 5.680
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "N:/ECE540/540FinalProject/Testbench/Worldselect/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 92d01c4fed624a48aa676a96cb56c7c2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_behav xil_defaultlib.top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_behav -key {Behavioral:sim_1:Functional:top} -tclbatch {top.tcl} -view {N:/ECE540/540FinalProject/Worldselect/top_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config N:/ECE540/540FinalProject/Worldselect/top_behav.wcfg
+WARNING: Simulation object /top/worldselect1/rseqchange was not found in the design.
+WARNING: Simulation object /top/worldselect1/seqchange was not found in the design.
+WARNING: Simulation object /top/worldselect1/prev_map_select was not found in the design.
+WARNING: Simulation object /top/worldselect1/state was not found in the design.
+WARNING: Simulation object /top/worldselect1/next_state was not found in the design.
+source top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+                   0	 i: 0 	 reset:1 	 map_change:0 	 map_select:0 
+ 
+                  40	 i: 0 	 reset:0 	 map_change:0 	 map_select:0 
+ 
+                  80	 i: 0 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 140	 i: 0 	 reset:0 	 map_change:1 	 map_select:3 
+ 
+                 180	 i: 1 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 320	 i: 1 	 reset:0 	 map_change:1 	 map_select:3 
+ 
+                 360	 i: 2 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 500	 i: 2 	 reset:0 	 map_change:1 	 map_select:3 
+ 
+                 540	 i: 3 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 620	 i: 3 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 680	 i: 3 	 reset:0 	 map_change:1 	 map_select:2 
+ 
+                 720	 i: 4 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 860	 i: 4 	 reset:0 	 map_change:1 	 map_select:2 
+ 
+                 900	 i: 5 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 920	 i: 5 	 reset:1 	 map_change:0 	 map_select:2 
+ 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1310.430 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'top' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "N:/ECE540/540FinalProject/Worldselect/worldselect.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module worldselect
+INFO: [VRFC 10-2263] Analyzing Verilog file "N:/ECE540/540FinalProject/Testbench/Worldselect/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 92d01c4fed624a48aa676a96cb56c7c2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot top_behav xil_defaultlib.top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "N:/ECE540/540FinalProject/Worldselect/worldselect.v" Line 10. Module worldselect doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.worldselect
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot top_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "top_behav -key {Behavioral:sim_1:Functional:top} -tclbatch {top.tcl} -view {N:/ECE540/540FinalProject/Worldselect/top_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+open_wave_config N:/ECE540/540FinalProject/Worldselect/top_behav.wcfg
+source top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+                   0	 i: 0 	 reset:1 	 map_change:0 	 map_select:0 
+ 
+                  40	 i: 0 	 reset:0 	 map_change:0 	 map_select:0 
+ 
+                  80	 i: 0 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 140	 i: 0 	 reset:0 	 map_change:1 	 map_select:3 
+ 
+                 180	 i: 1 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 320	 i: 1 	 reset:0 	 map_change:1 	 map_select:3 
+ 
+                 360	 i: 2 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 500	 i: 2 	 reset:0 	 map_change:1 	 map_select:3 
+ 
+                 540	 i: 3 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 620	 i: 3 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 680	 i: 3 	 reset:0 	 map_change:1 	 map_select:2 
+ 
+                 720	 i: 4 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 860	 i: 4 	 reset:0 	 map_change:1 	 map_select:2 
+ 
+                 900	 i: 5 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 920	 i: 5 	 reset:1 	 map_change:0 	 map_select:2 
+ 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1310.430 ; gain = 0.000
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1334.199 ; gain = 19.285
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'worldselect' [N:/ECE540/540FinalProject/Worldselect/worldselect.v:10]
+	Parameter map1_out bound to: 4'b0001 
+	Parameter map2_out bound to: 4'b0010 
+	Parameter map3_out bound to: 4'b0100 
+	Parameter map4_out bound to: 4'b1000 
+	Parameter map1 bound to: 0 - type: integer 
+	Parameter map2 bound to: 1 - type: integer 
+	Parameter map3 bound to: 2 - type: integer 
+	Parameter map4 bound to: 3 - type: integer 
+INFO: [Synth 8-226] default block is never used [N:/ECE540/540FinalProject/Worldselect/worldselect.v:36]
+WARNING: [Synth 8-567] referenced signal 'map_select' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:35]
+WARNING: [Synth 8-567] referenced signal 'rseqchange' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:61]
+WARNING: [Synth 8-567] referenced signal 'map_select' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:61]
+WARNING: [Synth 8-567] referenced signal 'seqchange' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:61]
+WARNING: [Synth 8-567] referenced signal 'next_state' should be on the sensitivity list [N:/ECE540/540FinalProject/Worldselect/worldselect.v:61]
+WARNING: [Synth 8-5788] Register state_reg in module worldselect is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [N:/ECE540/540FinalProject/Worldselect/worldselect.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'worldselect' (1#1) [N:/ECE540/540FinalProject/Worldselect/worldselect.v:10]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1357.801 ; gain = 42.887
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1357.801 ; gain = 42.887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1357.801 ; gain = 42.887
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1370.340 ; gain = 55.426
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 27 21:33:19 2019...

@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
--- Date        : Mon Nov 25 11:37:34 2019
+-- Date        : Mon Dec  2 09:30:50 2019
 -- Host        : caplab12 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map_sim_netlist.vhdl
+--               N:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map_sim_netlist.vhdl
 -- Design      : world_map
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,6 +20,8 @@ entity world_map_blk_mem_gen_prim_wrapper_init is
     doutb : out STD_LOGIC_VECTOR ( 1 downto 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
+    ena : in STD_LOGIC;
+    enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 13 downto 0 )
   );
@@ -244,13 +246,13 @@ begin
       DOPADOP(3 downto 0) => \NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_DOPADOP_UNCONNECTED\(3 downto 0),
       DOPBDOP(3 downto 0) => \NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_DOPBDOP_UNCONNECTED\(3 downto 0),
       ECCPARITY(7 downto 0) => \NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_ECCPARITY_UNCONNECTED\(7 downto 0),
-      ENARDEN => '1',
-      ENBWREN => '1',
+      ENARDEN => ena,
+      ENBWREN => enb,
       INJECTDBITERR => '0',
       INJECTSBITERR => '0',
       RDADDRECC(8 downto 0) => \NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_RDADDRECC_UNCONNECTED\(8 downto 0),
-      REGCEAREGCE => '1',
-      REGCEB => '1',
+      REGCEAREGCE => ena,
+      REGCEB => enb,
       RSTRAMARSTRAM => '0',
       RSTRAMB => '0',
       RSTREGARSTREG => '0',
@@ -270,6 +272,8 @@ entity world_map_blk_mem_gen_prim_width is
     doutb : out STD_LOGIC_VECTOR ( 1 downto 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
+    ena : in STD_LOGIC;
+    enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 13 downto 0 )
   );
@@ -286,7 +290,9 @@ begin
       clka => clka,
       clkb => clkb,
       douta(1 downto 0) => douta(1 downto 0),
-      doutb(1 downto 0) => doutb(1 downto 0)
+      doutb(1 downto 0) => doutb(1 downto 0),
+      ena => ena,
+      enb => enb
     );
 end STRUCTURE;
 library IEEE;
@@ -299,6 +305,8 @@ entity world_map_blk_mem_gen_generic_cstr is
     doutb : out STD_LOGIC_VECTOR ( 1 downto 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
+    ena : in STD_LOGIC;
+    enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 13 downto 0 )
   );
@@ -315,7 +323,9 @@ begin
       clka => clka,
       clkb => clkb,
       douta(1 downto 0) => douta(1 downto 0),
-      doutb(1 downto 0) => doutb(1 downto 0)
+      doutb(1 downto 0) => doutb(1 downto 0),
+      ena => ena,
+      enb => enb
     );
 end STRUCTURE;
 library IEEE;
@@ -328,6 +338,8 @@ entity world_map_blk_mem_gen_top is
     doutb : out STD_LOGIC_VECTOR ( 1 downto 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
+    ena : in STD_LOGIC;
+    enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 13 downto 0 )
   );
@@ -344,7 +356,9 @@ begin
       clka => clka,
       clkb => clkb,
       douta(1 downto 0) => douta(1 downto 0),
-      doutb(1 downto 0) => doutb(1 downto 0)
+      doutb(1 downto 0) => doutb(1 downto 0),
+      ena => ena,
+      enb => enb
     );
 end STRUCTURE;
 library IEEE;
@@ -357,6 +371,8 @@ entity world_map_blk_mem_gen_v8_4_1_synth is
     doutb : out STD_LOGIC_VECTOR ( 1 downto 0 );
     clka : in STD_LOGIC;
     clkb : in STD_LOGIC;
+    ena : in STD_LOGIC;
+    enb : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     addrb : in STD_LOGIC_VECTOR ( 13 downto 0 )
   );
@@ -373,7 +389,9 @@ begin
       clka => clka,
       clkb => clkb,
       douta(1 downto 0) => douta(1 downto 0),
-      doutb(1 downto 0) => doutb(1 downto 0)
+      doutb(1 downto 0) => doutb(1 downto 0),
+      ena => ena,
+      enb => enb
     );
 end STRUCTURE;
 library IEEE;
@@ -499,9 +517,9 @@ entity world_map_blk_mem_gen_v8_4_1 is
   attribute C_HAS_AXI_ID : integer;
   attribute C_HAS_AXI_ID of world_map_blk_mem_gen_v8_4_1 : entity is 0;
   attribute C_HAS_ENA : integer;
-  attribute C_HAS_ENA of world_map_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_ENA of world_map_blk_mem_gen_v8_4_1 : entity is 1;
   attribute C_HAS_ENB : integer;
-  attribute C_HAS_ENB of world_map_blk_mem_gen_v8_4_1 : entity is 0;
+  attribute C_HAS_ENB of world_map_blk_mem_gen_v8_4_1 : entity is 1;
   attribute C_HAS_INJECTERR : integer;
   attribute C_HAS_INJECTERR of world_map_blk_mem_gen_v8_4_1 : entity is 0;
   attribute C_HAS_MEM_OUTPUT_REGS_A : integer;
@@ -666,7 +684,9 @@ inst_blk_mem_gen: entity work.world_map_blk_mem_gen_v8_4_1_synth
       clka => clka,
       clkb => clkb,
       douta(1 downto 0) => douta(1 downto 0),
-      doutb(1 downto 0) => doutb(1 downto 0)
+      doutb(1 downto 0) => doutb(1 downto 0),
+      ena => ena,
+      enb => enb
     );
 end STRUCTURE;
 library IEEE;
@@ -676,9 +696,11 @@ use UNISIM.VCOMPONENTS.ALL;
 entity world_map is
   port (
     clka : in STD_LOGIC;
+    ena : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 13 downto 0 );
     douta : out STD_LOGIC_VECTOR ( 1 downto 0 );
     clkb : in STD_LOGIC;
+    enb : in STD_LOGIC;
     addrb : in STD_LOGIC_VECTOR ( 13 downto 0 );
     doutb : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
@@ -765,9 +787,9 @@ architecture STRUCTURE of world_map is
   attribute C_HAS_AXI_ID : integer;
   attribute C_HAS_AXI_ID of U0 : label is 0;
   attribute C_HAS_ENA : integer;
-  attribute C_HAS_ENA of U0 : label is 0;
+  attribute C_HAS_ENA of U0 : label is 1;
   attribute C_HAS_ENB : integer;
-  attribute C_HAS_ENB of U0 : label is 0;
+  attribute C_HAS_ENB of U0 : label is 1;
   attribute C_HAS_INJECTERR : integer;
   attribute C_HAS_INJECTERR of U0 : label is 0;
   attribute C_HAS_MEM_OUTPUT_REGS_A : integer;
@@ -865,6 +887,8 @@ architecture STRUCTURE of world_map is
   attribute x_interface_parameter of clka : signal is "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER";
   attribute x_interface_info of clkb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK";
   attribute x_interface_parameter of clkb : signal is "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER";
+  attribute x_interface_info of ena : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA EN";
+  attribute x_interface_info of enb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB EN";
   attribute x_interface_info of addra : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR";
   attribute x_interface_info of addrb : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR";
   attribute x_interface_info of douta : signal is "xilinx.com:interface:bram:1.0 BRAM_PORTA DOUT";
@@ -883,8 +907,8 @@ U0: entity work.world_map_blk_mem_gen_v8_4_1
       douta(1 downto 0) => douta(1 downto 0),
       doutb(1 downto 0) => doutb(1 downto 0),
       eccpipece => '0',
-      ena => '0',
-      enb => '0',
+      ena => ena,
+      enb => enb,
       injectdbiterr => '0',
       injectsbiterr => '0',
       rdaddrecc(13 downto 0) => NLW_U0_rdaddrecc_UNCONNECTED(13 downto 0),

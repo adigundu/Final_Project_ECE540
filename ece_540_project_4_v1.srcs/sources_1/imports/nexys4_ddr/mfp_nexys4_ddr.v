@@ -42,6 +42,16 @@ module mfp_nexys4_ddr(
                         input [4:1] JC 
                         );
                         
+   
+    // Signals used for worldselect.
+reg [1:0] mapdata1, mapdata2, mappixel;
+wire [1:0] world_pixel1, world_pixel2, world_pixel3, world_pixel4;
+wire [1:0]  worldmap_data_1_1, worldmap_data_1_2,
+            worldmap_data_2_1, worldmap_data_2_2,
+            worldmap_data_3_1, worldmap_data_3_2,
+            worldmap_data_4_1, worldmap_data_4_2;
+wire [3:0] map_en;
+wire map_change;
     
     // test buttons
     //assign JA[2] = 1'b1;
@@ -78,8 +88,16 @@ module mfp_nexys4_ddr(
                 LocY_reg,         // output wire [7 : 0] LocY_reg
                 Sensors_reg,      // output wire [7 : 0] Sensors_reg
                 BotInfo_reg;      // output wire [7 : 0] BotInfo_reg
-    wire [13:0] worldmap_addr;    // output wire [13 : 0] worldmap_addr
-    wire [1:0]  worldmap_data;    // input wire [1 : 0] worldmap_data
+    wire [13:0] worldmap_addr,    // output wire [13 : 0] worldmap_addr
+                worldmap_addr1,
+                worldmap_addr2,
+                worldmap_addr3,
+                worldmap_addr4;
+    wire [1:0]  worldmap_data,    // input wire [1 : 0] worldmap_data
+                worldmap_data1,
+                worldmap_data2, 
+                worldmap_data3,
+                worldmap_data4;              
     wire        clk_in_75mhz,     // input wire clk_in
                 reset,            // input wire reset
                 upd_sysregs, upd_sysregs_2;      // output wire upd_sysregs
@@ -258,32 +276,7 @@ module mfp_nexys4_ddr(
         end
      end
  
-// rojobot instantiation template for rojobot.v               
-    rojobot31 rojobot_1(
-                      .player(0),
-                      .MotCtl_in(MotCtl_in),            // input wire [7 : 0] MotCtl_in
-                      .LocX_reg(LocX_reg),              // output wire [7 : 0] LocX_reg
-                      .LocY_reg(LocY_reg),              // output wire [7 : 0] LocY_reg
-                      .Sensors_reg(Sensors_reg),        // output wire [7 : 0] Sensors_reg
-                      .BotInfo_reg(BotInfo_reg),        // output wire [7 : 0] BotInfo_reg
-                      .worldmap_addr(worldmap_addr),    // output wire [13 : 0] worldmap_addr
-                      .worldmap_data(worldmap_data),    // input wire [1 : 0] worldmap_data
-                      .clk_in(clk_out_75mhz),                  // input wire clk_in
-                      .reset(reset),                    // input wire reset
-                      .upd_sysregs(upd_sysregs),        // output wire upd_sysregs
-                      .Bot_Config_reg(Bot_Config_reg)  // input wire [7 : 0] Bot_Config_reg
-                        );
-                        
-                    
-//  Worldmap implementation for the demo
-    world_map worldmap_part_1(
-                             .clka (clk_out_75mhz),  //input clka;
-                             .addra(worldmap_addr),  //input [13 : 0] addra;
-                             .douta(worldmap_data),  //output [1 : 0] douta;
-                             .clkb (clk_out_75mhz),  // input clkb;
-                             .addrb({pixel_row_scaled,pixel_column_scaled}), // input [13 : 0] addrb;
-                             .doutb(world_pixel)     // output [1 : 0] doutb;
-                             );
+
                         
     // Display Timing Generator                    
     dtg hv_sync(   
@@ -400,17 +393,147 @@ module mfp_nexys4_ddr(
                       .Bot_Config_reg(Bot_Config_reg)     // input wire [7 : 0] Bot_Config_reg
                         );
 
+// rojobot instantiation template for rojobot.v               
+    rojobot31 rojobot_1(
+                      .player(0),
+                      .MotCtl_in(MotCtl_in),            // input wire [7 : 0] MotCtl_in
+                      .LocX_reg(LocX_reg),              // output wire [7 : 0] LocX_reg
+                      .LocY_reg(LocY_reg),              // output wire [7 : 0] LocY_reg
+                      .Sensors_reg(Sensors_reg),        // output wire [7 : 0] Sensors_reg
+                      .BotInfo_reg(BotInfo_reg),        // output wire [7 : 0] BotInfo_reg
+                      .worldmap_addr(worldmap_addr),    // output wire [13 : 0] worldmap_addr
+                      .worldmap_data(worldmap_data),    // input wire [1 : 0] worldmap_data
+                      .clk_in(clk_out_75mhz),                  // input wire clk_in
+                      .reset(reset),                    // input wire reset
+                      .upd_sysregs(upd_sysregs),        // output wire upd_sysregs
+                      .Bot_Config_reg(Bot_Config_reg)  // input wire [7 : 0] Bot_Config_reg
+                        );
+                        
+assign worldmap_data = mapdata1;    //robot 1
+assign worldmap_data2 = mapdata2;   //robot 2
+assign world_pixel = mappixel;   
+   
+always@(*) begin
+    if(map_en == 4'b0001) begin
+        mapdata1 = worldmap_data_1_1;
+        mapdata2 = worldmap_data_1_2;
+        mappixel = world_pixel1;
+    end
+    if(map_en == 4'b0010) begin
+        mapdata1 = worldmap_data_2_1;
+        mapdata2 = worldmap_data_2_2;
+        mappixel = world_pixel2;
+    end
+    if(map_en == 4'b0100) begin
+        mapdata1 = worldmap_data_3_1;
+        mapdata2 = worldmap_data_3_2;
+        mappixel = world_pixel3;
+    end    
+    if(map_en == 4'b1000) begin
+        mapdata1 = worldmap_data_4_1;
+        mapdata2 = worldmap_data_4_2;
+        mappixel = world_pixel4;
+    end    
+end
+
 
 //  Worldmap implementation for the demo
 // this is a copy for the worldmap for p2, just for the sensors to see something
-    world_map worldmap_part_1_p2(
+    map1 map1_1(
                              .clka (clk_out_75mhz),  //input clka;
-                             .addra(worldmap_addr_2),  //input [13 : 0] addra;
-                             .douta(worldmap_data_2),  //output [1 : 0] douta;
+                             .addra(worldmap_addr),  //input [13 : 0] addra;
+                             .douta(worldmap_data_1_1),  //output [1 : 0] douta;
                              .clkb (clk_out_75mhz),  // input clkb;
                              .addrb(), // input [13 : 0] addrb;
-                             .doutb()     // output [1 : 0] doutb;
+                             .doutb(),     // output [1 : 0] doutb;
+                             .ena(map_en[0]),
+                             .enb(map_en[0])
                              );
+//  Worldmap implementation for the demo
+     map1 map1_2(
+                              .clka (clk_out_75mhz),  //input clka;
+                              .addra(worldmap_addr2),  //input [13 : 0] addra;
+                              .douta(worldmap_data_1_2),  //output [1 : 0] douta;
+                              .clkb (clk_out_75mhz),  // input clkb;
+                              .addrb({pixel_row_scaled,pixel_column_scaled}), // input [13 : 0] addrb;
+                              .doutb(world_pixel1),     // output [1 : 0] doutb;
+                              .ena(map_en[0]),
+                              .enb(map_en[0])
+                              );
+// Map 2 for bot 1
+    map2 map2_1(
+                           .clka (clk_out_75mhz),  //input clka;
+                           .addra(worldmap_addr),  //input [13 : 0] addra;
+                           .douta(worldmap_data_2_1),  //output [1 : 0] douta;
+                           .clkb (clk_out_75mhz),  // input clkb;
+                           .addrb(), // input [13 : 0] addrb;
+                           .doutb(),     // output [1 : 0] doutb;
+                           .ena(map_en[1]),
+                           .enb(map_en[1])
+                           );
+// Map 2 for bot 2
+    map2 map2_2(
+                            .clka (clk_out_75mhz),  //input clka;
+                            .addra(worldmap_addr2),  //input [13 : 0] addra;
+                            .douta(worldmap_data_2_2),  //output [1 : 0] douta;
+                            .clkb (clk_out_75mhz),  // input clkb;
+                            .addrb({pixel_row_scaled,pixel_column_scaled}), // input [13 : 0] addrb;
+                            .doutb(world_pixel2),     // output [1 : 0] doutb;
+                            .ena(map_en[1]),
+                            .enb(map_en[1])
+                            );
+// Map 2 for bot 1
+    map3 map3_1(
+                           .clka (clk_out_75mhz),  //input clka;
+                           .addra(worldmap_addr),  //input [13 : 0] addra;
+                           .douta(worldmap_data_3_1),  //output [1 : 0] douta;
+                           .clkb (clk_out_75mhz),  // input clkb;
+                           .addrb(), // input [13 : 0] addrb;
+                           .doutb(),     // output [1 : 0] doutb;
+                           .ena(map_en[2]),
+                           .enb(map_en[2])
+                           );
+// Map 2 for bot 2
+    map3 map3_2(
+                            .clka (clk_out_75mhz),  //input clka;
+                            .addra(worldmap_addr2),  //input [13 : 0] addra;
+                            .douta(worldmap_data_3_2),  //output [1 : 0] douta;
+                            .clkb (clk_out_75mhz),  // input clkb;
+                            .addrb({pixel_row_scaled,pixel_column_scaled}), // input [13 : 0] addrb;
+                            .doutb(world_pixel3),     // output [1 : 0] doutb;
+                            .ena(map_en[2]),
+                            .enb(map_en[2])
+                            );
+// Map 2 for bot 1
+    map4 map4_1(
+                           .clka (clk_out_75mhz),  //input clka;
+                           .addra(worldmap_addr),  //input [13 : 0] addra;
+                           .douta(worldmap_data_4_1),  //output [1 : 0] douta;
+                           .clkb (clk_out_75mhz),  // input clkb;
+                           .addrb(), // input [13 : 0] addrb;
+                           .doutb(),     // output [1 : 0] doutb;
+                           .ena(map_en[3]),
+                           .enb(map_en[3])
+                           );
+// Map 2 for bot 2
+    map4 map4_2(
+                            .clka (clk_out_75mhz),  //input clka;
+                            .addra(worldmap_addr2),  //input [13 : 0] addra;
+                            .douta(worldmap_data_4_2),  //output [1 : 0] douta;
+                            .clkb (clk_out_75mhz),  // input clkb;
+                            .addrb({pixel_row_scaled,pixel_column_scaled}), // input [13 : 0] addrb;
+                            .doutb(world_pixel4),     // output [1 : 0] doutb;
+                            .ena(map_en[3]),
+                            .enb(map_en[3])
+                            );
+                            
+                      
+// Module to select worlds                            
+worldselect select_world(.clk(clk_out),.reset(reset),.map_change(map_change), .map_select(sw_debounced[1:0]), .map_en(map_en) ); 
+        
+scoreboard score_board(.clk(clk_out), .Sensors_reg1(Sensors_reg), .Sensors_reg2(Sensors_reg_2), .board_rst(reset), .map_rst(reset), .map_change(map_change), .score() );
+        
+                  
  //assign JA[1] = JA_1;
                                 assign LED[`MFP_N_LED-1] = ~JA_1;
                                 assign LED[`MFP_N_LED-2] = ~JA_2;

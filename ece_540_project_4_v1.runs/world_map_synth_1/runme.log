@@ -14,11 +14,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9356 
+INFO: Helper process launched with PID 10332 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 407.277 ; gain = 98.871
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 407.539 ; gain = 99.297
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'world_map' [n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/synth/world_map.vhd:70]
+INFO: [Synth 8-638] synthesizing module 'world_map' [n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/world_map/synth/world_map.vhd:72]
 	Parameter C_FAMILY bound to: artix7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
 	Parameter C_ELABORATION_DIR bound to: ./ - type: string 
@@ -43,7 +43,7 @@ INFO: [Synth 8-638] synthesizing module 'world_map' [n:/Final_Project_ECE540/ece
 	Parameter C_RST_PRIORITY_A bound to: CE - type: string 
 	Parameter C_RSTRAM_A bound to: 0 - type: integer 
 	Parameter C_INITA_VAL bound to: 0 - type: string 
-	Parameter C_HAS_ENA bound to: 0 - type: integer 
+	Parameter C_HAS_ENA bound to: 1 - type: integer 
 	Parameter C_HAS_REGCEA bound to: 0 - type: integer 
 	Parameter C_USE_BYTE_WEA bound to: 0 - type: integer 
 	Parameter C_WEA_WIDTH bound to: 1 - type: integer 
@@ -57,7 +57,7 @@ INFO: [Synth 8-638] synthesizing module 'world_map' [n:/Final_Project_ECE540/ece
 	Parameter C_RST_PRIORITY_B bound to: CE - type: string 
 	Parameter C_RSTRAM_B bound to: 0 - type: integer 
 	Parameter C_INITB_VAL bound to: 0 - type: string 
-	Parameter C_HAS_ENB bound to: 0 - type: integer 
+	Parameter C_HAS_ENB bound to: 1 - type: integer 
 	Parameter C_HAS_REGCEB bound to: 0 - type: integer 
 	Parameter C_USE_BYTE_WEB bound to: 0 - type: integer 
 	Parameter C_WEB_WIDTH bound to: 1 - type: integer 
@@ -92,8 +92,8 @@ INFO: [Synth 8-638] synthesizing module 'world_map' [n:/Final_Project_ECE540/ece
 	Parameter C_COUNT_36K_BRAM bound to: 1 - type: string 
 	Parameter C_COUNT_18K_BRAM bound to: 0 - type: string 
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     4.503 mW - type: string 
-INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_1' declared at 'n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195313' bound to instance 'U0' of component 'blk_mem_gen_v8_4_1' [n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/synth/world_map.vhd:235]
-INFO: [Synth 8-256] done synthesizing module 'world_map' (9#1) [n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/synth/world_map.vhd:70]
+INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_1' declared at 'n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/world_map/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195313' bound to instance 'U0' of component 'blk_mem_gen_v8_4_1' [n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/world_map/synth/world_map.vhd:239]
+INFO: [Synth 8-256] done synthesizing module 'world_map' (9#1) [n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/world_map/synth/world_map.vhd:72]
 WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper_init has unconnected port SSRA
 WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper_init has unconnected port SSRB
 WARNING: [Synth 8-3331] design blk_mem_gen_prim_wrapper_init has unconnected port SLEEP
@@ -122,13 +122,11 @@ WARNING: [Synth 8-3331] design blk_mem_output_block has unconnected port RDADDRE
 WARNING: [Synth 8-3331] design blk_mem_output_block has unconnected port RDADDRECC_I[1]
 WARNING: [Synth 8-3331] design blk_mem_output_block has unconnected port RDADDRECC_I[0]
 WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port RSTA
-WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port ENA
 WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port REGCEA
 WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port WEA[0]
 WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port DINA[1]
 WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port DINA[0]
 WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port RSTB
-WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port ENB
 WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port REGCEB
 WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port WEB[0]
 WARNING: [Synth 8-3331] design blk_mem_input_block has unconnected port DINB[1]
@@ -194,9 +192,11 @@ WARNING: [Synth 8-3331] design blk_mem_gen_v8_4_1_synth has unconnected port S_A
 WARNING: [Synth 8-3331] design blk_mem_gen_v8_4_1_synth has unconnected port S_AXI_WVALID
 WARNING: [Synth 8-3331] design blk_mem_gen_v8_4_1_synth has unconnected port S_AXI_BREADY
 WARNING: [Synth 8-3331] design blk_mem_gen_v8_4_1_synth has unconnected port S_AXI_ARID[3]
+WARNING: [Synth 8-3331] design blk_mem_gen_v8_4_1_synth has unconnected port S_AXI_ARID[2]
+WARNING: [Synth 8-3331] design blk_mem_gen_v8_4_1_synth has unconnected port S_AXI_ARID[1]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:53 ; elapsed = 00:01:02 . Memory (MB): peak = 674.551 ; gain = 366.145
+Finished RTL Elaboration : Time (s): cpu = 00:00:51 ; elapsed = 00:00:56 . Memory (MB): peak = 673.516 ; gain = 365.273
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -209,10 +209,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:01:04 . Memory (MB): peak = 674.551 ; gain = 366.145
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 673.516 ; gain = 365.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:53 ; elapsed = 00:01:04 . Memory (MB): peak = 674.551 ; gain = 366.145
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 673.516 ; gain = 365.273
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -221,35 +221,35 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map_ooc.xdc] for cell 'U0'
-Parsing XDC File [N:/Final_Project_ECE540/ece_540_project_4_v1.runs/world_map_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [N:/Final_Project_ECE540/ece_540_project_4_v1.runs/world_map_synth_1/dont_touch.xdc]
+Parsing XDC File [n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map_ooc.xdc] for cell 'U0'
+Parsing XDC File [N:/ECE540/540FinalProject/ece_540_project_4_v1.runs/world_map_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [N:/ECE540/540FinalProject/ece_540_project_4_v1.runs/world_map_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 731.707 ; gain = 1.504
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 733.973 ; gain = 1.566
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:01 ; elapsed = 00:01:16 . Memory (MB): peak = 731.707 ; gain = 423.301
+Finished Constraint Validation : Time (s): cpu = 00:01:00 ; elapsed = 00:01:09 . Memory (MB): peak = 733.973 ; gain = 425.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:01 ; elapsed = 00:01:16 . Memory (MB): peak = 731.707 ; gain = 423.301
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:00 ; elapsed = 00:01:09 . Memory (MB): peak = 733.973 ; gain = 425.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  N:/Final_Project_ECE540/ece_540_project_4_v1.runs/world_map_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  N:/ECE540/540FinalProject/ece_540_project_4_v1.runs/world_map_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:01 ; elapsed = 00:01:16 . Memory (MB): peak = 731.707 ; gain = 423.301
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:00 ; elapsed = 00:01:09 . Memory (MB): peak = 733.973 ; gain = 425.730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:02 ; elapsed = 00:01:17 . Memory (MB): peak = 731.707 ; gain = 423.301
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:00 ; elapsed = 00:01:10 . Memory (MB): peak = 733.973 ; gain = 425.730
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -285,7 +285,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:18 . Memory (MB): peak = 731.707 ; gain = 423.301
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:11 . Memory (MB): peak = 733.973 ; gain = 425.730
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -297,13 +297,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:10 ; elapsed = 00:01:27 . Memory (MB): peak = 781.070 ; gain = 472.664
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:09 ; elapsed = 00:01:20 . Memory (MB): peak = 786.836 ; gain = 478.594
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:27 . Memory (MB): peak = 781.070 ; gain = 472.664
+Finished Timing Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:20 . Memory (MB): peak = 786.836 ; gain = 478.594
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -340,7 +340,7 @@ INFO: [Synth 8-5816] Retiming module `world_map' done
 
 
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:10 ; elapsed = 00:01:27 . Memory (MB): peak = 781.145 ; gain = 472.738
+Finished Technology Mapping : Time (s): cpu = 00:01:09 ; elapsed = 00:01:20 . Memory (MB): peak = 786.910 ; gain = 478.668
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -364,7 +364,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:11 ; elapsed = 00:01:28 . Memory (MB): peak = 782.535 ; gain = 474.129
+Finished IO Insertion : Time (s): cpu = 00:01:10 ; elapsed = 00:01:21 . Memory (MB): peak = 788.035 ; gain = 479.793
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -377,7 +377,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:11 ; elapsed = 00:01:28 . Memory (MB): peak = 782.535 ; gain = 474.129
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:10 ; elapsed = 00:01:21 . Memory (MB): peak = 788.035 ; gain = 479.793
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -389,25 +389,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:11 ; elapsed = 00:01:28 . Memory (MB): peak = 782.535 ; gain = 474.129
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:10 ; elapsed = 00:01:21 . Memory (MB): peak = 788.035 ; gain = 479.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:11 ; elapsed = 00:01:28 . Memory (MB): peak = 782.535 ; gain = 474.129
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:10 ; elapsed = 00:01:21 . Memory (MB): peak = 788.035 ; gain = 479.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:11 ; elapsed = 00:01:28 . Memory (MB): peak = 782.535 ; gain = 474.129
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:10 ; elapsed = 00:01:21 . Memory (MB): peak = 788.035 ; gain = 479.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:11 ; elapsed = 00:01:28 . Memory (MB): peak = 782.535 ; gain = 474.129
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:10 ; elapsed = 00:01:21 . Memory (MB): peak = 788.035 ; gain = 479.793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -439,11 +439,11 @@ Report Instance Areas:
 |7     |            \prim_init.ram                   |blk_mem_gen_prim_wrapper_init |     1|
 +------+---------------------------------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:11 ; elapsed = 00:01:28 . Memory (MB): peak = 782.535 ; gain = 474.129
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:10 ; elapsed = 00:01:21 . Memory (MB): peak = 788.035 ; gain = 479.793
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 129 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:01:19 . Memory (MB): peak = 782.535 ; gain = 416.973
-Synthesis Optimization Complete : Time (s): cpu = 00:01:11 ; elapsed = 00:01:29 . Memory (MB): peak = 782.539 ; gain = 474.129
+Synthesis finished with 0 errors, 0 critical warnings and 127 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:01:12 . Memory (MB): peak = 788.035 ; gain = 419.336
+Synthesis Optimization Complete : Time (s): cpu = 00:01:10 ; elapsed = 00:01:22 . Memory (MB): peak = 788.039 ; gain = 479.793
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -455,10 +455,10 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 21 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:13 ; elapsed = 00:01:31 . Memory (MB): peak = 802.934 ; gain = 506.004
+synth_design: Time (s): cpu = 00:01:12 ; elapsed = 00:01:24 . Memory (MB): peak = 808.652 ; gain = 511.883
 INFO: [Coretcl 2-1174] Renamed 6 cell refs.
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'N:/Final_Project_ECE540/ece_540_project_4_v1.runs/world_map_synth_1/world_map.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'N:/ECE540/540FinalProject/ece_540_project_4_v1.runs/world_map_synth_1/world_map.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file world_map_utilization_synth.rpt -pb world_map_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 802.934 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Nov 25 11:37:35 2019...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.166 . Memory (MB): peak = 808.652 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  2 09:30:50 2019...

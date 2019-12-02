@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-// Date        : Mon Nov 25 11:37:34 2019
+// Date        : Mon Dec  2 09:30:50 2019
 // Host        : caplab12 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               n:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map_sim_netlist.v
+//               N:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map_sim_netlist.v
 // Design      : world_map
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -16,15 +16,19 @@
 (* NotValidForBitStream *)
 module world_map
    (clka,
+    ena,
     addra,
     douta,
     clkb,
+    enb,
     addrb,
     doutb);
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTA, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER" *) input clka;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA EN" *) input ena;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA ADDR" *) input [13:0]addra;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTA DOUT" *) output [1:0]douta;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME BRAM_PORTB, MEM_SIZE 8192, MEM_WIDTH 32, MEM_ECC NONE, MASTER_TYPE OTHER" *) input clkb;
+  (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB EN" *) input enb;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB ADDR" *) input [13:0]addrb;
   (* x_interface_info = "xilinx.com:interface:bram:1.0 BRAM_PORTB DOUT" *) output [1:0]doutb;
 
@@ -34,6 +38,8 @@ module world_map
   wire clkb;
   wire [1:0]douta;
   wire [1:0]doutb;
+  wire ena;
+  wire enb;
   wire NLW_U0_dbiterr_UNCONNECTED;
   wire NLW_U0_rsta_busy_UNCONNECTED;
   wire NLW_U0_rstb_busy_UNCONNECTED;
@@ -80,8 +86,8 @@ module world_map
   (* C_EST_POWER_SUMMARY = "Estimated Power for IP     :     4.503 mW" *) 
   (* C_FAMILY = "artix7" *) 
   (* C_HAS_AXI_ID = "0" *) 
-  (* C_HAS_ENA = "0" *) 
-  (* C_HAS_ENB = "0" *) 
+  (* C_HAS_ENA = "1" *) 
+  (* C_HAS_ENB = "1" *) 
   (* C_HAS_INJECTERR = "0" *) 
   (* C_HAS_MEM_OUTPUT_REGS_A = "1" *) 
   (* C_HAS_MEM_OUTPUT_REGS_B = "1" *) 
@@ -140,8 +146,8 @@ module world_map
         .douta(douta),
         .doutb(doutb),
         .eccpipece(1'b0),
-        .ena(1'b0),
-        .enb(1'b0),
+        .ena(ena),
+        .enb(enb),
         .injectdbiterr(1'b0),
         .injectsbiterr(1'b0),
         .rdaddrecc(NLW_U0_rdaddrecc_UNCONNECTED[13:0]),
@@ -200,12 +206,16 @@ module world_map_blk_mem_gen_generic_cstr
     doutb,
     clka,
     clkb,
+    ena,
+    enb,
     addra,
     addrb);
   output [1:0]douta;
   output [1:0]doutb;
   input clka;
   input clkb;
+  input ena;
+  input enb;
   input [13:0]addra;
   input [13:0]addrb;
 
@@ -215,6 +225,8 @@ module world_map_blk_mem_gen_generic_cstr
   wire clkb;
   wire [1:0]douta;
   wire [1:0]doutb;
+  wire ena;
+  wire enb;
 
   world_map_blk_mem_gen_prim_width \ramloop[0].ram.r 
        (.addra(addra),
@@ -222,7 +234,9 @@ module world_map_blk_mem_gen_generic_cstr
         .clka(clka),
         .clkb(clkb),
         .douta(douta),
-        .doutb(doutb));
+        .doutb(doutb),
+        .ena(ena),
+        .enb(enb));
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
@@ -231,12 +245,16 @@ module world_map_blk_mem_gen_prim_width
     doutb,
     clka,
     clkb,
+    ena,
+    enb,
     addra,
     addrb);
   output [1:0]douta;
   output [1:0]doutb;
   input clka;
   input clkb;
+  input ena;
+  input enb;
   input [13:0]addra;
   input [13:0]addrb;
 
@@ -246,6 +264,8 @@ module world_map_blk_mem_gen_prim_width
   wire clkb;
   wire [1:0]douta;
   wire [1:0]doutb;
+  wire ena;
+  wire enb;
 
   world_map_blk_mem_gen_prim_wrapper_init \prim_init.ram 
        (.addra(addra),
@@ -253,7 +273,9 @@ module world_map_blk_mem_gen_prim_width
         .clka(clka),
         .clkb(clkb),
         .douta(douta),
-        .doutb(doutb));
+        .doutb(doutb),
+        .ena(ena),
+        .enb(enb));
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
@@ -262,12 +284,16 @@ module world_map_blk_mem_gen_prim_wrapper_init
     doutb,
     clka,
     clkb,
+    ena,
+    enb,
     addra,
     addrb);
   output [1:0]douta;
   output [1:0]doutb;
   input clka;
   input clkb;
+  input ena;
+  input enb;
   input [13:0]addra;
   input [13:0]addrb;
 
@@ -277,6 +303,8 @@ module world_map_blk_mem_gen_prim_wrapper_init
   wire clkb;
   wire [1:0]douta;
   wire [1:0]doutb;
+  wire ena;
+  wire enb;
   wire \NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_CASCADEOUTA_UNCONNECTED ;
   wire \NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_CASCADEOUTB_UNCONNECTED ;
   wire \NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_DBITERR_UNCONNECTED ;
@@ -484,13 +512,13 @@ module world_map_blk_mem_gen_prim_wrapper_init
         .DOPADOP(\NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_DOPADOP_UNCONNECTED [3:0]),
         .DOPBDOP(\NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_DOPBDOP_UNCONNECTED [3:0]),
         .ECCPARITY(\NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_ECCPARITY_UNCONNECTED [7:0]),
-        .ENARDEN(1'b1),
-        .ENBWREN(1'b1),
+        .ENARDEN(ena),
+        .ENBWREN(enb),
         .INJECTDBITERR(1'b0),
         .INJECTSBITERR(1'b0),
         .RDADDRECC(\NLW_DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_RDADDRECC_UNCONNECTED [8:0]),
-        .REGCEAREGCE(1'b1),
-        .REGCEB(1'b1),
+        .REGCEAREGCE(ena),
+        .REGCEB(enb),
         .RSTRAMARSTRAM(1'b0),
         .RSTRAMB(1'b0),
         .RSTREGARSTREG(1'b0),
@@ -506,12 +534,16 @@ module world_map_blk_mem_gen_top
     doutb,
     clka,
     clkb,
+    ena,
+    enb,
     addra,
     addrb);
   output [1:0]douta;
   output [1:0]doutb;
   input clka;
   input clkb;
+  input ena;
+  input enb;
   input [13:0]addra;
   input [13:0]addrb;
 
@@ -521,6 +553,8 @@ module world_map_blk_mem_gen_top
   wire clkb;
   wire [1:0]douta;
   wire [1:0]doutb;
+  wire ena;
+  wire enb;
 
   world_map_blk_mem_gen_generic_cstr \valid.cstr 
        (.addra(addra),
@@ -528,7 +562,9 @@ module world_map_blk_mem_gen_top
         .clka(clka),
         .clkb(clkb),
         .douta(douta),
-        .doutb(doutb));
+        .doutb(doutb),
+        .ena(ena),
+        .enb(enb));
 endmodule
 
 (* C_ADDRA_WIDTH = "14" *) (* C_ADDRB_WIDTH = "14" *) (* C_ALGORITHM = "1" *) 
@@ -539,8 +575,8 @@ endmodule
 (* C_ENABLE_32BIT_ADDRESS = "0" *) (* C_EN_DEEPSLEEP_PIN = "0" *) (* C_EN_ECC_PIPE = "0" *) 
 (* C_EN_RDADDRA_CHG = "0" *) (* C_EN_RDADDRB_CHG = "0" *) (* C_EN_SAFETY_CKT = "0" *) 
 (* C_EN_SHUTDOWN_PIN = "0" *) (* C_EN_SLEEP_PIN = "0" *) (* C_EST_POWER_SUMMARY = "Estimated Power for IP     :     4.503 mW" *) 
-(* C_FAMILY = "artix7" *) (* C_HAS_AXI_ID = "0" *) (* C_HAS_ENA = "0" *) 
-(* C_HAS_ENB = "0" *) (* C_HAS_INJECTERR = "0" *) (* C_HAS_MEM_OUTPUT_REGS_A = "1" *) 
+(* C_FAMILY = "artix7" *) (* C_HAS_AXI_ID = "0" *) (* C_HAS_ENA = "1" *) 
+(* C_HAS_ENB = "1" *) (* C_HAS_INJECTERR = "0" *) (* C_HAS_MEM_OUTPUT_REGS_A = "1" *) 
 (* C_HAS_MEM_OUTPUT_REGS_B = "1" *) (* C_HAS_MUX_OUTPUT_REGS_A = "0" *) (* C_HAS_MUX_OUTPUT_REGS_B = "0" *) 
 (* C_HAS_REGCEA = "0" *) (* C_HAS_REGCEB = "0" *) (* C_HAS_RSTA = "0" *) 
 (* C_HAS_RSTB = "0" *) (* C_HAS_SOFTECC_INPUT_REGS_A = "0" *) (* C_HAS_SOFTECC_OUTPUT_REGS_B = "0" *) 
@@ -691,6 +727,8 @@ module world_map_blk_mem_gen_v8_4_1
   wire clkb;
   wire [1:0]douta;
   wire [1:0]doutb;
+  wire ena;
+  wire enb;
 
   assign dbiterr = \<const0> ;
   assign rdaddrecc[13] = \<const0> ;
@@ -754,7 +792,9 @@ module world_map_blk_mem_gen_v8_4_1
         .clka(clka),
         .clkb(clkb),
         .douta(douta),
-        .doutb(doutb));
+        .doutb(doutb),
+        .ena(ena),
+        .enb(enb));
 endmodule
 
 (* ORIG_REF_NAME = "blk_mem_gen_v8_4_1_synth" *) 
@@ -763,12 +803,16 @@ module world_map_blk_mem_gen_v8_4_1_synth
     doutb,
     clka,
     clkb,
+    ena,
+    enb,
     addra,
     addrb);
   output [1:0]douta;
   output [1:0]doutb;
   input clka;
   input clkb;
+  input ena;
+  input enb;
   input [13:0]addra;
   input [13:0]addrb;
 
@@ -778,6 +822,8 @@ module world_map_blk_mem_gen_v8_4_1_synth
   wire clkb;
   wire [1:0]douta;
   wire [1:0]doutb;
+  wire ena;
+  wire enb;
 
   world_map_blk_mem_gen_top \gnbram.gnativebmg.native_blk_mem_gen 
        (.addra(addra),
@@ -785,7 +831,9 @@ module world_map_blk_mem_gen_v8_4_1_synth
         .clka(clka),
         .clkb(clkb),
         .douta(douta),
-        .doutb(doutb));
+        .doutb(doutb),
+        .ena(ena),
+        .enb(enb));
 endmodule
 `ifndef GLBL
 `define GLBL

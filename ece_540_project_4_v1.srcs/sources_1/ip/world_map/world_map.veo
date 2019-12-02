@@ -56,9 +56,11 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 world_map your_instance_name (
   .clka(clka),    // input wire clka
+  .ena(ena),      // input wire ena
   .addra(addra),  // input wire [13 : 0] addra
   .douta(douta),  // output wire [1 : 0] douta
   .clkb(clkb),    // input wire clkb
+  .enb(enb),      // input wire enb
   .addrb(addrb),  // input wire [13 : 0] addrb
   .doutb(doutb)  // output wire [1 : 0] doutb
 );

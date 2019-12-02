@@ -55,9 +55,11 @@
 COMPONENT world_map
   PORT (
     clka : IN STD_LOGIC;
+    ena : IN STD_LOGIC;
     addra : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
     douta : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     clkb : IN STD_LOGIC;
+    enb : IN STD_LOGIC;
     addrb : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
     doutb : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
   );
@@ -71,9 +73,11 @@ END COMPONENT;
 your_instance_name : world_map
   PORT MAP (
     clka => clka,
+    ena => ena,
     addra => addra,
     douta => douta,
     clkb => clkb,
+    enb => enb,
     addrb => addrb,
     doutb => doutb
   );

@@ -1403,11 +1403,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 25 19:35:47 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 02 17:29:09 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:5e26ea4b</spirit:value>
+            <spirit:value>8:c4940933</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1423,11 +1423,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 25 19:35:51 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 02 17:29:11 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:5e26ea4b</spirit:value>
+            <spirit:value>8:c4940933</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1443,11 +1443,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 25 19:35:51 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 02 17:29:11 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:5e26ea4b</spirit:value>
+            <spirit:value>8:c4940933</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1462,11 +1462,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 25 19:35:51 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 02 17:29:12 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:21658b72</spirit:value>
+            <spirit:value>8:de76f3af</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1482,11 +1482,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 25 19:35:51 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 02 17:29:12 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:21658b72</spirit:value>
+            <spirit:value>8:de76f3af</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1500,11 +1500,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 25 19:35:51 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 02 17:29:12 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:5e26ea4b</spirit:value>
+            <spirit:value>8:c4940933</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1518,11 +1518,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 25 19:35:51 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 02 17:29:12 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:5e26ea4b</spirit:value>
+            <spirit:value>8:c4940933</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1536,11 +1536,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Nov 25 19:37:34 UTC 2019</spirit:value>
+            <spirit:value>Mon Dec 02 17:30:50 UTC 2019</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:5e26ea4b</spirit:value>
+            <spirit:value>8:c4940933</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1610,7 +1610,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.ena" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_ENA&apos;)) != 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) != 1))">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.ena" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_ENA&apos;)) != 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) != 1))">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1807,7 +1807,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.enb" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MEM_TYPE&apos;)) != 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_MEM_TYPE&apos;)) != 3) and(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_ENB&apos;)) != 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) != 1))">false</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.enb" xilinx:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_MEM_TYPE&apos;)) != 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_MEM_TYPE&apos;)) != 3) and(spirit:decode(id(&apos;MODELPARAM_VALUE.C_HAS_ENB&apos;)) != 0) and (spirit:decode(id(&apos;MODELPARAM_VALUE.C_INTERFACE_TYPE&apos;)) != 1))">true</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3140,7 +3140,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="INTEGER">
         <spirit:name>C_HAS_ENA</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_ENA">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_ENA">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="INTEGER">
         <spirit:name>C_HAS_REGCEA</spirit:name>
@@ -3196,7 +3196,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="INTEGER">
         <spirit:name>C_HAS_ENB</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_ENB">0</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_HAS_ENB">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="INTEGER">
         <spirit:name>C_HAS_REGCEB</spirit:name>
@@ -3902,7 +3902,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Enable_A</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Enable_A" spirit:choiceRef="choice_pairs_3949ecbf" spirit:order="24">Always_Enabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Enable_A" spirit:choiceRef="choice_pairs_3949ecbf" spirit:order="24">Use_ENA_Pin</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -3946,7 +3946,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Enable_B</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Enable_B" spirit:choiceRef="choice_pairs_2d73cdeb" spirit:order="28">Always_Enabled</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Enable_B" spirit:choiceRef="choice_pairs_2d73cdeb" spirit:order="28">Use_ENB_Pin</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

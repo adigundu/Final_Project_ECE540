@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.1 (64-bit)
+# SW Build 2288692 on Thu Jul 26 18:24:02 MDT 2018
+# IP Build 2289599 on Thu Jul 26 21:09:20 MDT 2018
+# Start of session at: Wed Nov 27 21:12:59 2019
+# Process ID: 2640
+# Current directory: N:/ECE540/540FinalProject/Worldselect/worldselect_project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10336 N:\ECE540\540FinalProject\Worldselect\worldselect_project\worldselect_project.xpr
+# Log file: N:/ECE540/540FinalProject/Worldselect/worldselect_project/vivado.log
+# Journal file: N:/ECE540/540FinalProject/Worldselect/worldselect_project\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project N:/ECE540/540FinalProject/Worldselect/worldselect_project/worldselect_project.xpr
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+synth_design -rtl -name rtl_1
+launch_simulation
+open_wave_config N:/ECE540/540FinalProject/Worldselect/top_behav.wcfg
+source top.tcl
+close_sim
+launch_simulation
+open_wave_config N:/ECE540/540FinalProject/Worldselect/top_behav.wcfg
+source top.tcl
+close_sim
+launch_simulation
+open_wave_config N:/ECE540/540FinalProject/Worldselect/top_behav.wcfg
+source top.tcl
+refresh_design
+close_sim

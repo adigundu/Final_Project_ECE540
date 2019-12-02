@@ -60,25 +60,29 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir N:/Final_Project_ECE540/ece_540_project_4_v1.cache/wt [current_project]
-  set_property parent.project_path N:/Final_Project_ECE540/ece_540_project_4_v1.xpr [current_project]
-  set_property ip_repo_paths N:/Downloads/proj2_release_f19/ece540_ip_repo/rojobot31 [current_project]
+  set_property webtalk.parent_dir N:/ECE540/540FinalProject/ece_540_project_4_v1.cache/wt [current_project]
+  set_property parent.project_path N:/ECE540/540FinalProject/ece_540_project_4_v1.xpr [current_project]
+  set_property ip_repo_paths N:/ECE540/Downloads/proj2_release_f19/ece540_ip_repo/rojobot31 [current_project]
   set_property ip_output_repo C:/Users/bupbup/ece_540_project_4/ece_540_project_2.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  add_files -quiet N:/Final_Project_ECE540/ece_540_project_4_v1.runs/synth_1/mfp_nexys4_ddr.dcp
-  read_ip -quiet N:/Final_Project_ECE540/ece_540_project_4_v1.srcs/clk_wiz_0/ip/clk_wiz_0/clk_wiz_0.xci
-  read_ip -quiet N:/Final_Project_ECE540/ece_540_project_4_v1.srcs/sources_1/ip/world_map/world_map.xci
-  read_xdc N:/Final_Project_ECE540/ece_540_project_4_v1.srcs/constrs_1/imports/nexys4_ddr/mfp_nexys4_ddr.xdc
+  add_files -quiet N:/ECE540/540FinalProject/ece_540_project_4_v1.runs/synth_1/mfp_nexys4_ddr.dcp
+  read_ip -quiet N:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/clk_wiz_0/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/map1/map1.xci
+  read_ip -quiet n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/map2/map2.xci
+  read_ip -quiet n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/map3/map3.xci
+  read_ip -quiet n:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/sources_1/ip/map4/map4.xci
+  read_xdc N:/ECE540/540FinalProject/ece_540_project_4_v1.srcs/constrs_1/imports/nexys4_ddr/mfp_nexys4_ddr.xdc
   link_design -top mfp_nexys4_ddr -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]
@@ -151,25 +155,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-  unset ACTIVE_STEP 
-}
-
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
-  catch { write_mem_info -force mfp_nexys4_ddr.mmi }
-  write_bitstream -force mfp_nexys4_ddr.bit 
-  catch {write_debug_probes -quiet -force mfp_nexys4_ddr}
-  catch {file copy -force mfp_nexys4_ddr.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 
