@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Dec  2 19:43:39 2019
+# Process ID: 3896
+# Current directory: C:/Final_Project_ECE540-bots_on_new_map_integration
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7312 C:\Final_Project_ECE540-bots_on_new_map_integration\ece_540_project_4_v1.xpr
+# Log file: C:/Final_Project_ECE540-bots_on_new_map_integration/vivado.log
+# Journal file: C:/Final_Project_ECE540-bots_on_new_map_integration\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Final_Project_ECE540-bots_on_new_map_integration/ece_540_project_4_v1.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files //thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Worldselect/worldselect.v] -no_script -reset -force -quiet
+remove_files  //thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Worldselect/worldselect.v
+export_ip_user_files -of_objects  [get_files //thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Scoreboard/scoreboard.sv] -no_script -reset -force -quiet
+remove_files  //thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Scoreboard/scoreboard.sv
+import_files -norecurse {C:/Final_Project_ECE540-bots_on_new_map_integration/Worldselect/worldselect.v C:/Final_Project_ECE540-bots_on_new_map_integration/Scoreboard/scoreboard.sv}
+update_compile_order -fileset sources_1
+reset_run map1_synth_1
+reset_run map2_synth_1
+reset_run map3_synth_1
+reset_run map4_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+report_utilization -name utilization_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1

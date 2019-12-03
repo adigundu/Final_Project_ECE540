@@ -1,0 +1,32 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+                   0	 i: 0 	 reset:1 	 map_change:0 	 map_select:0 
+ 
+                  40	 i: 0 	 reset:0 	 map_change:0 	 map_select:0 
+ 
+                  80	 i: 0 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 140	 i: 0 	 reset:0 	 map_change:1 	 map_select:3 
+ 
+                 180	 i: 1 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 320	 i: 1 	 reset:0 	 map_change:1 	 map_select:3 
+ 
+                 360	 i: 2 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 500	 i: 2 	 reset:0 	 map_change:1 	 map_select:3 
+ 
+                 540	 i: 3 	 reset:0 	 map_change:0 	 map_select:3 
+ 
+                 620	 i: 3 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 680	 i: 3 	 reset:0 	 map_change:1 	 map_select:2 
+ 
+                 720	 i: 4 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 860	 i: 4 	 reset:0 	 map_change:1 	 map_select:2 
+ 
+                 900	 i: 5 	 reset:0 	 map_change:0 	 map_select:2 
+ 
+                 920	 i: 5 	 reset:1 	 map_change:0 	 map_select:2 
+ 
