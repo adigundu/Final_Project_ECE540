@@ -1,0 +1,45 @@
+16:51:18 **** Incremental Build of configuration Default for project proj ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+main.S: Assembler messages:
+main.S:623: Error: operand 3 must be constant `and $22,$21,P2_MSKBOTINFO'
+main.S:627: Error: operand 3 must be constant `and $22,$21,P2_MSKBOTINFO'
+main.S:631: Error: operand 3 must be constant `and $22,$21,P2_MSKBOTINFO'
+main.S:635: Error: operand 3 must be constant `and $22,$21,P2_MSKBOTINFO'
+make: *** [main.o] Error 1
+16:52:20 **** Incremental Build of configuration Default for project proj ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+mips-mti-elf-gcc  -EL -march=m14kc -msoft-float -nostartfiles -Wl,-Map=program.map -L"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" -Wl,--defsym,__stack=0x80040000 -Wl,--defsym,__memory_size=0x1f800 -T uhi32.ld -Wl,--defsym,__flash_start=0xbfc00000 -Wl,--defsym,__flash_app_start=0x80000000 -Wl,--defsym,__app_start=0x80000000 -Wl,--defsym,__isr_vec_count=0 -Wl,-e,0xbfc00000 boot.o exceptions.o dummy.o main.o -lfdc -o program.elf
+main.o: In function `P2_DEB_rdbtns':
+(.text+0xa38): undefined reference to `P2_PORT_PBTNS'
+collect2.exe: error: ld returned 1 exit status
+make: *** [program.elf] Error 1
+16:53:59 **** Incremental Build of configuration Default for project proj ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+mips-mti-elf-gcc  -EL -march=m14kc -msoft-float -nostartfiles -Wl,-Map=program.map -L"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" -Wl,--defsym,__stack=0x80040000 -Wl,--defsym,__memory_size=0x1f800 -T uhi32.ld -Wl,--defsym,__flash_start=0xbfc00000 -Wl,--defsym,__flash_app_start=0x80000000 -Wl,--defsym,__app_start=0x80000000 -Wl,--defsym,__isr_vec_count=0 -Wl,-e,0xbfc00000 boot.o exceptions.o dummy.o main.o -lfdc -o program.elf
+mips-mti-elf-objcopy --remove-section .MIPS.abiflags --remove-section .reginfo program.elf
+mips-mti-elf-size program.elf
+   text	   data	    bss	    dec	    hex	filename
+   3664	      0	      0	   3664	    e50	program.elf
+mips-mti-elf-objdump -D -l -t program.elf > program.dis
+mips-mti-elf-objdump -D program.elf > program.txt
+mips-mti-elf-objcopy program.elf -O srec program.rec
+16:54:19 **** Incremental Build of configuration Default for project proj ****
+make all 
+make: Nothing to be done for `all'.
+18:32:47 **** Incremental Build of configuration Default for project proj ****
+make all 
+mips-mti-elf-gcc -c -EL -g -march=m14kc -msoft-float -O1 -I"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" main.S -o main.o
+mips-mti-elf-gcc  -EL -march=m14kc -msoft-float -nostartfiles -Wl,-Map=program.map -L"C:\PROGRA~1\IMAGIN~1\TOOLCH~1\MIPS-M~1\2016~1.05-/share/mips/addons/libfdc/" -Wl,--defsym,__stack=0x80040000 -Wl,--defsym,__memory_size=0x1f800 -T uhi32.ld -Wl,--defsym,__flash_start=0xbfc00000 -Wl,--defsym,__flash_app_start=0x80000000 -Wl,--defsym,__app_start=0x80000000 -Wl,--defsym,__isr_vec_count=0 -Wl,-e,0xbfc00000 boot.o exceptions.o dummy.o main.o -lfdc -o program.elf
+mips-mti-elf-objcopy --remove-section .MIPS.abiflags --remove-section .reginfo program.elf
+mips-mti-elf-size program.elf
+   text	   data	    bss	    dec	    hex	filename
+   3664	      0	      0	   3664	    e50	program.elf
+mips-mti-elf-objdump -D -l -t program.elf > program.dis
+mips-mti-elf-objdump -D program.elf > program.txt
+mips-mti-elf-objcopy program.elf -O srec program.rec
+18:33:13 **** Incremental Build of configuration Default for project proj ****
+make all 
+make: Nothing to be done for `all'.

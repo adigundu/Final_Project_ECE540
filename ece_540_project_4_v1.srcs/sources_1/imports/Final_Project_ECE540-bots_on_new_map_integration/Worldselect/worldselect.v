@@ -78,9 +78,8 @@ module worldselect(	input wire clk,
     // State Synchronization
     always@(posedge clk or posedge reset) begin
         if(reset == 1'b1) begin
-            next_state <= map1;
-            prev_map_select <= map1;
-            end
+            state <= map1;
+        end
         else 
             state <= next_state;
     end

@@ -1,0 +1,99 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Dec  2 19:43:39 2019
+# Process ID: 3896
+# Current directory: C:/Final_Project_ECE540-bots_on_new_map_integration
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7312 C:\Final_Project_ECE540-bots_on_new_map_integration\ece_540_project_4_v1.xpr
+# Log file: C:/Final_Project_ECE540-bots_on_new_map_integration/vivado.log
+# Journal file: C:/Final_Project_ECE540-bots_on_new_map_integration\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Final_Project_ECE540-bots_on_new_map_integration/ece_540_project_4_v1.xpr
+INFO: [Project 1-313] Project file moved from 'N:/ECE540/540FinalProject' since last save.
+CRITICAL WARNING: [Project 1-19] Could not find the file '//thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Worldselect/worldselect.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file '//thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Scoreboard/scoreboard.sv'.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-2] IP Repository Path: Could not find the directory 'C:/Downloads/proj2_release_f19/ece540_ip_repo/rojobot31', nor could it be found using path 'N:/ECE540/Downloads/proj2_release_f19/ece540_ip_repo/rojobot31'.
+WARNING: [filemgmt 56-3] IP Output Repository Path: Could not find the directory 'C:/Users/bupbup/ece_540_project_4/ece_540_project_2.cache/ip'.
+WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/ece_540_project_4/ece_540_project_2.ip_user_files', nor could it be found using path 'N:/ECE540/ece_540_project_4/ece_540_project_2.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Downloads/proj2_release_f19/ece540_ip_repo/rojobot31'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:40 ; elapsed = 00:00:48 . Memory (MB): peak = 843.434 ; gain = 119.887
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files //thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Worldselect/worldselect.v] -no_script -reset -force -quiet
+remove_files  //thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Worldselect/worldselect.v
+export_ip_user_files -of_objects  [get_files //thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Scoreboard/scoreboard.sv] -no_script -reset -force -quiet
+remove_files  //thoth.cecs.pdx.edu/Home06/mescue/ECE540/540FinalProject/Scoreboard/scoreboard.sv
+remove_files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:25 . Memory (MB): peak = 910.664 ; gain = 0.000
+import_files -norecurse {C:/Final_Project_ECE540-bots_on_new_map_integration/Worldselect/worldselect.v C:/Final_Project_ECE540-bots_on_new_map_integration/Scoreboard/scoreboard.sv}
+update_compile_order -fileset sources_1
+reset_run map1_synth_1
+reset_run map2_synth_1
+reset_run map3_synth_1
+reset_run map4_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'map1'...
+CRITICAL WARNING: [IP_Flow 19-4664] The IP Cache location 'C:/Users/bupbup/ece_540_project_4/ece_540_project_2.cache/ip' is marked as non-writeable in the file system. Vivado will be unable to add IP to the IP Cache repository.
+Change the permissions of the IP Cache location to allow write permissions.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'map2'...
+CRITICAL WARNING: [IP_Flow 19-4664] The IP Cache location 'C:/Users/bupbup/ece_540_project_4/ece_540_project_2.cache/ip' is marked as non-writeable in the file system. Vivado will be unable to add IP to the IP Cache repository.
+Change the permissions of the IP Cache location to allow write permissions.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'map3'...
+CRITICAL WARNING: [IP_Flow 19-4664] The IP Cache location 'C:/Users/bupbup/ece_540_project_4/ece_540_project_2.cache/ip' is marked as non-writeable in the file system. Vivado will be unable to add IP to the IP Cache repository.
+Change the permissions of the IP Cache location to allow write permissions.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'map4'...
+CRITICAL WARNING: [IP_Flow 19-4664] The IP Cache location 'C:/Users/bupbup/ece_540_project_4/ece_540_project_2.cache/ip' is marked as non-writeable in the file system. Vivado will be unable to add IP to the IP Cache repository.
+Change the permissions of the IP Cache location to allow write permissions.
+[Mon Dec  2 19:49:50 2019] Launched map1_synth_1, map2_synth_1, map3_synth_1, map4_synth_1...
+Run output will be captured here:
+map1_synth_1: C:/Final_Project_ECE540-bots_on_new_map_integration/ece_540_project_4_v1.runs/map1_synth_1/runme.log
+map2_synth_1: C:/Final_Project_ECE540-bots_on_new_map_integration/ece_540_project_4_v1.runs/map2_synth_1/runme.log
+map3_synth_1: C:/Final_Project_ECE540-bots_on_new_map_integration/ece_540_project_4_v1.runs/map3_synth_1/runme.log
+map4_synth_1: C:/Final_Project_ECE540-bots_on_new_map_integration/ece_540_project_4_v1.runs/map4_synth_1/runme.log
+[Mon Dec  2 19:49:50 2019] Launched synth_1...
+Run output will be captured here: C:/Final_Project_ECE540-bots_on_new_map_integration/ece_540_project_4_v1.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 936.336 ; gain = 10.441
+launch_runs impl_1 -jobs 4
+[Mon Dec  2 19:59:59 2019] Launched impl_1...
+Run output will be captured here: C:/Final_Project_ECE540-bots_on_new_map_integration/ece_540_project_4_v1.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:23 . Memory (MB): peak = 942.023 ; gain = 2.355
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 706 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1946.215 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1946.215 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 91 instances were transformed.
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 76 instances
+  RAM128X1S => RAM128X1S (MUXF7, RAMS64E, RAMS64E): 3 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 8 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 4 instances
+
+open_run: Time (s): cpu = 00:00:40 ; elapsed = 00:00:44 . Memory (MB): peak = 2013.348 ; gain = 1053.895
+open_report: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 2099.051 ; gain = 62.504
+report_utilization -name utilization_1
+report_utilization: Time (s): cpu = 00:00:22 ; elapsed = 00:00:11 . Memory (MB): peak = 2313.551 ; gain = 48.738
+report_utilization: Time (s): cpu = 00:00:22 ; elapsed = 00:00:11 . Memory (MB): peak = 2313.551 ; gain = 48.738
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary: Time (s): cpu = 00:00:24 ; elapsed = 00:00:13 . Memory (MB): peak = 2393.789 ; gain = 70.961
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Dec  2 20:11:28 2019...

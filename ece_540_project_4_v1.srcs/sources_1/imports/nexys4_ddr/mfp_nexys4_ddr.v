@@ -51,8 +51,10 @@ wire [1:0]  worldmap_data_1_1, worldmap_data_1_2,
             worldmap_data_3_1, worldmap_data_3_2,
             worldmap_data_4_1, worldmap_data_4_2;
 wire [3:0] map_en;
+
 wire map_change;
-    
+reg map_change_db;   
+reg [16:0] map_change_counter;
     // test buttons
     //assign JA[2] = 1'b1;
     
@@ -531,38 +533,53 @@ end
 // Module to select worlds                            
 worldselect select_world(.clk(clk_out),.reset(reset),.map_change(map_change), .map_select(sw_debounced[1:0]), .map_en(map_en) ); 
         
-scoreboard score_board(.clk(clk_out), .Sensors_reg1(Sensors_reg), .Sensors_reg2(Sensors_reg_2), .board_rst(reset), .map_rst(reset), .map_change(map_change), .score() );
-        
+scoreboard score_board(.clk(clk_out), .Sensors_reg1(Sensors_reg), .Sensors_reg2(Sensors_reg_2), .board_rst(reset), .map_rst(reset), .map_change(), .score() );
+
+// Debug for map select
+assign map_change = map_change_db; // removed connection from scoreboad to facilitate testing.
+
+always@(posedge clk_out)begin
+    if(reset) map_change_counter <= 0;
+    else if(map_change_counter >= (1000*sw_debounced[15:2])) begin
+        map_change_db <= 1;
+        map_change_counter <= 0;
+    end
+    else begin
+        map_change_db <= 0;
+        map_change_counter <= map_change_counter + 1;
+    end
+end
+          
                   
  //assign JA[1] = JA_1;
-                                assign LED[`MFP_N_LED-1] = ~JA_1;
-                                assign LED[`MFP_N_LED-2] = ~JA_2;
-                                assign LED[`MFP_N_LED-3] = ~JA_3;
-                                assign LED[`MFP_N_LED-4] = ~JA_4;
-                                always @(*)
-                                begin
+//                                assign LED[`MFP_N_LED-1] = ~JA_1;
+//                                assign LED[`MFP_N_LED-2] = ~JA_2;
+//                                assign LED[`MFP_N_LED-3] = ~JA_3;
+//                                assign LED[`MFP_N_LED-4] = ~JA_4;
+//                                always @(*)
+//                                begin
                                 
-                                    case (JC[1])
-                                        1'b0:    JA_1 <= 1'b0;
-                                        1'b1:    JA_1 <= 1'b1;
-                                        default: JA_1 <= 1'b0; 
-                                    endcase
+//                                    case (JC[1])
+//                                        1'b0:    JA_1 <= 1'b0;
+//                                        1'b1:    JA_1 <= 1'b1;
+//                                        default: JA_1 <= 1'b0; 
+//                                    endcase
                                     
-                                    case (JC[2])
-                                        1'b0:    JA_2 <= 1'b0;
-                                        1'b1:    JA_2 <= 1'b1;
-                                        default: JA_2 <= 1'b0; 
-                                    endcase
-                                    case (JC[3])
-                                        1'b0:    JA_3 <= 1'b0;
-                                        1'b1:    JA_3 <= 1'b1;
-                                        default: JA_3 <= 1'b0; 
-                                    endcase
-                                    case (JC[4])
-                                        1'b0:    JA_4 <= 1'b0;
-                                        1'b1:    JA_4 <= 1'b1;
-                                        default: JA_4 <= 1'b0; 
-                                    endcase
+//                                    case (JC[2])
+//                                        1'b0:    JA_2 <= 1'b0;
+//                                        1'b1:    JA_2 <= 1'b1;
+//                                        default: JA_2 <= 1'b0; 
+//                                    endcase
+//                                    case (JC[3])
+//                                        1'b0:    JA_3 <= 1'b0;
+//                                        1'b1:    JA_3 <= 1'b1;
+//                                        default: JA_3 <= 1'b0; 
+//                                    endcase
+//                                    case (JC[4])
+//                                        1'b0:    JA_4 <= 1'b0;
+//                                        1'b1:    JA_4 <= 1'b1;
+//                                        default: JA_4 <= 1'b0; 
+//                                    endcase
                                
                               ////////////////////////////////////////////////////  
                               /*
@@ -590,7 +607,7 @@ scoreboard score_board(.clk(clk_out), .Sensors_reg1(Sensors_reg), .Sensors_reg2(
                                */ 
                                 ///////////////////////////////////////////////////////
                                 
-                                end
+//                                end
                                 
                                 
 endmodule
