@@ -51,10 +51,15 @@ wire [1:0]  worldmap_data_1_1, worldmap_data_1_2,
             worldmap_data_3_1, worldmap_data_3_2,
             worldmap_data_4_1, worldmap_data_4_2;
 wire [3:0] map_en;
-
 wire map_change;
 reg map_change_db;   
 reg [16:0] map_change_counter;
+
+// Scoreboard signals.
+wire [15:0] score;
+
+
+
     // test buttons
     //assign JA[2] = 1'b1;
     
@@ -260,8 +265,8 @@ reg [16:0] map_change_counter;
                     .IO_BotInfo_2(IO_BotInfo_2), // inputs to the mfp_sys
                     .IO_BotUpdt_Sync_2(IO_BotUpdt_Sync_2),
                     
-                    .IO_PB_2(pbtn_debounced_2) // NEW BUTTONS for Player 2),                    
-
+                    .IO_PB_2(pbtn_debounced_2), // NEW BUTTONS for Player 2),                    
+                    .score(score)
                     );
                     
  
@@ -529,23 +534,26 @@ end
                             .enb(map_en[3])
                             );
                             
+wire sb_map_change;
+wire map_rst; 
                       
 // Module to select worlds                            
-worldselect select_world(.clk(clk_out),.reset(reset),.map_change(map_change), .map_select(sw_debounced[1:0]), .map_en(map_en) ); 
+worldselect select_world(.clk(clk_out),.reset(reset),.map_change(map_change), .map_select(sw_debounced[1:0]), .map_en(map_en), .map_rst(map_rst) ); 
+
         
-scoreboard score_board(.clk(clk_out), .Sensors_reg1(Sensors_reg), .Sensors_reg2(Sensors_reg_2), .board_rst(reset), .map_rst(reset), .map_change(), .score() );
+scoreboard score_board(.clk(clk_out), .Sensors_reg1(Sensors_reg), .Sensors_reg2(Sensors_reg_2), .board_rst(reset), .map_rst(map_rst), .map_change(sb_map_change), .score(score) );
 
 // Debug for map select
 assign map_change = map_change_db; // removed connection from scoreboad to facilitate testing.
 
 always@(posedge clk_out)begin
     if(reset) map_change_counter <= 0;
-    else if(map_change_counter >= (1000*sw_debounced[15:2])) begin
-        map_change_db <= 1;
-        map_change_counter <= 0;
-    end
+//    else if(map_change_counter >= (1000*sw_debounced[15:2])) begin
+//map_change_db <= 1;
+//        map_change_counter <= 0;
+//    end
     else begin
-        map_change_db <= 0;
+        map_change_db <= sb_map_change;
         map_change_counter <= map_change_counter + 1;
     end
 end

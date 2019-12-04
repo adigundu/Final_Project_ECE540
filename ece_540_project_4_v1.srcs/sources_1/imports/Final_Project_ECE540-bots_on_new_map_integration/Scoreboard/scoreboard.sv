@@ -45,8 +45,8 @@ always @ ( negedge d2 or posedge map_rst or posedge board_rst)						// flag regi
 			q2 <= 1;								// flag is asserted on passing the black line 
 	end
 
-always @ (posedge clk)
-	begin	
+always @ (q3)
+ begin	
 		map_change <= q3;							// when one bot reaches the finish line then map_change is asserted to switch to next map
 	end
 my_counter botscore1 ( .clk(clk), .rst(board_rst), .inc(q1), .botscore(bot_score1)); // botscore of rojobot 1

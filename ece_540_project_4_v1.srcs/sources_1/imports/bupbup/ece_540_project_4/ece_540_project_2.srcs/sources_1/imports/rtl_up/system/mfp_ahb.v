@@ -52,8 +52,9 @@ module mfp_ahb
     input  [31:0]           IO_BotInfo_2,
     input                   IO_BotUpdt_Sync_2,
     
-    input      [`MFP_N_PB-1 : 0] IO_PB_2
-    
+    input      [`MFP_N_PB-1 : 0] IO_PB_2,
+    input                    [15:0] score
+
 
 
 );
@@ -104,7 +105,7 @@ module mfp_ahb
     .HCLK(HCLK),
     .HRESETn(HRESETn),
     .HADDR(HADDR),
-    .HWDATA(HWDATA),
+    .HWDATA({16'b0,score}),
     .HWRITE(HWRITE),/*************/
     .HSEL(HSEL[3]),
 // 7 segment outputs ////////////////////////

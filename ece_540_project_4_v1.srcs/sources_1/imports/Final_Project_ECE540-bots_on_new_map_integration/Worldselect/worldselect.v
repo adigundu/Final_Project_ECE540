@@ -11,7 +11,8 @@ module worldselect(	input wire clk,
                     input wire reset, 
 					input wire map_change, 
 					input wire [1:0] map_select, 
-					output reg [3:0] map_en );
+					output reg [3:0] map_en ,
+					output reg map_rst);
 					
 	parameter 	map1_out = 4'b0001,
 				map2_out = 4'b0010,
@@ -33,26 +34,23 @@ module worldselect(	input wire clk,
 	
     // Output Logic
     always@(state) begin
+        map_rst <= 1;
+        prev_map_select <= map_select;
         case(state)
             map1:   begin
                          map_en <= map1_out;
-                         prev_map_select <= map_select;
                     end
             map2:   begin
                          map_en <= map2_out;
-                         prev_map_select <= map_select;
                     end
             map3:   begin
                         map_en <= map3_out;
-                        prev_map_select <= map_select;
                     end
             map4:   begin
-                        map_en <= map4_out;
-                        prev_map_select <= map_select;
+                        map_en <= map4_out;   
                     end
            default: begin
-                         map_en <= map1_out;
-                         prev_map_select <= map_select;
+                         map_en <= map1_out; 
                     end
         endcase
     end
@@ -83,7 +81,8 @@ module worldselect(	input wire clk,
         else 
             state <= next_state;
     end
-            
+     
+    always@(negedge clk) map_rst <= 0;
             
             
 	endmodule

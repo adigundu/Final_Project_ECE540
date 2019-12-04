@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="map4_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575381608">
   <File Type="PA-TCL" Name="map4.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="map4_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="map4_reports.tcl"/>
   <File Type="RDS-RDS" Name="map4.vds"/>
   <File Type="RDS-UTIL" Name="map4_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="map4_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="map4.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="map4_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="map4_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/map4">
     <File Path="$PSRCDIR/sources_1/ip/map4/map4.xci">
       <FileInfo>
@@ -38,8 +35,8 @@
   <Strategy Version="1" Minor="2">
     <StratHandle Name="bestone" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design">
-      <Option Id="RepFanoutThreshold">1000</Option>
       <Option Id="ReTiming">1</Option>
+      <Option Id="RepFanoutThreshold">1000</Option>
       <Option Id="Directive">6</Option>
     </Step>
   </Strategy>

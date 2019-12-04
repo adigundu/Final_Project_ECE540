@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.1 (win64) Build 2288692 Thu Jul 26 18:24:02 MDT 2018
-| Date         : Tue Dec  3 09:33:49 2019
+| Date         : Wed Dec  4 13:04:29 2019
 | Host         : caplab12 running 64-bit major release  (build 9200)
 | Command      : report_drc -file mfp_nexys4_ddr_drc_routed.rpt -pb mfp_nexys4_ddr_drc_routed.pb -rpx mfp_nexys4_ddr_drc_routed.rpx
 | Design       : mfp_nexys4_ddr
@@ -24,20 +24,22 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 53
-+-----------+----------+-----------------------------------------------------+------------+
-| Rule      | Severity | Description                                         | Violations |
-+-----------+----------+-----------------------------------------------------+------------+
-| CFGBVS-1  | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
-| CHECK-3   | Warning  | Report rule limit reached                           | 2          |
-| DPOP-1    | Warning  | PREG Output pipelining                              | 1          |
-| DPOP-2    | Warning  | MREG Output pipelining                              | 1          |
-| PLCK-12   | Warning  | Clock Placer Checks                                 | 1          |
-| PLIO-3    | Warning  | Placement Constraints Check for IO constraints      | 1          |
-| REQP-1839 | Warning  | RAMB36 async control check                          | 20         |
-| REQP-1840 | Warning  | RAMB18 async control check                          | 20         |
-| RPBF-3    | Warning  | IO port buffering is incomplete                     | 6          |
-+-----------+----------+-----------------------------------------------------+------------+
+             Violations found: 57
++-------------+----------+-------------------------------------------------------------+------------+
+| Rule        | Severity | Description                                                 | Violations |
++-------------+----------+-------------------------------------------------------------+------------+
+| CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
+| CHECK-3     | Warning  | Report rule limit reached                                   | 2          |
+| DPOP-1      | Warning  | PREG Output pipelining                                      | 1          |
+| DPOP-2      | Warning  | MREG Output pipelining                                      | 1          |
+| PDRC-153    | Warning  | Gated clock check                                           | 2          |
+| PLCK-12     | Warning  | Clock Placer Checks                                         | 1          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 2          |
+| PLIO-3      | Warning  | Placement Constraints Check for IO constraints              | 1          |
+| REQP-1839   | Warning  | RAMB36 async control check                                  | 20         |
+| REQP-1840   | Warning  | RAMB18 async control check                                  | 20         |
+| RPBF-3      | Warning  | IO port buffering is incomplete                             | 6          |
++-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
@@ -74,6 +76,16 @@ MREG Output pipelining
 DSP map_change_counter1 multiplier stage map_change_counter1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
+PDRC-153#1 Warning
+Gated clock check  
+Net rojobot_1/BOTREGIF/d1 is a gated clock net sourced by a combinational pin rojobot_1/BOTREGIF/q1_i_1/O, cell rojobot_1/BOTREGIF/q1_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net rojobot_2/BOTREGIF/d2 is a gated clock net sourced by a combinational pin rojobot_2/BOTREGIF/q2_i_1/O, cell rojobot_2/BOTREGIF/q2_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
 PLCK-12#1 Warning
 Clock Placer Checks  
 Poor placement for routing between an IO pin and BUFG. 
@@ -82,6 +94,20 @@ Resolution: Poor placement of an IO pin and a BUFG has resulted in the router us
 
 	IBUF1 (IBUF.O) is locked to H14
 	BUFG1 (BUFG.I) is provisionally placed by clockplacer on BUFGCTRL_X0Y0
+
+Related violations: <none>
+
+PLHOLDVIO-2#1 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT rojobot_1/BOTREGIF/q1_i_1 is driving clock pin of 1 cells. This could lead to large hold time violations. First few involved cells are:
+    score_board/q1_reg {FDCE}
+
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT rojobot_2/BOTREGIF/q2_i_1 is driving clock pin of 1 cells. This could lead to large hold time violations. First few involved cells are:
+    score_board/q2_reg {FDCE}
 
 Related violations: <none>
 

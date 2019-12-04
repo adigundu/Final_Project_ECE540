@@ -47,8 +47,9 @@ module mfp_sys(
                     input  [31:0]           IO_BotInfo_2,
                     input                   IO_BotUpdt_Sync_2,
                     
-                    input  [`MFP_N_PB-1 :0] IO_PB_2
-                    
+                    input  [`MFP_N_PB-1 :0] IO_PB_2,
+                    input [15:0]score
+
                     );
 
 
@@ -360,7 +361,9 @@ module mfp_sys(
         
         .IO_BotInfo_2(IO_BotInfo_2), // inputs to the mfp_sys
         .IO_BotUpdt_Sync_2(IO_BotUpdt_Sync_2),
-        .IO_PB_2(IO_PB_2) // NEW BUTTONS for Player 2),                    
+        .IO_PB_2(IO_PB_2), // NEW BUTTONS for Player 2),   
+        .score(score)
+                 
     );
 
 

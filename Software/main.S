@@ -582,16 +582,16 @@ ret_next_step:
 # ===============================================================================
 
 wr_alldigits:
-				lw 	$25, (SP_DIG0)				# Load the lower 7 segment displays
-				li 	$2, PORT_SEVENSEG_LOW
-				sw	$25, 0($2)					# Write to the lower 7 segment displays
-				lw 	$25, (SP_DIG4)				# Load the higher 7 segment displays
-				li 	$2, PORT_SEVENSEG_HGH
-				sw	$25, 0($2)					# Write to the higher 7 segment displays
-				li 	$25, 0x00					# Enable all the display segments
-				li 	$2, PORT_SEVENSEG_EN
-				sw	$25, 0($2)
-				jr 	$ra
+				# lw 	$25, (SP_DIG0)				# Load the lower 7 segment displays
+				# li 	$2, PORT_SEVENSEG_LOW
+				# sw	$25, 0($2)					# Write to the lower 7 segment displays
+				# lw 	$25, (SP_DIG4)				# Load the higher 7 segment displays
+				# li 	$2, PORT_SEVENSEG_HGH
+				# sw	$25, 0($2)					# Write to the higher 7 segment displays
+				# li 	$25, 0x00					# Enable all the display segments
+				# li 	$2, PORT_SEVENSEG_EN
+				# sw	$25, 0($2)
+			 jr 	$ra
 				nop
 				
 #*******

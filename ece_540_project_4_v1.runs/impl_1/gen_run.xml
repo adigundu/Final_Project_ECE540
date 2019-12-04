@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575393764">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1575492724">
   <File Type="BITSTR-BMM" Name="mfp_nexys4_ddr_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="mfp_nexys4_ddr_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="mfp_nexys4_ddr_timing_summary_init.rpt"/>
@@ -1812,32 +1812,42 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/yourmap.coe">
+    <File Path="$PSRCDIR/sources_1/imports/540FinalProject/yourmap.coe">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/yourmap.coe"/>
+        <Attr Name="ImportTime" Val="1575307034"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/coe/map1.coe">
+    <File Path="$PSRCDIR/sources_1/imports/540FinalProject/coe/map1.coe">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/coe/map1.coe"/>
+        <Attr Name="ImportTime" Val="1575383549"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/coe/map2.coe">
+    <File Path="$PSRCDIR/sources_1/imports/540FinalProject/coe/map2.coe">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/coe/map2.coe"/>
+        <Attr Name="ImportTime" Val="1575315822"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/coe/map3.coe">
+    <File Path="$PSRCDIR/sources_1/imports/540FinalProject/coe/map3.coe">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/coe/map3.coe"/>
+        <Attr Name="ImportTime" Val="1575315822"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/coe/map4.coe">
+    <File Path="$PSRCDIR/sources_1/imports/540FinalProject/coe/map4.coe">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/coe/map4.coe"/>
+        <Attr Name="ImportTime" Val="1575315822"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

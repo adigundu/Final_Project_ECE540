@@ -17,10 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.incrementalSynthesisCache N:/ECE540/540FinalProject/.Xil/Vivado-10048-caplab12/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_msg_config  -ruleid {1}  -id {Synth 8-4442}  -string {{CRITICAL WARNING: [Synth 8-4442] BlackBox module map1_1 has unconnected pin addrb[13]}}  -suppress 
 create_project -in_memory -part xc7a100tcsg324-1
 
